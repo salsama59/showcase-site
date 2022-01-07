@@ -1,0 +1,21 @@
+{
+	"useTabs": true,
+	"arrowParens": "always",
+	"bracketSpacing": true,
+	"trailingComma": "none",
+	"endOfLine": "auto",
+	"overrides": [
+		{
+			"files": "*.component.html",
+			"options": {
+				"parser": "angular"
+			}
+		},
+		{
+			"files": "*.html",
+			"options": {
+				"parser": "html"
+			}
+		}
+	]
+}
