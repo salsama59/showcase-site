@@ -1,0 +1,2 @@
+# Autodetect text files and end of file style unix
+* text=auto eol=lf
