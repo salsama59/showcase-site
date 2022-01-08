@@ -133,9 +133,21 @@
               "devServerTarget": "showcase-site:serve:production"
             }
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "showcase-site"
+  "defaultProject": "showcase-site",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
