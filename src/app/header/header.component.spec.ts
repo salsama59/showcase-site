@@ -22,7 +22,22 @@ describe('HeaderComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create the header component', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render the Home link', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelectorAll('header nav div#navbarNav ul > li a').item(0).textContent).toContain('Home');
+  });
+
+  it('should render the CV link', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelectorAll('header nav div#navbarNav ul > li a').item(1).textContent).toContain('CV');
+  });
+
+  it('should render the Projects link', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelectorAll('header nav div#navbarNav ul > li a').item(2).textContent).toContain('Projects');
   });
 });
