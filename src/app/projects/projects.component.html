@@ -1,0 +1,35 @@
+<h1 class="project-list-title mb-5 text-center">Project list page</h1>
+<div class="filter-listing-group">
+  <aside class="filter-side-bar">
+    <div class="card">
+      <div class="card-header filter-header">
+        Filters
+      </div>
+      <div class="card-body">
+        <p class="card-text">Project types</p>
+        <div *ngFor="let projectTypeFilter of projectTypeFilters" class="form-check">
+          <input class="form-check-input" type="checkbox" (change)="onProjectFilterChange()" [(ngModel)]="projectTypeFilter.isFilterActive" value="" id="{{ projectTypeFilter.filterId }}">
+          <label class="form-check-label" for="{{ projectTypeFilter.filterId }}">{{ projectTypeFilter.filterName }}</label>
+        </div>
+        <p class="mt-3 card-text">Project technologies</p>
+        <div *ngFor="let projectTechnologiesFilter of projectTechnologiesFilters" class="form-check">
+          <input class="form-check-input" type="checkbox" (change)="onProjectFilterChange()" [(ngModel)]="projectTechnologiesFilter.isFilterActive" value="" id="{{ projectTechnologiesFilter.filterId }}">
+          <label class="form-check-label" for="{{ projectTechnologiesFilter.filterId }}">{{ projectTechnologiesFilter.filterName }}</label>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <section class="project-list-section">
+      <article *ngFor="let project of projectList">
+          <div class="card text-center border-dark">
+              <img [src]="getProjectImagePathByProjectType(project.projectType)" class="card-img-top project-image" [alt]="getProjectImageNameByProjectType(project.projectType)">
+              <div class="card-body">
+                <h5 class="card-title">{{ project.projectTitle }}</h5>
+                <p class="card-text">{{ project.projectDescription }}</p>
+                <button (click)="onViewProjectElement(project.projectId)" class="btn btn-success">Go check the project</button>
+              </div>
+            </div>
+      </article>
+  </section>
+</div>
+

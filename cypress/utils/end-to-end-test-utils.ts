@@ -4,7 +4,6 @@ export class EndToEndTestUtils {
         return cypressObject.get(elementsSelector).eq(elementIndex);
     }
 
-
     public static clickElement(element : Cypress.Chainable): Cypress.Chainable {
         return element.click();
     }

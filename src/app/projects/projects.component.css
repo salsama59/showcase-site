@@ -1,0 +1,47 @@
+.project-list-section {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	align-items: center;
+	align-content: space-around;
+}
+
+section.project-list-section > article {
+	flex-basis: 33%;
+}
+
+.project-image {
+	width: 364px;
+	height: 170px;
+}
+
+h5.card-title {
+	font-weight: bold;
+	/* color: #35ca65; */
+	/* color: #ca6535; */
+
+	color: #ca354f;
+}
+
+h1.project-list-title {
+	color: #ca354f;
+}
+
+div.filter-listing-group {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.filter-header {
+	border-bottom: 1px solid black;
+}
+
+aside.filter-side-bar {
+	width: 40%;
+}
+
+aside.filter-side-bar div div.card-body {
+	font-size: 13px;
+}

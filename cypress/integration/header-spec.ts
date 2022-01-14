@@ -1,4 +1,5 @@
 import { HeaderDomConstants } from "cypress/constants/header-dom-constants"
+import { ProjectsDomConstants } from "cypress/constants/projects-dom-constants";
 import { EndToEndTestUtils } from "cypress/utils/end-to-end-test-utils"
 
 describe('The header element end to end test', () => {
@@ -15,6 +16,12 @@ describe('The header element end to end test', () => {
     it('Visits the application home page and check the Projects link existence', () => {
         cy.visit('/')
         EndToEndTestUtils.getNthElement(cy, HeaderDomConstants.HEADER_LINKS, 2).should('contain', 'Projects');
+    });
+
+    it('Visits the application home page and click the Projects link', () => {
+        cy.visit('/')
+        EndToEndTestUtils.clickElement(cy.get(HeaderDomConstants.HEADER_PROJECTS_TAB_LINK));
+        cy.get(ProjectsDomConstants.PROJECT_LIST_PAGE_TITLE).should('contain', 'Project list page');
     });
 });
 
