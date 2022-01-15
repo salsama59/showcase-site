@@ -1,4 +1,17 @@
 <h1 class="project-list-title mb-5 text-center">Project list page</h1>
+<section class="project-list-sort-group">
+  <article>
+    <div class="input-group">
+      <select class="form-select" id="projectsSortDropdown" aria-label="Project list sort dropdown" [(ngModel)]="userSortChoice" (change)="onSortChoiceChange()">
+        <option [ngValue]="projectSortType.CREATION_DATE" selected>Creation date</option>
+        <option [ngValue]="projectSortType.PROJECT_TYPE">Project type</option>
+        <option [ngValue]="projectSortType.TITLE">Project title</option>
+        <option [ngValue]="projectSortType.LAST_MODIFIED">Last modified</option>
+      </select>
+      <button class="btn btn-primary" id="sortOrderButton" type="button" (click)="onSortOrderUpdate()">{{ sortLabel }}</button>
+    </div>
+  </article>
+</section>
 <div class="filter-listing-group">
   <aside class="filter-side-bar">
     <div class="card">
@@ -21,11 +34,18 @@
   </aside>
   <section class="project-list-section">
       <article *ngFor="let project of projectList">
-          <div class="card text-center border-dark">
+          <div class="card border-dark">
               <img [src]="getProjectImagePathByProjectType(project.projectType)" class="card-img-top project-image" [alt]="getProjectImageNameByProjectType(project.projectType)">
-              <div class="card-body">
-                <h5 class="card-title">{{ project.projectTitle }}</h5>
+              <div class="card-body project-card">
+                <h5 class="card-title">{{ getProjectTypeLabelByProjectType(project.projectType) }}</h5>
+                <h6 class="card-subtitle text-muted">{{ project.projectTitle }}</h6>
+                <p class="card-text creation-date-paragraph"><small class="text-muted">Creation date : {{ project.projectCreationDate | date:'dd/MM/yyyy' }}</small></p>
+                <p class="card-text last-modified-date-paragraph"><small class="text-muted">Last modified date : {{ project.projectLastModifiedDate | date:'dd/MM/yyyy' }}</small></p>
                 <p class="card-text">{{ project.projectDescription }}</p>
+                <span class="tag-label">Tags : </span>
+                <div class="technologies-block">
+                  <span *ngFor="let tag of project.projectTags" class="badge rounded-pill bg-primary">{{ getTechnologyLabelByProjectTechnologyType(tag) }}</span>
+                </div>
                 <button (click)="onViewProjectElement(project.projectId)" class="btn btn-success">Go check the project</button>
               </div>
             </div>

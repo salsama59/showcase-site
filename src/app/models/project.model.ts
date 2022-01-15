@@ -14,12 +14,16 @@ export class Project {
  * @param projectDescription the project description
  * @param projectType the project type
  * @param projectTags the project tags
+ * @param projectCreationDate the project creation date
+ * @param projectLastModifiedDate the project last modified date
  */
  public constructor(
 	public projectId: number,
     public projectTitle: string,
     public projectDescription: string,
     public projectType: ProjectTypeEnum,
-    public projectTags: ProjectTechnologyEnum[]
+    public projectTags: ProjectTechnologyEnum[],
+    public projectCreationDate: Date,
+    public projectLastModifiedDate: Date,
 ) {}
 }

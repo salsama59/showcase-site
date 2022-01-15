@@ -9,6 +9,7 @@ import { SocialNetworksService } from './services/social-networks.service';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectsService } from './services/projects.service';
 import { FormsModule } from '@angular/forms';
+import { ProjectUtilsService } from './utils/project-utils.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [SocialNetworksService, ProjectsService],
+  providers: [SocialNetworksService, ProjectsService, ProjectUtilsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
