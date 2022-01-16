@@ -7,11 +7,7 @@ import { Project } from '../models/project.model';
 import { NewsService } from '../services/news.service';
 import { ProjectsService } from '../services/projects.service';
 import { ProjectUtilsService } from '../utils/project-utils.service';
-
-/** 
- * Duration object declaration
-*/
-const Duration = require('duration');
+import moment  from 'moment';
 
 /**
  * Home Component class responsible for the home page management.
@@ -74,8 +70,9 @@ export class HomeComponent implements OnInit {
    */
   private getFreshNews(): Array<News> {
     return this.newsService.getNews().filter((news: News, index: number) => {
-      const duration: any = new Duration(news.newsCreationDate, new Date());
-        return duration.months <= 1;
+      const millisecondDuration: number = new Date().getTime() - news.newsCreationDate.getTime(); 
+      const duration: moment.Duration = moment.duration(millisecondDuration, "milliseconds");
+        return duration.months() <= 1;
     });
   }
 
@@ -107,23 +104,25 @@ export class HomeComponent implements OnInit {
    * @returns the elapsed time label representation.
    */
   getElapsedTimeLabelRepresentation(startDate: Date): string {
-    const duration: any = new Duration(startDate, new Date());
+    
     let durationRepresentation: string = '';
+    const millisecondDuration: number = new Date().getTime() - startDate.getTime(); 
+    const duration: moment.Duration = moment.duration(millisecondDuration, "milliseconds");
 
-    if(duration.month > 0){
-      durationRepresentation += duration.month + ' month(s) ';
+    if(duration.months() > 0){
+      durationRepresentation += duration.months() + ' month(s) ';
     }
 
-    if(duration.day > 0){
-      durationRepresentation += duration.day + ' day(s) ';
+    if(duration.days() > 0){
+      durationRepresentation += duration.days() + ' day(s) ';
     }
 
-    if(duration.hour > 0){
-      durationRepresentation += duration.hour + ' hour(s) ';
+    if(duration.hours() > 0){
+      durationRepresentation += duration.hours() + ' hour(s) ';
     }
 
-    if(duration.minute > 0){
-      durationRepresentation += duration.minute + ' minute(s) ';
+    if(duration.minutes() > 0){
+      durationRepresentation += duration.minutes() + ' minute(s) ';
     }
 
     return durationRepresentation.trim();
