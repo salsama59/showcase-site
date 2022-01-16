@@ -69,8 +69,9 @@ export class ProjectsComponent implements OnInit {
    * @param projectService  the projects service
    * @param router the router
    * @param activatedRoute the activated route
+   * @param projectUtilsService the project utility service
    */
-  constructor(private projectService: ProjectsService, private router: Router, private activatedRoute: ActivatedRoute, private projectUtilsService: ProjectUtilsService) { }
+  constructor(private projectService: ProjectsService, private router: Router, private activatedRoute: ActivatedRoute, public projectUtilsService: ProjectUtilsService) { }
 
   /**
    * Initialize the project list to diplay on the page.
@@ -114,56 +115,56 @@ export class ProjectsComponent implements OnInit {
     this.projectTechnologiesFilters.push({
       filterId: "angularTechnologyFilter",
       projectTechnology: ProjectTechnologyEnum.ANGULAR,
-      filterName: this.getTechnologyLabelByProjectTechnologyType(ProjectTechnologyEnum.ANGULAR),
+      filterName: this.projectUtilsService.getTechnologyLabelByProjectTechnologyType(ProjectTechnologyEnum.ANGULAR),
       isFilterActive: true
     });
 
     this.projectTechnologiesFilters.push({
       filterId: "cssTechnologyFilter",
       projectTechnology: ProjectTechnologyEnum.CSS,
-      filterName: this.getTechnologyLabelByProjectTechnologyType(ProjectTechnologyEnum.CSS),
+      filterName: this.projectUtilsService.getTechnologyLabelByProjectTechnologyType(ProjectTechnologyEnum.CSS),
       isFilterActive: true
     });
 
     this.projectTechnologiesFilters.push({
       filterId: "cSharpTechnologyFilter",
       projectTechnology: ProjectTechnologyEnum.C_SHARP,
-      filterName: this.getTechnologyLabelByProjectTechnologyType(ProjectTechnologyEnum.C_SHARP),
+      filterName: this.projectUtilsService.getTechnologyLabelByProjectTechnologyType(ProjectTechnologyEnum.C_SHARP),
       isFilterActive: true
     });
 
     this.projectTechnologiesFilters.push({
       filterId: "dotNetTechnologyFilter",
       projectTechnology: ProjectTechnologyEnum.DOT_NET,
-      filterName: this.getTechnologyLabelByProjectTechnologyType(ProjectTechnologyEnum.DOT_NET),
+      filterName: this.projectUtilsService.getTechnologyLabelByProjectTechnologyType(ProjectTechnologyEnum.DOT_NET),
       isFilterActive: true
     });
 
     this.projectTechnologiesFilters.push({
       filterId: "htmlTechnologyFilter",
       projectTechnology: ProjectTechnologyEnum.HTML,
-      filterName: this.getTechnologyLabelByProjectTechnologyType(ProjectTechnologyEnum.HTML),
+      filterName: this.projectUtilsService.getTechnologyLabelByProjectTechnologyType(ProjectTechnologyEnum.HTML),
       isFilterActive: true
     });
 
     this.projectTechnologiesFilters.push({
       filterId: "javaTechnologyFilter",
       projectTechnology: ProjectTechnologyEnum.JAVA,
-      filterName: this.getTechnologyLabelByProjectTechnologyType(ProjectTechnologyEnum.JAVA),
+      filterName: this.projectUtilsService.getTechnologyLabelByProjectTechnologyType(ProjectTechnologyEnum.JAVA),
       isFilterActive: true
     });
 
     this.projectTechnologiesFilters.push({
       filterId: "slick2dTechnologyFilter",
       projectTechnology: ProjectTechnologyEnum.SLICK2D,
-      filterName: this.getTechnologyLabelByProjectTechnologyType(ProjectTechnologyEnum.SLICK2D),
+      filterName: this.projectUtilsService.getTechnologyLabelByProjectTechnologyType(ProjectTechnologyEnum.SLICK2D),
       isFilterActive: true
     });
 
     this.projectTechnologiesFilters.push({
       filterId: "unityTechnologyFilter",
       projectTechnology: ProjectTechnologyEnum.UNITY,
-      filterName: this.getTechnologyLabelByProjectTechnologyType(ProjectTechnologyEnum.UNITY),
+      filterName: this.projectUtilsService.getTechnologyLabelByProjectTechnologyType(ProjectTechnologyEnum.UNITY),
       isFilterActive: true
     });
   }
@@ -179,105 +180,7 @@ export class ProjectsComponent implements OnInit {
 		});
   }
 
-  /**
-   * Gets project image path by project type
-   * @param projectType the project type
-   * @returns the project image path given a project type
-   * @public
-   */
-  getProjectImagePathByProjectType(projectType: ProjectTypeEnum): string {
-    let projectImagePath: string = '';
-
-    switch (projectType) {
-      case ProjectTypeEnum.WEB_DEVELOPEMENT:
-        projectImagePath = "assets/images/web-development-illustration.png";
-        break;
-      case ProjectTypeEnum.GAME_DEVELOPEMENT:
-        projectImagePath = "assets/images/game-development-illustration.png";
-        break;
-    }
-
-    return projectImagePath;
-  }
-
-  /**
-   * Gets project image name by project type
-   * @param projectType the project type
-   * @returns the project image name given a project type
-   * @public
-   */
-  getProjectImageNameByProjectType(projectType: ProjectTypeEnum): string {
-    let projectImageName: string = '';
-
-    switch (projectType) {
-      case ProjectTypeEnum.WEB_DEVELOPEMENT:
-        projectImageName = "web-development-illustration.png";
-        break;
-      case ProjectTypeEnum.GAME_DEVELOPEMENT:
-        projectImageName = "game-development-illustration.png";
-        break;
-    }
-
-    return projectImageName;
-  }
-
-  /**
-   * Gets project type label by project type
-   * @param projectType the project type
-   * @returns a project type given a project type
-   */
-  getProjectTypeLabelByProjectType(projectType: ProjectTypeEnum){
-    let projectTypeLabel: string = '';
-
-    switch (projectType) {
-      case ProjectTypeEnum.WEB_DEVELOPEMENT:
-        projectTypeLabel = "Web development project";
-        break;
-      case ProjectTypeEnum.GAME_DEVELOPEMENT:
-        projectTypeLabel = "Game development project";
-        break;
-    }
-
-    return projectTypeLabel;
-  }
-
-  /**
-   * Gets technology label by project technology type
-   * @param projectTechnology the project technology
-   * @returns a technology label given a technology type
-   */
-  getTechnologyLabelByProjectTechnologyType(projectTechnology: ProjectTechnologyEnum){
-    let projectTechnologyLabel: string = '';
-
-    switch (projectTechnology) {
-      case ProjectTechnologyEnum.JAVA:
-        projectTechnologyLabel = TechnologyNameConstants.JAVA_TECHNOLOGY_NAME;
-        break;
-      case ProjectTechnologyEnum.HTML:
-        projectTechnologyLabel = TechnologyNameConstants.HTML_TECHNOLOGY_NAME;
-        break;
-      case ProjectTechnologyEnum.CSS:
-        projectTechnologyLabel = TechnologyNameConstants.CSS_TECHNOLOGY_NAME;
-        break;
-      case ProjectTechnologyEnum.ANGULAR:
-        projectTechnologyLabel = TechnologyNameConstants.ANGULAR_TECHNOLOGY_NAME;
-        break;
-      case ProjectTechnologyEnum.C_SHARP:
-        projectTechnologyLabel = TechnologyNameConstants.C_SHARP_TECHNOLOGY_NAME;
-        break;
-      case ProjectTechnologyEnum.UNITY:
-        projectTechnologyLabel = TechnologyNameConstants.UNITY_TECHNOLOGY_NAME;
-        break;
-      case ProjectTechnologyEnum.SLICK2D:
-        projectTechnologyLabel = TechnologyNameConstants.SLICK2D_TECHNOLOGY_NAME;
-        break;
-      case ProjectTechnologyEnum.DOT_NET:
-        projectTechnologyLabel = TechnologyNameConstants.DOT_NET_TECHNOLOGY_NAME;
-        break;
-    }
-
-    return projectTechnologyLabel;
-  }
+  
 
   /**
    * Determines what happens when the project filter value change
