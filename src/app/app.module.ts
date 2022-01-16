@@ -10,20 +10,23 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ProjectsService } from './services/projects.service';
 import { FormsModule } from '@angular/forms';
 import { ProjectUtilsService } from './utils/project-utils.service';
+import { HomeComponent } from './home/home.component';
+import { NewsService } from './services/news.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [SocialNetworksService, ProjectsService, ProjectUtilsService],
+  providers: [SocialNetworksService, ProjectsService, ProjectUtilsService, NewsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

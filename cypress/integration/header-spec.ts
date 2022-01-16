@@ -20,7 +20,7 @@ describe('The header element end to end test', () => {
 
     it('Visits the application home page and click the Projects link', () => {
         cy.visit('/')
-        EndToEndTestUtils.clickElement(cy.get(HeaderDomConstants.HEADER_PROJECTS_TAB_LINK));
+        EndToEndTestUtils.clickElement(cy.get(HeaderDomConstants.HEADER_PROJECTS_TAB_LINK), true);
         cy.get(ProjectsDomConstants.PROJECT_LIST_PAGE_TITLE).should('contain', 'Project list page');
     });
 });

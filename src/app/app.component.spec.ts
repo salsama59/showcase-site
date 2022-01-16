@@ -35,9 +35,4 @@ describe('AppComponent', () => {
    
     expect(appComponent.title).toEqual('showcase-site');
   });
-
-  it('should render title', () => {
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('p')?.textContent).toContain('showcase-site app is running!');
-  });
 });

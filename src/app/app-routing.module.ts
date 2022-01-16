@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RouteConstants } from './constants/route-constants';
+import { HomeComponent } from './home/home.component';
 import { ProjectsComponent } from './projects/projects.component';
 
 /**
@@ -10,6 +11,10 @@ import { ProjectsComponent } from './projects/projects.component';
  */
 const routes: Routes = [
   {
+    path: RouteConstants.HOME_ROUTE_PATH,
+    component: HomeComponent
+  },
+  {
     path: RouteConstants.PROJECTS_ROUTE_PATH,
     component: ProjectsComponent,
     children: [
@@ -17,6 +22,7 @@ const routes: Routes = [
       // { path: ':mode', component: TeamComponent }
     ]
   }
+  
 ];
 
 /**
