@@ -1,4 +1,5 @@
 import { HeaderDomConstants } from "cypress/constants/header-dom-constants"
+import { HomeDomConstants } from "cypress/constants/home-dom-constants";
 import { ProjectsDomConstants } from "cypress/constants/projects-dom-constants";
 import { EndToEndTestUtils } from "cypress/utils/end-to-end-test-utils"
 
@@ -22,6 +23,12 @@ describe('The header element end to end test', () => {
         cy.visit('/')
         EndToEndTestUtils.clickElement(cy.get(HeaderDomConstants.HEADER_PROJECTS_TAB_LINK), true);
         cy.get(ProjectsDomConstants.PROJECT_LIST_PAGE_TITLE).should('contain', 'Project list page');
+    });
+
+    it('Visits the application projects page and click the Home link', () => {
+        EndToEndTestUtils.goToProjectListPage(cy);
+        EndToEndTestUtils.clickElement(cy.get(HeaderDomConstants.HEADER_HOME_TAB_LINK), true);
+        cy.get(HomeDomConstants.HOME_PAGE_TITLE_GENERAL_TITLE_SELECTOR).should('contain', 'Welcome to my showcase site');
     });
 });
 

@@ -1,4 +1,15 @@
+import { RouteConstants } from '../../src/app/constants/route-constants';
+import { RouteModeConstants } from '../../src/app/constants/route-mode-constants';
+
 export class EndToEndTestUtils {
+
+    public static goToProjectListPage(cypressObject : Cypress.cy): void {
+        cypressObject.visit('/' + RouteConstants.PROJECTS_ROUTE_PATH);
+    }
+
+    public static goToProjectDetailPage(cypressObject : Cypress.cy, projectId: number): void {
+        cypressObject.visit('/' + RouteConstants.PROJECTS_ROUTE_PATH + '/' + projectId + '/' + RouteModeConstants.MODE_VIEW_CONSTANT);
+    }
 
     public static getNthElement(cypressObject : Cypress.cy, elementsSelector: string, elementIndex: number): Cypress.Chainable {
         return cypressObject.get(elementsSelector).eq(elementIndex);
