@@ -8,6 +8,8 @@ import { NewsService } from '../services/news.service';
 import { ProjectsService } from '../services/projects.service';
 import { ProjectUtilsService } from '../utils/project-utils.service';
 import moment  from 'moment';
+import { Router } from '@angular/router';
+import { RouteModeConstants } from '../constants/route-mode-constants';
 
 /**
  * Home Component class responsible for the home page management.
@@ -50,9 +52,10 @@ export class HomeComponent implements OnInit {
    * @param projectsService the projects service
    * @param projectUtilsService the project utility service
    * @param newsService the news service
+   * @param router the router
    * @public
    */
-  constructor(private projectsService: ProjectsService, public projectUtilsService: ProjectUtilsService, private newsService: NewsService) { }
+  constructor(private projectsService: ProjectsService, public projectUtilsService: ProjectUtilsService, private newsService: NewsService, private router: Router) { }
 
   /**
    * Initialize the recomended project list, the current recommended project description and the news list
@@ -96,6 +99,14 @@ export class HomeComponent implements OnInit {
   onCarouselSlideFinished(event: any): void {
     const currentSildeIndex: number = event.to;
     this.currentRecommendedProjectDescription = this.recommendedProjects[currentSildeIndex].projectDescription;
+  }
+
+  /**
+   * Determines what to do when the user click on the recommended projects carousel image
+   * @param projectId  the project id
+   */
+  onProjectDetailNavigation(projectId: number): void {
+    void this.router.navigate([RouteConstants.PROJECTS_ROUTE_PATH, projectId, RouteModeConstants.MODE_VIEW_CONSTANT]);
   }
 
   /**

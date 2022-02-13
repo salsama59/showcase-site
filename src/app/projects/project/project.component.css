@@ -1,0 +1,19 @@
+.game-frame-block {
+	height: 100%;
+	width: 100%;
+}
+
+.project-content-parent {
+	display: flex;
+	justify-content: center;
+}
+
+.project-detail-introduction-title,
+.project-detail-instructions-title,
+.project-detail-test-title {
+	text-decoration: underline;
+}
+
+h1.project-detail-page-title {
+	color: #ca354f;
+}

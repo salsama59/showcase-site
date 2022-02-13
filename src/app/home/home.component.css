@@ -48,11 +48,6 @@
 	text-align: center;
 }
 
-.title-icons {
-	color: gold;
-	margin-right: 0.5%;
-}
-
 .site-sections-list {
 	width: 16%;
 }
@@ -66,4 +61,8 @@
 	font-size: 12px;
 	width: 30%;
 	height: 70%;
+}
+
+.carousel-item {
+	cursor: pointer;
 }

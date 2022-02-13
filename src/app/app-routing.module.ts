@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RouteConstants } from './constants/route-constants';
 import { HomeComponent } from './home/home.component';
+import { ProjectComponent } from './projects/project/project.component';
 import { ProjectsComponent } from './projects/projects.component';
 
 /**
@@ -16,13 +17,11 @@ const routes: Routes = [
   },
   {
     path: RouteConstants.PROJECTS_ROUTE_PATH,
-    component: ProjectsComponent,
-    children: [
-      // { path: ':teamId/:mode', component: TeamComponent },
-      // { path: ':mode', component: TeamComponent }
-    ]
+    component: ProjectsComponent
+  },
+  { path: RouteConstants.PROJECT_VIEW_MODE_ROUTE_PATH, 
+    component: ProjectComponent 
   }
-  
 ];
 
 /**
@@ -32,4 +31,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

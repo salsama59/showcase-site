@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { ProjectUtilsService } from './utils/project-utils.service';
 import { HomeComponent } from './home/home.component';
 import { NewsService } from './services/news.service';
+import { ProjectComponent } from './projects/project/project.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NewsService } from './services/news.service';
     HeaderComponent,
     FooterComponent,
     ProjectsComponent,
-    HomeComponent
+    HomeComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
