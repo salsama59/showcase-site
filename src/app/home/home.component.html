@@ -49,11 +49,11 @@
               <button *ngFor="let recommendedProject of recommendedProjects; let i = index" type="button" data-bs-target="#recommendedProjectCarousel" attr.data-bs-slide-to="{{ i }}" [ngClass]="{active: i === 0}" attr.aria-current="{{ i === 0 ? 'true' : null }}" attr.aria-label="Slide {{ i }}"></button>
             </div>
             <div class="carousel-inner">
-              <div *ngFor="let recommendedProject of recommendedProjects; let i = index" class="carousel-item" [ngClass]="{active: i === 0}">
+              <div id="recommendedProjectDisplay{{ i }}" (click)="onProjectDetailNavigation(recommendedProject.projectId)" *ngFor="let recommendedProject of recommendedProjects; let i = index" class="carousel-item" [ngClass]="{active: i === 0}" data-bs-toggle="tooltip" data-bs-placement="top" title="go to the project page">
                 <img [src]="projectUtilsService.getProjectImagePathByProjectType(recommendedProject.projectType)" class="d-block w-100 home-recommended-project-images" [alt]="projectUtilsService.getProjectImageNameByProjectType(recommendedProject.projectType)">
                 <div class="carousel-caption d-none d-md-block">
                   <h4>{{ projectUtilsService.getProjectTypeLabelByProjectType(recommendedProject.projectType) }}</h4>
-                  <h5>{{ recommendedProject.projectTitle }}</h5>
+                  <h5 id="carousselElementProjectTitle{{ i }}">{{ recommendedProject.projectTitle }}</h5>
                 </div>
               </div>
             </div>

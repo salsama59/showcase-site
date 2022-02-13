@@ -1,4 +1,5 @@
 import { HomeDomConstants } from "cypress/constants/home-dom-constants";
+import { ProjectDomConstants } from "cypress/constants/project-dom-constants";
 import { ProjectsDomConstants } from "cypress/constants/projects-dom-constants";
 import { EndToEndTestUtils } from "cypress/utils/end-to-end-test-utils"
 
@@ -32,5 +33,13 @@ describe('The Home page end to end test', () => {
     cy.visit('/')
     EndToEndTestUtils.clickElement(cy.get(HomeDomConstants.HOME_SECTIONS_CV_LINK_SELECTOR), true);
     cy.get(HomeDomConstants.HOME_PAGE_TITLE_GENERAL_TITLE_SELECTOR).should('contain', 'Welcome to my showcase site');
+  });
+
+  it('Should navigate to the project detail page when clicking on the recommended projects caroussel', () => {
+    cy.visit('/')
+    cy.get(HomeDomConstants.HOME_PAGE_PROJECT_DISPLAY_SELECTOR).find(HomeDomConstants.HOME_PAGE_CAROUSEL_ELEMENT_PROJECT_TITLE_SELECTOR).invoke('text').then((h5Text) => {
+      EndToEndTestUtils.clickElement(cy.get(HomeDomConstants.HOME_PAGE_PROJECT_DISPLAY_SELECTOR), true);
+      cy.get(ProjectDomConstants.PROJECT_DETAILS_PAGE_TITLE).should('contain', h5Text);
+    });
   });
 });

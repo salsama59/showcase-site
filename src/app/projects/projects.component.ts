@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { RouteModeConstants } from '../constants/route-mode-constants';
 import { TechnologyNameConstants } from '../constants/technology-name-constants';
 import { ProjectSortType } from '../enums/project-sort-type';
 import { ProjectTechnologyEnum } from '../enums/project-technology-enum';
@@ -175,7 +176,7 @@ export class ProjectsComponent implements OnInit {
    * @public
    */
   onViewProjectElement(projectId: number): void {
-    void this.router.navigate([projectId, 'view'], {
+    void this.router.navigate([projectId, RouteModeConstants.MODE_VIEW_CONSTANT], {
 			relativeTo: this.activatedRoute
 		});
   }

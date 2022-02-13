@@ -1,10 +1,14 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { RouteConstants } from '../constants/route-constants';
 import { ProjectSortType } from '../enums/project-sort-type';
 import { SortOrder } from '../enums/sort-order';
+import { HomeComponent } from '../home/home.component';
 import { ProjectsService } from '../services/projects.service';
+import { ProjectComponent } from './project/project.component';
 
 import { ProjectsComponent } from './projects.component';
 
@@ -19,12 +23,19 @@ describe('ProjectsComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         RouterTestingModule.withRoutes([
-					{
-						path: 'projects',
-						component: ProjectsComponent,
-						//children: [{ path: ':playerId', component: PlayerComponent }]
-					}
-				])
+          {
+            path: RouteConstants.HOME_ROUTE_PATH,
+            component: HomeComponent
+          },
+          {
+            path: RouteConstants.PROJECTS_ROUTE_PATH,
+            component: ProjectsComponent
+          },
+          { path: RouteConstants.PROJECT_VIEW_MODE_ROUTE_PATH, 
+            component: ProjectComponent 
+          }
+        ]),
+        FormsModule
       ],
       declarations: [ ProjectsComponent ],
       providers: [

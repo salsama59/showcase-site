@@ -33,12 +33,12 @@
     </div>
   </aside>
   <section class="project-list-section">
-      <article *ngFor="let project of projectList">
+      <article *ngFor="let project of projectList; let i = index">
           <div class="card border-dark">
               <img [src]="projectUtilsService.getProjectImagePathByProjectType(project.projectType)" class="card-img-top project-image" [alt]="projectUtilsService.getProjectImageNameByProjectType(project.projectType)">
               <div class="card-body project-card">
                 <h5 class="card-title">{{ projectUtilsService.getProjectTypeLabelByProjectType(project.projectType) }}</h5>
-                <h6 class="card-subtitle text-muted">{{ project.projectTitle }}</h6>
+                <h6 id="cardProjectTitle{{ i }}" class="card-subtitle text-muted">{{ project.projectTitle }}</h6>
                 <p class="card-text creation-date-paragraph"><small class="text-muted">Creation date : {{ project.projectCreationDate | date:'dd/MM/yyyy' }}</small></p>
                 <p class="card-text last-modified-date-paragraph"><small class="text-muted">Last modified date : {{ project.projectLastModifiedDate | date:'dd/MM/yyyy' }}</small></p>
                 <p class="card-text">{{ project.projectDescription }}</p>
@@ -46,7 +46,7 @@
                 <div class="technologies-block">
                   <span *ngFor="let tag of project.projectTags" class="badge rounded-pill bg-primary">{{ projectUtilsService.getTechnologyLabelByProjectTechnologyType(tag) }}</span>
                 </div>
-                <button (click)="onViewProjectElement(project.projectId)" class="btn btn-success">Go check the project</button>
+                <button id="projectDetailsButton{{ i }}" (click)="onViewProjectElement(project.projectId)" class="btn btn-success">Go check the project</button>
               </div>
             </div>
       </article>
