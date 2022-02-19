@@ -13,7 +13,7 @@ describe('The Home page end to end test', () => {
 
     cy.get(HomeDomConstants.HOME_SECTIONS_HOME_LINK_SELECTOR).should('contain', 'The home page');
     cy.get(HomeDomConstants.HOME_SECTIONS_PROJECTS_LINK_SELECTOR).should('contain', 'The projects page');
-    cy.get(HomeDomConstants.HOME_SECTIONS_CV_LINK_SELECTOR).should('contain', 'The CV page');
+    cy.get(HomeDomConstants.HOME_SECTIONS_CV_LINK_SELECTOR).should('contain', 'The resume page');
 
   });
 
@@ -29,7 +29,7 @@ describe('The Home page end to end test', () => {
     cy.get(ProjectsDomConstants.PROJECT_LIST_PAGE_TITLE).should('contain', 'Project list page');
   });
 
-  it('Should navigate to the CV page when clicking in the CV page link at the section list', () => {
+  it('Should navigate to The resume page when clicking in The resume page link at the section list', () => {
     cy.visit('/')
     EndToEndTestUtils.clickElement(cy.get(HomeDomConstants.HOME_SECTIONS_CV_LINK_SELECTOR), true);
     cy.get(HomeDomConstants.HOME_PAGE_TITLE_GENERAL_TITLE_SELECTOR).should('contain', 'Welcome to my showcase site');

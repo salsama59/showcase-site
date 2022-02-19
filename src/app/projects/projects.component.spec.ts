@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { RouteConstants } from '../constants/route-constants';
+import { RouteModeConstants } from '../constants/route-mode-constants';
 import { ProjectSortType } from '../enums/project-sort-type';
 import { SortOrder } from '../enums/sort-order';
 import { HomeComponent } from '../home/home.component';
@@ -69,7 +70,7 @@ describe('ProjectsComponent', () => {
   it('should navigate to view project section', () => {
 		const spy = spyOn(router, 'navigate');
 		component.onViewProjectElement(0);
-		expect(spy).toHaveBeenCalledWith([0, 'view'], {
+		expect(spy).toHaveBeenCalledWith([0, RouteModeConstants.MODE_VIEW_CONSTANT], {
 			relativeTo: activatedRoute
 		});
 	});

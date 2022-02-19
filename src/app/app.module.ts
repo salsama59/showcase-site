@@ -13,6 +13,9 @@ import { ProjectUtilsService } from './utils/project-utils.service';
 import { HomeComponent } from './home/home.component';
 import { NewsService } from './services/news.service';
 import { ProjectComponent } from './projects/project/project.component';
+import { ResumeComponent } from './resumes/resume/resume.component';
+import { NumberToArrayPipe } from './pipes/number-to-array.pipe';
+import { ResumesComponent } from './resumes/resumes.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { ProjectComponent } from './projects/project/project.component';
     FooterComponent,
     ProjectsComponent,
     HomeComponent,
-    ProjectComponent
+    ProjectComponent,
+    ResumeComponent,
+    NumberToArrayPipe,
+    ResumesComponent
   ],
   imports: [
     BrowserModule,

@@ -9,9 +9,9 @@ describe('The header element end to end test', () => {
       EndToEndTestUtils.getNthElement(cy, HeaderDomConstants.HEADER_LINKS, 0).should('contain', 'Home');
     });
 
-    it('Visits the application home page and check the CV link existence', () => {
+    it('Visits the application home page and check the Resume link existence', () => {
         cy.visit('/')
-        EndToEndTestUtils.getNthElement(cy, HeaderDomConstants.HEADER_LINKS, 1).should('contain', 'CV');
+        EndToEndTestUtils.getNthElement(cy, HeaderDomConstants.HEADER_LINKS, 1).should('contain', 'Resume');
     });
 
     it('Visits the application home page and check the Projects link existence', () => {
