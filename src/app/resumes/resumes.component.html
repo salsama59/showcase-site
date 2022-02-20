@@ -2,7 +2,7 @@
 <h1 class="mb-5 resume-page-title">This is my resumes</h1>
 
 <ul class="nav nav-pills resume-list">
-    <li *ngFor="let resume of resumes" class="nav-item">
+    <li id="resumeElement{{i}}" *ngFor="let resume of resumes; let i = index;" class="nav-item">
       <a class="nav-link" [attr.aria-current]="defaultResumeId === resume.resumeId ? 'page' : null" 
       routerLink="{{ resume.resumeId + '/' + routeModeConstants.MODE_VIEW_CONSTANT }}" 
       routerLinkActive="active"

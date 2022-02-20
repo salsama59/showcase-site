@@ -11,6 +11,11 @@ export class EndToEndTestUtils {
         cypressObject.visit('/' + RouteConstants.PROJECTS_ROUTE_PATH + '/' + projectId + '/' + RouteModeConstants.MODE_VIEW_CONSTANT);
     }
 
+    public static goToResumesPage(cypressObject : Cypress.cy): void {
+        cypressObject.visit('/' + RouteConstants.RESUMES_ROUTE_PATH);
+    }
+
+
     public static getNthElement(cypressObject : Cypress.cy, elementsSelector: string, elementIndex: number): Cypress.Chainable {
         return cypressObject.get(elementsSelector).eq(elementIndex);
     }

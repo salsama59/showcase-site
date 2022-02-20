@@ -1,6 +1,7 @@
 import { HomeDomConstants } from "cypress/constants/home-dom-constants";
 import { ProjectDomConstants } from "cypress/constants/project-dom-constants";
 import { ProjectsDomConstants } from "cypress/constants/projects-dom-constants";
+import { ResumesDomConstants } from "cypress/constants/resumes-dom-constants";
 import { EndToEndTestUtils } from "cypress/utils/end-to-end-test-utils"
 
 describe('The Home page end to end test', () => {
@@ -13,7 +14,7 @@ describe('The Home page end to end test', () => {
 
     cy.get(HomeDomConstants.HOME_SECTIONS_HOME_LINK_SELECTOR).should('contain', 'The home page');
     cy.get(HomeDomConstants.HOME_SECTIONS_PROJECTS_LINK_SELECTOR).should('contain', 'The projects page');
-    cy.get(HomeDomConstants.HOME_SECTIONS_CV_LINK_SELECTOR).should('contain', 'The resume page');
+    cy.get(HomeDomConstants.HOME_SECTIONS_CV_LINK_SELECTOR).should('contain', 'The resumes page');
 
   });
 
@@ -29,10 +30,10 @@ describe('The Home page end to end test', () => {
     cy.get(ProjectsDomConstants.PROJECT_LIST_PAGE_TITLE).should('contain', 'Project list page');
   });
 
-  it('Should navigate to The resume page when clicking in The resume page link at the section list', () => {
+  it('Should navigate to The resumes page when clicking in The resumes page link at the section list', () => {
     cy.visit('/')
     EndToEndTestUtils.clickElement(cy.get(HomeDomConstants.HOME_SECTIONS_CV_LINK_SELECTOR), true);
-    cy.get(HomeDomConstants.HOME_PAGE_TITLE_GENERAL_TITLE_SELECTOR).should('contain', 'Welcome to my showcase site');
+    cy.get(ResumesDomConstants.RESUMES_LIST_PAGE_TITLE).should('contain', 'This is my resumes');
   });
 
   it('Should navigate to the project detail page when clicking on the recommended projects caroussel', () => {

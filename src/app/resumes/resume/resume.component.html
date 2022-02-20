@@ -4,7 +4,7 @@
             <p>
                 <strong>{{ currentResume?.detail?.person?.firstName }} {{ currentResume?.detail?.person?.familyName }}</strong>
             </p>
-            <p>{{ currentResume?.detail?.title }}</p>
+            <p id="resumeElementTitle">{{ currentResume?.detail?.title }}</p>
             <p>{{ currentResume?.detail?.person?.address?.street }}, {{ currentResume?.detail?.person?.address?.city }}, {{ currentResume?.detail?.person?.address?.postalCode }}, {{ currentResume?.detail?.person?.address?.country | uppercase }}</p>
             <p>{{ currentResume?.detail?.person?.contact?.phoneNumber }} &nbsp; {{ currentResume?.detail?.person?.contact?.email }}</p>
         </article>
