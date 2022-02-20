@@ -3,7 +3,11 @@ nav {
 }
 
 nav a {
-	color: #ffffff;
+	color: rgba(255, 255, 255, 0.7);
+}
+
+.nav-link.active {
+	color: #fff;
 }
 
 nav a:hover {
