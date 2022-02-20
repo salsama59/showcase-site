@@ -25,7 +25,7 @@ export class ResumesComponent implements OnInit {
    * Default resume id of resumes component
    * @public
    */
-  defaultResumeId: number = 0;
+  defaultResumeId: number = -1;
 
   /**
    * Route constants of home component
