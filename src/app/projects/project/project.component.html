@@ -1,0 +1,54 @@
+<h1 class="mb-5 project-detail-page-title text-center">{{ currentProject?.projectTitle }}</h1>
+<section class="project-detail-introduction-section mb-4">
+  <article>
+    <h3 class="mb-3 project-detail-introduction-title">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="title-icons" viewBox="0 0 16 16">
+        <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2V2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z"/>
+      </svg>Introduction :
+    </h3>
+    <p>{{ currentProjectDetail?.projectDetailIntroduction }}</p>
+  </article>
+</section>
+<section class="project-detail-instructions-section mb-4">
+    <article>
+      <h3 class="mb-3 project-detail-instructions-title">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="title-icons" viewBox="0 0 16 16">
+            <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z"/>
+            <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z"/>
+          </svg>Instructions :
+      </h3>
+      <ol class="list-group list-group-numbered">
+        <li *ngFor="let instruction of currentProjectDetail?.projectDetailInstructions" class="list-group-item">{{ instruction }}</li>
+      </ol>
+    </article>
+</section>
+<section class="project-detail-test-section mb-4">
+    <article>
+      <h3 class="mb-3 project-detail-test-title">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="title-icons" viewBox="0 0 16 16">
+            <path d="M10 2a2 2 0 0 1-1.5 1.937v5.087c.863.083 1.5.377 1.5.726 0 .414-.895.75-2 .75s-2-.336-2-.75c0-.35.637-.643 1.5-.726V3.937A2 2 0 1 1 10 2z"/>
+            <path d="M0 9.665v1.717a1 1 0 0 0 .553.894l6.553 3.277a2 2 0 0 0 1.788 0l6.553-3.277a1 1 0 0 0 .553-.894V9.665c0-.1-.06-.19-.152-.23L9.5 6.715v.993l5.227 2.178a.125.125 0 0 1 .001.23l-5.94 2.546a2 2 0 0 1-1.576 0l-5.94-2.546a.125.125 0 0 1 .001-.23L6.5 7.708l-.013-.988L.152 9.435a.25.25 0 0 0-.152.23z"/>
+          </svg>Test the project :
+      </h3>
+      <div [ngSwitch]="currentProject?.projectType">
+        <div id="gameProjectContent" *ngSwitchCase="this.projectTypeEnum.GAME_DEVELOPEMENT" class="project-content-parent" [style.width]="getProjectResolutionDataWidth()" [style.height]="getProjectResolutionDataHeight()">
+            <iframe 
+                id="project{{ currentProjectDetail?.projectDetailProjectId }}Frame" 
+                class="game-frame-block" 
+                [src]="getProjectUrl()" 
+                attr.mozallowfullscreen="{{ currentProjectDetail?.projectMetadatas?.isFullScreenEnabled }}" 
+                attr.msallowfullscreen="{{ currentProjectDetail?.projectMetadatas?.isFullScreenEnabled }}" 
+                attr.allowfullscreen="{{ currentProjectDetail?.projectMetadatas?.isFullScreenEnabled }}" 
+                attr.webkitallowfullscreen="{{ currentProjectDetail?.projectMetadatas?.isFullScreenEnabled }}" 
+                attr.scrolling="{{ currentProjectDetail?.projectMetadatas?.isScrollingEnabled ? 'yes' : 'no' }}" 
+                attr.allowtransparency="{{ currentProjectDetail?.projectMetadatas?.isTransparencyEnabled }}" 
+                attr.allow="{{ getProjectPermissions() }}"
+                frameborder="0"></iframe>
+        </div>
+        <div id="webProjectContent" *ngSwitchCase="this.projectTypeEnum.WEB_DEVELOPEMENT" class="project-content-parent">
+            <a [href]="getProjectUrl()" class="link-success">Go to the project page</a>
+        </div>
+      </div>
+      
+    </article>
+</section>

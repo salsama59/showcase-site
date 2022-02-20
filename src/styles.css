@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+html,
+body {
+	height: 100%;
+}
+
+body {
+	min-height: 75rem;
+	padding-top: 4.5rem;
+}
+
+.title-icons {
+	color: gold;
+	margin-right: 0.5%;
+}

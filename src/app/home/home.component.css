@@ -1,0 +1,68 @@
+.carousel-block {
+	width: 50%;
+	height: 50%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+	background-image: unset;
+	color: #ca354f;
+}
+
+.carousel-indicators [data-bs-target] {
+	background-color: #ca354f;
+}
+
+.carousel-caption {
+	color: #ca354f;
+}
+
+.main-home-article {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.home-recommended-project-images {
+	width: 364px;
+	height: 170px;
+}
+
+.home-page-title {
+	width: 100%;
+	text-align: center;
+	color: #ca354f;
+}
+
+.recommended-projects-title,
+.introduction-title,
+.news-title {
+	text-decoration: underline;
+}
+
+.recommended-project-description {
+	font-weight: bold;
+	background-color: #e3e3e3;
+	width: 40%;
+	text-align: center;
+}
+
+.site-sections-list {
+	width: 16%;
+}
+
+.news-statement-block {
+	display: flex;
+	align-items: center;
+}
+
+.news-element-block {
+	font-size: 12px;
+	width: 30%;
+	height: 70%;
+}
+
+.carousel-item {
+	cursor: pointer;
+}

@@ -1,0 +1,11 @@
+nav {
+	background-color: #6535ca;
+}
+
+nav a {
+	color: #ffffff;
+}
+
+nav a:hover {
+	opacity: 0.5;
+}
