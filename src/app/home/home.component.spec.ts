@@ -52,7 +52,7 @@ describe('HomeComponent', () => {
   });
 
   it('should return a full Elapsed time label representation', () => {
-    const elapsedTimeLabel: string = homeComponent.getElapsedTimeLabelRepresentation(new Date(2000, 6, 1));
+    const elapsedTimeLabel: string = homeComponent.getElapsedTimeLabelRepresentation(new Date(2000, 6, 1, 10, 10));
     expect(elapsedTimeLabel).toContain("month(s)");
     expect(elapsedTimeLabel).toContain("day(s)");
     expect(elapsedTimeLabel).toContain("hour(s)");

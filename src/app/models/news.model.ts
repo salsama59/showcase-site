@@ -13,6 +13,7 @@ export class News {
      * @param newsCreationDate the news creation date
      * @param isNewsActive the news state
      * @public
+     * @constructor
      */
     public constructor(public newsId: number, public newsDescription: string, public newsType: NewsType, public newsCreationDate: Date, public isNewsActive: boolean){}
 }

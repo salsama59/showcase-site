@@ -1,0 +1,11 @@
+.resume-page-title {
+	width: 100%;
+	text-align: center;
+	color: #ca354f;
+}
+
+.resume-list {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

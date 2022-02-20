@@ -4,6 +4,7 @@ import { ActivatedRoute, UrlSegment } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { of } from 'rxjs';
 import { RouteConstants } from 'src/app/constants/route-constants';
+import { RouteModeConstants } from 'src/app/constants/route-mode-constants';
 import { ProjectTechnologyEnum } from 'src/app/enums/project-technology-enum';
 import { ProjectTypeEnum } from 'src/app/enums/project-type-enum';
 import { HomeComponent } from 'src/app/home/home.component';
@@ -48,13 +49,13 @@ describe('ProjectComponent', () => {
         {
           provide: ActivatedRoute,
           useValue: {
-            params: of({ projectId: '0', mode: 'view' }),
+            params: of({ projectId: '0', mode: RouteModeConstants.MODE_VIEW_CONSTANT }),
             queryParams: of({}),
-            snapshot: { params: { projectId: '0', mode: 'view' } },
+            snapshot: { params: { projectId: '0', mode: RouteModeConstants.MODE_VIEW_CONSTANT } },
             url: of([
               new UrlSegment('/', {}),
               new UrlSegment('projects', {}),
-              new UrlSegment('', { projectId: '0', mode: 'view' })
+              new UrlSegment('', { projectId: '0', mode: RouteModeConstants.MODE_VIEW_CONSTANT })
             ]),
             fragment: of('/projects')
           }

@@ -31,9 +31,9 @@ describe('HeaderComponent', () => {
     expect(compiled.querySelectorAll('header nav div#navbarNav ul > li a').item(0).textContent).toContain('Home');
   });
 
-  it('should render the CV link', () => {
+  it('should render the Resume link', () => {
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelectorAll('header nav div#navbarNav ul > li a').item(1).textContent).toContain('CV');
+    expect(compiled.querySelectorAll('header nav div#navbarNav ul > li a').item(1).textContent).toContain('Resume');
   });
 
   it('should render the Projects link', () => {
