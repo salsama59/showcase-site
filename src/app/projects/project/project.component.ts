@@ -7,6 +7,7 @@ import { ProjectMetadatas } from 'src/app/models/project-metadatas.model';
 import { Project } from 'src/app/models/project.model';
 import { ProjectDetailsService } from 'src/app/services/project-details.service';
 import { ProjectsService } from 'src/app/services/projects.service';
+import { environment } from 'src/environments/environment';
 
 /**
  * The project component class responsible for managing the project detail section
@@ -62,12 +63,16 @@ export class ProjectComponent implements OnInit {
     switch (this.currentProject?.projectType) {
       case ProjectTypeEnum.GAME_DEVELOPEMENT:
         if(this.currentProjectDetail){
-          sanitizedProjectUrl = this.domSanitizer.bypassSecurityTrustResourceUrl((<ProjectDetail>this.currentProjectDetail).projectUrl);
+          let unsafeGameProjectUrl: string = '';
+          unsafeGameProjectUrl = unsafeGameProjectUrl.concat(environment.gameProjectBaseUrl, (<ProjectDetail>this.currentProjectDetail).projectUrl);
+          sanitizedProjectUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(unsafeGameProjectUrl);
         }
         break;
       case ProjectTypeEnum.WEB_DEVELOPEMENT:
         if(this.currentProjectDetail){
-          sanitizedProjectUrl = this.domSanitizer.bypassSecurityTrustUrl((<ProjectDetail>this.currentProjectDetail).projectUrl);
+          let unsafeWebProjectUrl: string = '';
+          unsafeWebProjectUrl = unsafeWebProjectUrl.concat(environment.webProjectBaseUrl, (<ProjectDetail>this.currentProjectDetail).projectUrl);
+          sanitizedProjectUrl = this.domSanitizer.bypassSecurityTrustUrl(unsafeWebProjectUrl);
         }
         break;
     }
