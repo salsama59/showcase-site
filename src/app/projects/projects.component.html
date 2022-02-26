@@ -2,7 +2,7 @@
 <section class="project-list-sort-group">
   <article>
     <div class="input-group">
-      <select class="form-select" id="projectsSortDropdown" aria-label="Project list sort dropdown" [(ngModel)]="userSortChoice" (change)="onSortChoiceChange()">
+      <select class="form-select" id="projectsSortDropdown" aria-label="Project list sort dropdown" [(ngModel)]="userSortChoice" (change)="onSortChoiceChange(true)">
         <option [ngValue]="projectSortType.CREATION_DATE" selected>Creation date</option>
         <option [ngValue]="projectSortType.PROJECT_TYPE">Project type</option>
         <option [ngValue]="projectSortType.TITLE">Project title</option>
@@ -21,18 +21,19 @@
       <div class="card-body">
         <p class="card-text">Project types</p>
         <div *ngFor="let projectTypeFilter of projectTypeFilters" class="form-check">
-          <input class="form-check-input" type="checkbox" (change)="onProjectFilterChange()" [(ngModel)]="projectTypeFilter.isFilterActive" value="" id="{{ projectTypeFilter.filterId }}">
+          <input class="form-check-input" type="checkbox" (change)="onProjectFilterChange(true)" [(ngModel)]="projectTypeFilter.isFilterActive" value="" id="{{ projectTypeFilter.filterId }}">
           <label class="form-check-label" for="{{ projectTypeFilter.filterId }}">{{ projectTypeFilter.filterName }}</label>
         </div>
         <p class="mt-3 card-text">Project technologies</p>
         <div *ngFor="let projectTechnologiesFilter of projectTechnologiesFilters" class="form-check">
-          <input class="form-check-input" type="checkbox" (change)="onProjectFilterChange()" [(ngModel)]="projectTechnologiesFilter.isFilterActive" value="" id="{{ projectTechnologiesFilter.filterId }}">
+          <input class="form-check-input" type="checkbox" (change)="onProjectFilterChange(true)" [(ngModel)]="projectTechnologiesFilter.isFilterActive" value="" id="{{ projectTechnologiesFilter.filterId }}">
           <label class="form-check-label" for="{{ projectTechnologiesFilter.filterId }}">{{ projectTechnologiesFilter.filterName }}</label>
         </div>
       </div>
     </div>
   </aside>
-  <section class="project-list-section">
+  <div class="project-list-display">
+    <section class="project-list-section">
       <article *ngFor="let project of projectList; let i = index">
           <div class="card border-dark">
               <img [src]="projectUtilsService.getProjectImagePathByProjectType(project.projectType)" class="card-img-top project-image" [alt]="projectUtilsService.getProjectImageNameByProjectType(project.projectType)">
@@ -50,6 +51,15 @@
               </div>
             </div>
       </article>
-  </section>
+    </section>
+    <div class="pagination-block">
+      <app-pagination
+        [elementsPerPageNumber]="maximumProjectsPerPageCount"
+        [totalElementsNumber]="getProjectListLength()"
+        [paginatedDataSubject]="projectsService.projectListLengthChanged"
+      ></app-pagination>
+    </div>
+  </div>
 </div>
+
 

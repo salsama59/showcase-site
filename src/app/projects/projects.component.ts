@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { RouteModeConstants } from '../constants/route-mode-constants';
 import { TechnologyNameConstants } from '../constants/technology-name-constants';
 import { ProjectSortType } from '../enums/project-sort-type';
@@ -65,26 +65,51 @@ export class ProjectsComponent implements OnInit {
   public sortLabel: string = "ASC";
 
   /**
+	 * Maximum projects per page count
+	 */
+	public maximumProjectsPerPageCount: number = 4;
+
+  /**
+	 * Current project page number
+	 */
+	private currentProjectPage: number = 1;
+
+  /**
    * Creates an instance of projects component.
    * @constructor
-   * @param projectService  the projects service
+   * @param projectsService  the projects service
    * @param router the router
    * @param activatedRoute the activated route
    * @param projectUtilsService the project utility service
    */
-  constructor(private projectService: ProjectsService, private router: Router, private activatedRoute: ActivatedRoute, public projectUtilsService: ProjectUtilsService) { }
+  constructor(public projectsService: ProjectsService, private router: Router, private activatedRoute: ActivatedRoute, public projectUtilsService: ProjectUtilsService) { }
 
   /**
    * Initialize the project list to diplay on the page.
    * Initialize the different filters.
    * Sort the project list with the default configuration
+   * Paginate the projects
    * @public
    */
   ngOnInit(): void {
+    this.projectList = this.projectsService.getProjects();
+    this.paginateProjects('1', null);
+		void this.router.navigate([], {
+			relativeTo: this.activatedRoute,
+			queryParams: { page: '1' }
+		});
+		this.activatedRoute.queryParams.subscribe((params: Params) => {
+      if (params['page']) {
+				this.currentProjectPage = +params['page'];
+			}
+      if(this.projectList.length > 0){
+        this.onProjectFilterChange(true);
+      }
+			this.paginateProjects(params['page'], this.projectList.length > 0 ? this.projectList : null);
+		});
     this.initializeProjectTypeFilters();
     this.initializeProjectTechnologiesFilters();
-    this.projectList = this.projectService.getProjects();
-    this.onSortChoiceChange();
+    this.onSortChoiceChange(true);
   }
 
 
@@ -185,9 +210,10 @@ export class ProjectsComponent implements OnInit {
 
   /**
    * Determines what happens when the project filter value change
+   * @param isSortAllowed the sort activation flag
    * @public
    */
-  onProjectFilterChange(): void {
+  onProjectFilterChange(isSortAllowed: boolean): void {
     const selectedProjectTypeFilters: Array<ProjectTypeFilter> = this.projectTypeFilters.filter((projectTypeFilter: ProjectTypeFilter, index: number) => {
       return projectTypeFilter.isFilterActive;
     });
@@ -196,10 +222,18 @@ export class ProjectsComponent implements OnInit {
       return projectTypeFilter.projectType;
     });
 
-    const resultingProjectsFilteredByProjectType: Project[] = this.projectService.getProjects().filter((project: Project, index: number) => {
-      return selectedProjectTypeFilterEnums.includes(project.projectType);
-    });
+    let resultingProjectsFilteredByProjectType : Project[] = [];
 
+    if(isSortAllowed) {
+      resultingProjectsFilteredByProjectType = this.projectsService.getProjects().filter((project: Project, index: number) => {
+        return selectedProjectTypeFilterEnums.includes(project.projectType);
+      });
+    } else {
+      resultingProjectsFilteredByProjectType = this.projectList.filter((project: Project, index: number) => {
+        return selectedProjectTypeFilterEnums.includes(project.projectType);
+      });
+    }
+    
     const selectedProjectTechnologyFilters: Array<ProjectTechnologyFilter> = this.projectTechnologiesFilters.filter((projectTechnologyFilter: ProjectTechnologyFilter, index: number) => {
       return projectTechnologyFilter.isFilterActive;
     });
@@ -218,7 +252,12 @@ export class ProjectsComponent implements OnInit {
     }
 
     this.projectList = resultingProjectsFilteredByProjectTechnologies;
-    this.onSortChoiceChange();
+    this.projectsService.projectListLengthChanged.next(this.projectList.length);
+    if(isSortAllowed){
+      this.onSortChoiceChange(false);
+    }
+    
+    this.paginateProjects(this.currentProjectPage, this.projectList);
   }
 
   /**
@@ -236,36 +275,101 @@ export class ProjectsComponent implements OnInit {
         this.sortLabel = "ASC";
       break;
     }
-    this.onSortChoiceChange();
+    this.onSortChoiceChange(true);
   }
 
 
   /**
    * Determines what happens when the sort dropdown value change
+   * @param isFilterAllowed the fliter activation flag
    * @public
    */
-  onSortChoiceChange(): void {
+  onSortChoiceChange(isFilterAllowed: boolean): void {
+
+    let listToUpdate: Project[] = [];
+
+    if(isFilterAllowed) {
+      listToUpdate = this.projectsService.getProjects();
+    } else {
+      listToUpdate = this.projectList;
+    }
+
     switch (this.userSortChoice) {
       case ProjectSortType.CREATION_DATE:
-        this.projectList =this.projectList.sort((firstProject: Project, secondProject: Project) => {
+        this.projectList = listToUpdate.sort((firstProject: Project, secondProject: Project) => {
           return this.projectUtilsService.sortByProjectCreationDate(firstProject, secondProject, this.userSortOrderChoice);
         });
       break;
       case ProjectSortType.PROJECT_TYPE:
-        this.projectList =this.projectList.sort((firstProject: Project, secondProject: Project) => {
+        this.projectList = listToUpdate.sort((firstProject: Project, secondProject: Project) => {
           return this.projectUtilsService.sortByProjectType(firstProject, secondProject, this.userSortOrderChoice);
         });
       break;
       case ProjectSortType.TITLE:
-        this.projectList = this.projectList.sort((firstProject: Project, secondProject: Project) => {
+        this.projectList = listToUpdate.sort((firstProject: Project, secondProject: Project) => {
           return this.projectUtilsService.sortByProjectTitle(firstProject, secondProject, this.userSortOrderChoice);
         });
       break;
       case ProjectSortType.LAST_MODIFIED:
-        this.projectList = this.projectList.sort((firstProject: Project, secondProject: Project) => {
+        this.projectList = listToUpdate.sort((firstProject: Project, secondProject: Project) => {
           return this.projectUtilsService.sortByProjectLastModifiedDate(firstProject, secondProject, this.userSortOrderChoice);
         });
       break;
+    }
+
+    if(isFilterAllowed){
+      this.onProjectFilterChange(false);
+    }
+  }
+
+  /**
+	 * Paginates the project list given a page number and a project list.
+	 * @param pageNumber the page number.
+   * @param updatedProjectList the updated project list
+	 */
+	paginateProjects(pageNumber: string | number | undefined | null, updatedProjectList: Project[] | null): void {
+		if (pageNumber) {
+      let currentProjectListLength: number = 0;
+
+      if(updatedProjectList){
+        currentProjectListLength = updatedProjectList.length;
+      } else {
+        currentProjectListLength = this.projectsService.getProjects().length
+      }
+
+			let newPageTotal: number = Math.ceil(
+				currentProjectListLength / this.maximumProjectsPerPageCount
+			);
+
+			if (newPageTotal === 0) {
+				newPageTotal = 1;
+			}
+
+			if (newPageTotal < +pageNumber) {
+				pageNumber = newPageTotal.toString();
+			}
+
+			const start: number =
+				this.maximumProjectsPerPageCount * +pageNumber -
+				this.maximumProjectsPerPageCount;
+			const end: number = this.maximumProjectsPerPageCount * +pageNumber;
+      if(updatedProjectList) {
+        this.projectList = updatedProjectList.slice(start, end);
+      } else {
+        this.projectList = this.projectsService.getProjects().slice(start, end);
+      }
+		}
+	}
+
+  /**
+   * Gets project list length
+   * @returns the project list length
+   */
+  getProjectListLength(): number {
+    if(this.projectList.length > 0){
+      return this.projectList.length;
+    } else {
+      return this.projectsService.getProjects().length;
     }
   }
 }
