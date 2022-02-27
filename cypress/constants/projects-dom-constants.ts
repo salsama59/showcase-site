@@ -9,6 +9,6 @@ export class ProjectsDomConstants {
     public static PROJECT_LIST_SORT_DROPDOWN: string = 'select#projectsSortDropdown';
     public static PROJECT_LIST_PROJECT_DETAILS_BUTTON: string = 'button[id^="projectDetailsButton"]';
     public static PROJECT_LIST_PROJECT_CARD_TITLE: string = 'h6[id^="cardProjectTitle"]';
-    
+    public static PROJECT_LIST_PAGINATION_BLOCK: string = 'div.pagination-block';
     
 }

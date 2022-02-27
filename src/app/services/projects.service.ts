@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { ProjectTechnologyEnum } from '../enums/project-technology-enum';
 import { ProjectTypeEnum } from '../enums/project-type-enum';
 import { Project } from '../models/project.model';
@@ -16,6 +17,11 @@ export class ProjectsService {
    * @private
    */
   private projects: Project[] = [];
+
+  /**
+	 * Player list length changed event
+	 */
+	public projectListLengthChanged: Subject<number> = new Subject<number>();
 
   /**
    * Creates an instance of projects service.

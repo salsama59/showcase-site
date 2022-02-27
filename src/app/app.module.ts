@@ -16,6 +16,7 @@ import { ProjectComponent } from './projects/project/project.component';
 import { ResumeComponent } from './resumes/resume/resume.component';
 import { NumberToArrayPipe } from './pipes/number-to-array.pipe';
 import { ResumesComponent } from './resumes/resumes.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ResumesComponent } from './resumes/resumes.component';
     ProjectComponent,
     ResumeComponent,
     NumberToArrayPipe,
-    ResumesComponent
+    ResumesComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
