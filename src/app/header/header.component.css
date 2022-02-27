@@ -13,3 +13,14 @@ nav a {
 nav a:hover {
 	opacity: 0.5;
 }
+
+.navbar-brand {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.navbar-brand > img {
+	margin-right: 5%;
+}
