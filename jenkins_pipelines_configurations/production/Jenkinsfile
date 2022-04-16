@@ -1,0 +1,48 @@
+pipeline {
+
+  agent any
+  
+  stages {
+    stage('Prepare') {
+		    steps {
+		        sh "curl --request GET 'http://${AWS_LIGTHSAIL_SERVER_IP}:8200/v1/applications/showcase-site-frontend/data/production' --header 'X-Vault-Token: $SECRET_MANAGER_TOKEN' 2>/dev/null | python -c 'import json,sys;obj=json.load(sys.stdin);print(obj[\"data\"][\"data\"][\"application_configuration\"]);' >> ./src/environments/environment.prod.ts"
+		    }
+		}
+    stage('Install dependencies') {
+      steps { sh 'npm install' }
+    }
+    stage('Code quality') {
+        steps { sh 'npm run-script lint -- --fix' }
+    }
+    stage('Unit tests') {
+        steps { sh 'npm run-script test -- --watch false --browsers=ChromeHeadless' }
+    }
+    stage('End to end tests') {
+        steps { sh 'npm run-script cypress:ci' }
+    }
+    stage('Build artefact') {
+      steps { sh 'npm run-script build -- --configuration production' }
+    }
+    stage('Artefact compression') {
+      steps {
+        sh 'tar -C ./dist -zcvf ./dist/showcase-site-archive.tar.gz showcase-site'
+      }
+    }
+    stage('Remote deployment') {
+      steps {
+        script {
+          def remote = [:]
+          remote.name = 'main_server'
+          remote.host = "${AWS_LIGTHSAIL_SERVER_IP}"
+          remote.allowAnyHosts = true
+          withCredentials([sshUserPrivateKey(credentialsId: '0356a688-d313-49c9-919e-227b95f1f068', keyFileVariable: 'keyFile', passphraseVariable: '', usernameVariable: 'username')]) {
+            remote.user = username
+            remote.identityFile = keyFile
+            sh 'scp -i $keyFile ./dist/showcase-site-archive.tar.gz ubuntu@${AWS_LIGTHSAIL_SERVER_IP}:/home/apps'
+            sshCommand remote: remote, command: 'cd /home/apps && sudo tar -zxvf showcase-site-archive.tar.gz && sudo chmod -R 765 showcase-site && sudo chown -R ubuntu:ubuntu showcase-site && sudo rm showcase-site-archive.tar.gz'
+          }
+        }
+      }
+    }
+  }
+}
