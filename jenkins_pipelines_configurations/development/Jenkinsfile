@@ -39,7 +39,7 @@ pipeline {
             remote.user = username
             remote.identityFile = keyFile
             sh 'scp -i $keyFile ./dist/showcase-site-archive.tar.gz ubuntu@${AWS_LIGTHSAIL_SERVER_IP}:/home/apps'
-            sshCommand remote: remote, command: 'cd /home/apps && sudo tar -zxvf showcase-site-archive.tar.gz && sudo chmod -R 765 showcase-site && sudo chown -R ubuntu:ubuntu showcase-site && sudo rm showcase-site-archive.tar.gz'
+            sshCommand remote: remote, command: 'cd /home/apps && sudo rm -r showcase-site/* && sudo tar -zxvf showcase-site-archive.tar.gz && sudo chmod -R 765 showcase-site && sudo chown -R ubuntu:ubuntu showcase-site && sudo rm showcase-site-archive.tar.gz'
           }
         }
       }
