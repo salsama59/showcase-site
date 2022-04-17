@@ -3,9 +3,24 @@ nav {
 }
 
 nav a {
-	color: #ffffff;
+	color: rgba(255, 255, 255, 0.7);
+}
+
+.nav-link.active {
+	color: #fff;
 }
 
 nav a:hover {
 	opacity: 0.5;
+}
+
+.navbar-brand {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.navbar-brand > img {
+	margin-right: 5%;
 }

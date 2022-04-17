@@ -1,7 +1,8 @@
 <header>
   <nav class="navbar fixed-top navbar-expand-lg navbar-ligth">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="/">
+        <img src="assets/images/crown_v1.png" alt="" width="24" height="24">Showcase</a>
       <button
 			class="navbar-toggler"
 			type="button"
@@ -22,8 +23,7 @@
           </li>
           <li class="nav-item">
             <a id="resumePageLink" class="nav-link" routerLink="{{ routeConstants.RESUMES_ROUTE_PATH }}"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }">Resumes</a>
+            routerLinkActive="active">Resumes</a>
           </li>
           <li class="nav-item">
             <a id="projectsPageLink" class="nav-link" routerLink="{{ routeConstants.PROJECTS_ROUTE_PATH }}"

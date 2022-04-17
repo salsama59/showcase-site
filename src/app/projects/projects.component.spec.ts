@@ -77,7 +77,7 @@ describe('ProjectsComponent', () => {
 
   it('should posess six projects', () => {
     expect(component.projectList).toBeDefined();
-		expect(component.projectList).toHaveSize(6);
+		expect(component.projectList).toHaveSize(4);
 	});
 
   it('should filter the projects', () => {
@@ -85,11 +85,11 @@ describe('ProjectsComponent', () => {
     expect(component.projectTypeFilters).toBeDefined();
     expect(component.projectTechnologiesFilters).toBeDefined();
 
-		expect(component.projectList).toHaveSize(6);
+		expect(component.projectList).toHaveSize(4);
     expect(component.projectTypeFilters).toHaveSize(2);
     expect(component.projectTechnologiesFilters).toHaveSize(8);
     component.projectTypeFilters[0].isFilterActive = false;
-		component.onProjectFilterChange();
+		component.onProjectFilterChange(true);
 
     expect(component.projectList).toHaveSize(2);
 	});
@@ -101,21 +101,21 @@ describe('ProjectsComponent', () => {
     expect(component.userSortOrderChoice).toBeDefined();
     expect(component.sortLabel).toBeDefined();
 
-		expect(component.projectList).toHaveSize(6);
+		expect(component.projectList).toHaveSize(4);
     expect(component.userSortChoice).toEqual(ProjectSortType.CREATION_DATE);
     expect(component.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
     expect(component.sortLabel).toEqual('ASC');
 
 		component.onSortOrderUpdate();
 
-    expect(component.projectList).toHaveSize(6);
+    expect(component.projectList).toHaveSize(4);
     expect(component.userSortChoice).toEqual(ProjectSortType.CREATION_DATE);
     expect(component.userSortOrderChoice).toEqual(SortOrder.DESCENDING);
     expect(component.sortLabel).toEqual('DESC');
 
     component.onSortOrderUpdate();
 
-    expect(component.projectList).toHaveSize(6);
+    expect(component.projectList).toHaveSize(4);
     expect(component.userSortChoice).toEqual(ProjectSortType.CREATION_DATE);
     expect(component.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
     expect(component.sortLabel).toEqual('ASC');
@@ -128,21 +128,21 @@ describe('ProjectsComponent', () => {
     expect(component.userSortOrderChoice).toBeDefined();
     expect(component.sortLabel).toBeDefined();
 
-		expect(component.projectList).toHaveSize(6);
+		expect(component.projectList).toHaveSize(4);
     component.userSortChoice = ProjectSortType.PROJECT_TYPE;
     expect(component.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
     expect(component.sortLabel).toEqual('ASC');
 
 		component.onSortOrderUpdate();
 
-    expect(component.projectList).toHaveSize(6);
+    expect(component.projectList).toHaveSize(4);
     expect(component.userSortChoice).toEqual(ProjectSortType.PROJECT_TYPE);
     expect(component.userSortOrderChoice).toEqual(SortOrder.DESCENDING);
     expect(component.sortLabel).toEqual('DESC');
 
     component.onSortOrderUpdate();
 
-    expect(component.projectList).toHaveSize(6);
+    expect(component.projectList).toHaveSize(4);
     expect(component.userSortChoice).toEqual(ProjectSortType.PROJECT_TYPE);
     expect(component.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
     expect(component.sortLabel).toEqual('ASC');
@@ -156,21 +156,21 @@ describe('ProjectsComponent', () => {
     expect(component.userSortOrderChoice).toBeDefined();
     expect(component.sortLabel).toBeDefined();
 
-		expect(component.projectList).toHaveSize(6);
+		expect(component.projectList).toHaveSize(4);
     component.userSortChoice = ProjectSortType.TITLE;
     expect(component.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
     expect(component.sortLabel).toEqual('ASC');
 
 		component.onSortOrderUpdate();
 
-    expect(component.projectList).toHaveSize(6);
+    expect(component.projectList).toHaveSize(4);
     expect(component.userSortChoice).toEqual(ProjectSortType.TITLE);
     expect(component.userSortOrderChoice).toEqual(SortOrder.DESCENDING);
     expect(component.sortLabel).toEqual('DESC');
 
     component.onSortOrderUpdate();
 
-    expect(component.projectList).toHaveSize(6);
+    expect(component.projectList).toHaveSize(4);
     expect(component.userSortChoice).toEqual(ProjectSortType.TITLE);
     expect(component.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
     expect(component.sortLabel).toEqual('ASC');
@@ -184,25 +184,47 @@ describe('ProjectsComponent', () => {
     expect(component.userSortOrderChoice).toBeDefined();
     expect(component.sortLabel).toBeDefined();
 
-		expect(component.projectList).toHaveSize(6);
+		expect(component.projectList).toHaveSize(4);
     component.userSortChoice = ProjectSortType.LAST_MODIFIED;
     expect(component.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
     expect(component.sortLabel).toEqual('ASC');
 
 		component.onSortOrderUpdate();
 
-    expect(component.projectList).toHaveSize(6);
+    expect(component.projectList).toHaveSize(4);
     expect(component.userSortChoice).toEqual(ProjectSortType.LAST_MODIFIED);
     expect(component.userSortOrderChoice).toEqual(SortOrder.DESCENDING);
     expect(component.sortLabel).toEqual('DESC');
 
     component.onSortOrderUpdate();
 
-    expect(component.projectList).toHaveSize(6);
+    expect(component.projectList).toHaveSize(4);
     expect(component.userSortChoice).toEqual(ProjectSortType.LAST_MODIFIED);
     expect(component.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
     expect(component.sortLabel).toEqual('ASC');
 
+	});
+
+  it('should paginate the projects on page 1', () => {
+    expect(component.projectList).toBeDefined();
+		expect(component.projectList).toHaveSize(4);
+		component.paginateProjects(1, null);
+    expect(component.projectList).toHaveSize(4);
+	});
+
+  it('should not paginate the projects on page 100 but 1', () => {
+    expect(component.projectList).toBeDefined();
+		expect(component.projectList).toHaveSize(4);
+		component.paginateProjects(100, null);
+    expect(component.projectList).toHaveSize(2);
+	});
+
+  it('should get the projects length', () => {
+    expect(component.projectList).toBeDefined();
+		expect(component.projectList).toHaveSize(4);
+    component.projectList = [];
+    expect(component.projectList).toHaveSize(0);
+    expect(component.getProjectListLength()).toBe(6);
 	});
 });
 

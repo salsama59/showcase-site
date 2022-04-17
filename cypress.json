@@ -5,7 +5,7 @@
   "screenshotsFolder": "cypress/screenshots",
   "pluginsFile": "cypress/plugins/index.ts",
   "fixturesFolder": "cypress/fixtures",
-  "baseUrl": "http://localhost:4200",
+  "baseUrl": "http://localhost:4202",
   "viewportWidth": 1024,
   "viewportHeight": 768
 }

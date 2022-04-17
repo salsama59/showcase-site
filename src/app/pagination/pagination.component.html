@@ -1,0 +1,45 @@
+<nav *ngIf="totalElementsNumber > 0" aria-label="Page pagination">
+	<ul class="pagination pagination justify-content-start">
+		<li
+			class="page-item"
+			[ngClass]="{'disabled': isPaginationSideButtonDisabled(PREVIOUS_PAGE)}"
+		>
+			<a
+				class="page-link"
+				tabindex="-1"
+				attr.aria-disabled="{{isPaginationSideButtonDisabled(PREVIOUS_PAGE)}}"
+				routerLink="{{targetLink? targetLink : ['./']}}"
+				[queryParams]="{page: currentPageNumber - 1}"
+				(click)="onPageLinkClick(currentPageNumber - 1)"
+				>Previous</a
+			>
+		</li>
+		<li
+			class="page-item"
+			[ngClass]="{'active': isCurrentSelectedPage(pageLink.pageNumber)}"
+			*ngFor="let pageLink of paginationLinks"
+			attr.aria-current="{{isCurrentSelectedPage(pageLink.pageNumber)? 'page' : null}}"
+			(click)="onPageLinkClick(pageLink.pageNumber)"
+		>
+			<a
+				class="page-link"
+				routerLink="{{pageLink.uri? pageLink.uri : ['./']}}"
+				[queryParams]="{page: pageLink.pageNumber}"
+				>{{pageLink.pageNumber}}</a
+			>
+		</li>
+		<li
+			class="page-item"
+			[ngClass]="{'disabled': isPaginationSideButtonDisabled(NEXT_PAGE)}"
+		>
+			<a
+				class="page-link"
+				attr.aria-disabled="{{isPaginationSideButtonDisabled(NEXT_PAGE)}}"
+				routerLink="{{targetLink? targetLink : ['./']}}"
+				[queryParams]="{page: currentPageNumber + 1}"
+				(click)="onPageLinkClick(currentPageNumber + 1)"
+				>Next</a
+			>
+		</li>
+	</ul>
+</nav>

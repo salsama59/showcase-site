@@ -91,3 +91,18 @@ section.project-list-sort-group {
 .technologies-block > span {
 	margin-right: 2%;
 }
+
+.pagination-block {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 5%;
+}
+
+.project-list-display {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
