@@ -21,11 +21,11 @@ export class ProjectDetailsService {
    */
   constructor() { 
     this.projectDetails.push(new ProjectDetail(0, 0, 'Project 0 details introduction!!!', ['Instruction 1!', 'Instruction 2!', 'Instruction 3!', 'Instruction 4!'], '#/', null));
-    this.projectDetails.push(new ProjectDetail(1, 1, 'Project 1 details introduction!!!', ['Instruction 1!', 'Instruction 2!', 'Instruction 3!', 'Instruction 4!'], 'the-pit-fall/index.html', new ProjectMetadatas(true, true, true, true, ['autoplay', 'fullscreen', 'geolocation', 'microphone', 'camera', 'midi'], new ScreenRsolutionData(100, '%', 640, 'px'))));
+    this.projectDetails.push(new ProjectDetail(1, 1, 'Project 1 details introduction!!!', ['Instruction 1!', 'Instruction 2!', 'Instruction 3!', 'Instruction 4!'], 'the-pitfall/index.html', new ProjectMetadatas(true, true, true, true, ['autoplay', 'fullscreen', 'geolocation', 'microphone', 'camera', 'midi'], new ScreenRsolutionData(100, '%', 640, 'px'))));
     this.projectDetails.push(new ProjectDetail(2, 2, 'Project 2 details introduction!!!', ['Instruction 1!', 'Instruction 2!', 'Instruction 3!', 'Instruction 4!'], '#/', null));
     this.projectDetails.push(new ProjectDetail(3, 3, 'Project 3 details introduction!!!', ['Instruction 1!', 'Instruction 2!', 'Instruction 3!', 'Instruction 4!'], '#/', null));
     this.projectDetails.push(new ProjectDetail(4, 4, 'Project 4 details introduction!!!', ['Instruction 1!', 'Instruction 2!', 'Instruction 3!', 'Instruction 4!'], '#/', null));
-    this.projectDetails.push(new ProjectDetail(5, 5, 'Project 5 details introduction!!!', ['Instruction 1!', 'Instruction 2!', 'Instruction 3!', 'Instruction 4!'], 'the-pit-fall/index.html', new ProjectMetadatas(true, true, true, true, ['autoplay', 'fullscreen', 'geolocation', 'microphone', 'camera', 'midi'], new ScreenRsolutionData(100, '%', 640, 'px'))));
+    this.projectDetails.push(new ProjectDetail(5, 5, 'Project 5 details introduction!!!', ['Instruction 1!', 'Instruction 2!', 'Instruction 3!', 'Instruction 4!'], 'the-pitfall/index.html', new ProjectMetadatas(true, true, true, true, ['autoplay', 'fullscreen', 'geolocation', 'microphone', 'camera', 'midi'], new ScreenRsolutionData(100, '%', 640, 'px'))));
   }
 
   /**
