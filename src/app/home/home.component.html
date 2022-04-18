@@ -23,7 +23,7 @@
       </svg>What's new ?
     </h3>
     <p class="mb-3">This is what happened regarding the site this month :</p>
-    <div *ngFor="let news of newsListToDisplay" class="alert news-element-block" [ngClass]="{'alert-primary': news.newsType === newsType.UPDATE, 'alert-success': news.newsType === newsType.CREATE}" role="alert">
+    <div *ngFor="let news of newsListToDisplay | async" class="alert news-element-block" [ngClass]="{'alert-primary': news.newsType === newsType.UPDATE, 'alert-success': news.newsType === newsType.CREATE}" role="alert">
       <small class="alert-heading">{{ getElapsedTimeLabelRepresentation(news.newsCreationDate) }} ago</small>
       <hr>
       <div class="news-statement-block">

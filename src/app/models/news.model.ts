@@ -15,5 +15,11 @@ export class News {
      * @public
      * @constructor
      */
-    public constructor(public newsId: number, public newsDescription: string, public newsType: NewsType, public newsCreationDate: Date, public isNewsActive: boolean){}
+    public constructor(
+        public newsId: number
+        , public newsDescription: string
+        , public newsType: NewsType
+        , public newsCreationDate: Date
+        , public isNewsActive: boolean
+        ){}
 }
