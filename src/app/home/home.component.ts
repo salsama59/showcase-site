@@ -81,7 +81,7 @@ export class HomeComponent implements OnInit {
       return news.filter((news: News, index: number) => {
         const millisecondDuration: number = new Date().getTime() - news.newsCreationDate.getTime(); 
         const duration: moment.Duration = moment.duration(millisecondDuration, "milliseconds");
-          return duration.months() <= 1;
+          return duration.years() === 0 && duration.months() <= 1;
       });
     }));
   }
