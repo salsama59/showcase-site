@@ -10,6 +10,8 @@ import { ProjectUtilsService } from '../utils/project-utils.service';
 import moment  from 'moment';
 import { Router } from '@angular/router';
 import { RouteModeConstants } from '../constants/route-mode-constants';
+import { map, catchError, tap } from "rxjs/operators";
+import { Observable } from 'rxjs';
 
 /**
  * Home Component class responsible for the home page management.
@@ -35,7 +37,7 @@ export class HomeComponent implements OnInit {
   /**
    * News list to display of home component
    */
-  newsListToDisplay : Array<News> = [];
+  newsListToDisplay :  Observable<News[]> = new Observable<News[]>()
 
   /**
    * Route constants of home component
@@ -71,12 +73,17 @@ export class HomeComponent implements OnInit {
    * @returns fresh news list.
    * @private
    */
-  private getFreshNews(): Array<News> {
-    return this.newsService.getNews().filter((news: News, index: number) => {
-      const millisecondDuration: number = new Date().getTime() - news.newsCreationDate.getTime(); 
-      const duration: moment.Duration = moment.duration(millisecondDuration, "milliseconds");
-        return duration.months() <= 1;
-    });
+  private getFreshNews(): Observable<News[]> {
+    return this.newsService
+    .getNews()
+    .pipe(
+      map(news => {
+      return news.filter((news: News, index: number) => {
+        const millisecondDuration: number = new Date().getTime() - news.newsCreationDate.getTime(); 
+        const duration: moment.Duration = moment.duration(millisecondDuration, "milliseconds");
+          return duration.months() <= 1;
+      });
+    }));
   }
 
   /**

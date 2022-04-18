@@ -17,6 +17,8 @@ import { ResumeComponent } from './resumes/resume/resume.component';
 import { NumberToArrayPipe } from './pipes/number-to-array.pipe';
 import { ResumesComponent } from './resumes/resumes.component';
 import { PaginationComponent } from './pagination/pagination.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JsonDateInterceptor } from './interceptors/json-date-interceptor';
 
 @NgModule({
   declarations: [
@@ -34,9 +36,10 @@ import { PaginationComponent } from './pagination/pagination.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [SocialNetworksService, ProjectsService, ProjectUtilsService, NewsService],
+  providers: [SocialNetworksService, ProjectsService, ProjectUtilsService, NewsService, { provide: HTTP_INTERCEPTORS, useClass: JsonDateInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
