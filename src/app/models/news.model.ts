@@ -16,10 +16,10 @@ export class News {
      * @constructor
      */
     public constructor(
-        public newsId: number
-        , public newsDescription: string
-        , public newsType: NewsType
-        , public newsCreationDate: Date
-        , public isNewsActive: boolean
+        public newsId: string, 
+        public newsDescription: string, 
+        public newsType: NewsType, 
+        public newsCreationDate: Date, 
+        public isNewsActive: boolean
         ){}
 }

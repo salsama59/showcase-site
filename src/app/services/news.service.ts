@@ -22,6 +22,6 @@ export class NewsService {
    * @returns an observable of News 
    */
   getNews(): Observable<Array<News>> {
-    return this.httpClient.get<News[]>(environment.showcaseBackendUrl + BackendEndpointConstants.NEWS_ENDPOINT_URI, {headers: new HttpHeaders({ 'Content-Type': 'application/json' })})
+    return this.httpClient.get<News[]>(environment.showcaseBackendUrl + BackendEndpointConstants.NEWS_ENDPOINT_URI, {headers: new HttpHeaders({ 'Content-Type': 'application/json' })});
   }
 }

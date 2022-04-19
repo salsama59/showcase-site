@@ -40,7 +40,7 @@ export class ResumesService {
         , new Person('My first name', 'The family name'
         , new Date(), new Contact('myemail@test.com', '0123456974')
         , new Address('Street is here', 'City', 'France', '59000'))
-        , [new SocialNetwork('fbSocialNetwork', 'FB', 'https://myFB-link/test', 'github.svg')])
+        , [new SocialNetwork('1dvs894fvzs9ef19', 'fbSocialNetwork', 'FB', 'https://myFB-link/test', 'github.svg')])
       , [new Skill('Sleep', SkillLevelType.EXPERIENCED), new Skill('Jump', SkillLevelType.SKILLFULL), new Skill('Investigation', SkillLevelType.BEGINNER), new Skill('Bargain', SkillLevelType.NOVICE)]
       , ['Doing things 1', 'Doing nothing']
       , [new Language('French', LanguageLevelType.NATIVE_SPEAKER), new Language('English', LanguageLevelType.HIGHLY_PROFICIENT)]
@@ -54,7 +54,7 @@ export class ResumesService {
         , new Person('My first name', 'The family name'
         , new Date(), new Contact('myemail@test2.com', '0123456974')
         , new Address('Street is here', 'City', 'France', '59000'))
-        , [new SocialNetwork('rasSocialNetwork', 'RAS', 'https://myras-link/test', 'linkedin.svg')])
+        , [new SocialNetwork('14fsd1fsd16fd1q6sc', 'rasSocialNetwork', 'RAS', 'https://myras-link/test', 'linkedin.svg')])
       , [new Skill('Drink', SkillLevelType.EXPERIENCED), new Skill('Eat', SkillLevelType.SKILLFULL), new Skill('Investigation', SkillLevelType.BEGINNER), new Skill('Bargain', SkillLevelType.NOVICE)]
       , ['Doing multiple things', 'Doing something new']
       , [new Language('English', LanguageLevelType.HIGHLY_PROFICIENT)]
