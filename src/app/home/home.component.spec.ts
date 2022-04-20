@@ -1,17 +1,27 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
+import { Observable, of } from 'rxjs';
 import { RouteConstants } from '../constants/route-constants';
+import { NewsType } from '../enums/news-type';
+import { News } from '../models/news.model';
 import { ProjectComponent } from '../projects/project/project.component';
 import { ProjectsComponent } from '../projects/projects.component';
+import { NewsService } from '../services/news.service';
+import { ProjectsService } from '../services/projects.service';
+import { ProjectUtilsService } from '../utils/project-utils.service';
 
 import { HomeComponent } from './home.component';
 
 describe('HomeComponent', () => {
+  let httpClientSpy: jasmine.SpyObj<HttpClient>;
   let homeComponent: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
 
   beforeEach(async () => {
+    httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
     await TestBed.configureTestingModule({
       imports: [
         RouterTestingModule.withRoutes([
@@ -26,14 +36,29 @@ describe('HomeComponent', () => {
           { path: RouteConstants.PROJECT_VIEW_MODE_ROUTE_PATH, 
             component: ProjectComponent 
           }
-        ])
+        ]), HttpClientModule
       ],
-      declarations: [ HomeComponent ]
+      declarations: [ HomeComponent ],
+			providers: [
+        ProjectsService, 
+        ProjectUtilsService, 
+        NewsService,
+        {provide: HttpClient, useValue: httpClientSpy}],
+        schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
+    
+    const expectedNews: Observable<News[]> = of([
+      new News('4ssd4q6f4q', 'des', NewsType.CREATE, new Date(), true),
+      new News('4ssd4q6f4q', 'des', NewsType.CREATE, new Date(), true),
+      new News('4ssd4q6f4q', 'des', NewsType.CREATE, new Date(), true),
+      new News('4ssd4q6f4q', 'des', NewsType.CREATE, new Date(), true)
+    ]);
+
+    httpClientSpy.get.and.returnValue(expectedNews);
     fixture = TestBed.createComponent(HomeComponent);
     homeComponent = fixture.componentInstance;
     fixture.detectChanges();
