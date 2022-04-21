@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="row mb-3 footer-social-part">
 			<div id="social-link-title" class="text-center">Follow Me :</div>
-			<a *ngFor="let socialNetwork of socialNetworksToDisplay" href="{{ socialNetwork.socialNetworkLinkUrl }}" id="social-link-{{ socialNetwork.socialNetworkLinkId }}" class="social-link-url">{{ socialNetwork.socialNetworkLinkName }}&nbsp;
+			<a *ngFor="let socialNetwork of socialNetworksToDisplay | async" href="{{ socialNetwork.socialNetworkLinkUrl }}" id="social-link-{{ socialNetwork.socialNetworkLinkId }}" class="social-link-url">{{ socialNetwork.socialNetworkLinkName }}&nbsp;
 				<img src="assets/images/{{ socialNetwork.socialNetworkImageName }}" class="img-fluid social-link-image" alt="{{ socialNetwork.socialNetworkImageName }}"/>
 			</a>
 		</div>

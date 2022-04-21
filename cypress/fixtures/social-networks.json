@@ -1,0 +1,16 @@
+[
+    {
+        "socialNetworkId": "6248254cb97ff99dc964e4e2",
+        "socialNetworkLinkId": "linkedin",
+        "socialNetworkLinkName": "LinkedIn",
+        "socialNetworkLinkUrl": "https://www.linkedin.com/in/saül-yeponde-3ba27b82",
+        "socialNetworkImageName": "linkedin.svg"
+    },
+    {
+        "socialNetworkId": "6248254cb97ff99dc964e4e3",
+        "socialNetworkLinkId": "github",
+        "socialNetworkLinkName": "Git Hub",
+        "socialNetworkLinkUrl": "https://github.com/salsama59",
+        "socialNetworkImageName": "github.svg"
+    }
+]

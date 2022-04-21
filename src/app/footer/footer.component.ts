@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import pkg from 'package.json';
+import { Observable } from 'rxjs';
 import { SocialNetwork } from '../models/social-network.model';
 import { SocialNetworksService } from '../services/social-networks.service';
 
@@ -36,7 +37,7 @@ export class FooterComponent implements OnInit {
 	/**
 	 * Social links to display of footer component
 	 */
-	public socialNetworksToDisplay: SocialNetwork[] = [];
+	public socialNetworksToDisplay: Observable<SocialNetwork[]> = new Observable<SocialNetwork[]>();
 
 	/**
 	 * Creates an instance of footer component.

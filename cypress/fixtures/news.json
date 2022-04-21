@@ -1,0 +1,30 @@
+[
+  {
+    "newsId": "62476e04b97ff99dc964e4d3",
+    "newsDescription": "Great news something is now created!!!",
+    "newsType": "CREATE",
+    "newsCreationDate": "2022-01-14T23:00:00.000Z",
+    "newsActive": true
+  },
+  {
+    "newsId": "62476e04b97ff99dc964e4d4",
+    "newsDescription": "Great news something is now updated!!!",
+    "newsType": "UPDATE",
+    "newsCreationDate": "2022-01-15T23:00:00.000Z",
+    "newsActive": true
+  },
+  {
+    "newsId": "62476e04b97ff99dc964e4d5",
+    "newsDescription": "Great news another thing is now created!!!",
+    "newsType": "CREATE",
+    "newsCreationDate": "2021-04-09T22:00:00.000Z",
+    "newsActive": false
+  },
+  {
+    "newsId": "62476e04b97ff99dc964e4d6",
+    "newsDescription": "Great news another thing is now updated!!!",
+    "newsType": "UPDATE",
+    "newsCreationDate": "2019-06-10T22:00:00.000Z",
+    "newsActive": false
+  }
+]
