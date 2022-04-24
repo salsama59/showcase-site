@@ -1,7 +1,9 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { BackendEndpointConstants } from '../constants/backend-endpoint-constants';
 import { ProjectDetail } from '../models/project-detail.model';
-import { ProjectMetadatas } from '../models/project-metadatas.model';
-import { ScreenRsolutionData } from '../models/screen-resolution-data.model';
 
 /**
  * The project details service class providing method to manage the project details.
@@ -19,21 +21,14 @@ export class ProjectDetailsService {
   /**
    * Creates an instance of project details service.
    */
-  constructor() { 
-    this.projectDetails.push(new ProjectDetail(0, 0, 'Project 0 details introduction!!!', ['Instruction 1!', 'Instruction 2!', 'Instruction 3!', 'Instruction 4!'], '#/', null));
-    this.projectDetails.push(new ProjectDetail(1, 1, 'Project 1 details introduction!!!', ['Instruction 1!', 'Instruction 2!', 'Instruction 3!', 'Instruction 4!'], 'the-pitfall/index.html', new ProjectMetadatas(true, true, true, true, ['autoplay', 'fullscreen', 'geolocation', 'microphone', 'camera', 'midi'], new ScreenRsolutionData(100, '%', 640, 'px'))));
-    this.projectDetails.push(new ProjectDetail(2, 2, 'Project 2 details introduction!!!', ['Instruction 1!', 'Instruction 2!', 'Instruction 3!', 'Instruction 4!'], '#/', null));
-    this.projectDetails.push(new ProjectDetail(3, 3, 'Project 3 details introduction!!!', ['Instruction 1!', 'Instruction 2!', 'Instruction 3!', 'Instruction 4!'], '#/', null));
-    this.projectDetails.push(new ProjectDetail(4, 4, 'Project 4 details introduction!!!', ['Instruction 1!', 'Instruction 2!', 'Instruction 3!', 'Instruction 4!'], '#/', null));
-    this.projectDetails.push(new ProjectDetail(5, 5, 'Project 5 details introduction!!!', ['Instruction 1!', 'Instruction 2!', 'Instruction 3!', 'Instruction 4!'], 'the-pitfall/index.html', new ProjectMetadatas(true, true, true, true, ['autoplay', 'fullscreen', 'geolocation', 'microphone', 'camera', 'midi'], new ScreenRsolutionData(100, '%', 640, 'px'))));
-  }
+  constructor(private httpClient: HttpClient) {}
 
   /**
    * Gets the project details list
    * @returns project details 
    */
-  getProjectDetails(): Array<ProjectDetail> {
-    return this.projectDetails.slice();
+  getProjectDetails(): Observable<Array<ProjectDetail>> {
+    return this.httpClient.get<ProjectDetail[]>(environment.showcaseBackendUrl + BackendEndpointConstants.PROJECT_DETAILS_ENDPOINT_URI, {headers: new HttpHeaders({ 'Content-Type': 'application/json' })});
   }
 
   /**
@@ -41,7 +36,7 @@ export class ProjectDetailsService {
    * @param projectId the project id
    * @returns the project detail given a project id 
    */
-  getProjectDetailByProjectId(projectId: number): ProjectDetail | undefined {
-    return this.getProjectDetails().find((projectDetail: ProjectDetail, index: number) => projectDetail.projectDetailProjectId === projectId);
+  getProjectDetailByProjectId(projectId: string): Observable<ProjectDetail> {
+    return this.httpClient.get<ProjectDetail>(environment.showcaseBackendUrl + BackendEndpointConstants.PROJECT_DETAILS_ENDPOINT_URI + '/' + projectId , {headers: new HttpHeaders({ 'Content-Type': 'application/json' })});
   }
 }

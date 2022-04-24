@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Params } from '@angular/router';
+import { catchError } from 'rxjs/operators';
 import { ProjectTypeEnum } from 'src/app/enums/project-type-enum';
 import { ProjectDetail } from 'src/app/models/project-detail.model';
 import { ProjectMetadatas } from 'src/app/models/project-metadatas.model';
@@ -48,9 +49,18 @@ export class ProjectComponent implements OnInit {
    */
   ngOnInit(): void {
     this.activatedRoute.params.subscribe({next: (params: Params) => {
-      const currentProjectId: number = +params['projectId'];
-      this.currentProject = this.projectsService.getProjectById(currentProjectId);
-      this.currentProjectDetail = this.projectDetailsService.getProjectDetailByProjectId(currentProjectId);
+      const currentProjectId: string = params['projectId'];
+       this.projectsService.getProjectById(currentProjectId).subscribe(project => {
+        this.currentProject = project;
+      });
+      
+      this.projectDetailsService.getProjectDetailByProjectId(currentProjectId)
+      .subscribe((projectDetails: ProjectDetail | undefined) => {
+        this.currentProjectDetail = projectDetails;
+      }, catchError(error => {
+        throw error;
+      }));
+      
     }});
   }
 
