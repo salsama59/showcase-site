@@ -101,13 +101,13 @@ export class ProjectsComponent implements OnInit {
     this.projectsService.getProjects().subscribe(projects => {
       this.projectListToDisplay = projects;
       this.originalProjectList = projects;
-    })
+      this.paginateProjects('1', projects);
+		  void this.router.navigate([], {
+        relativeTo: this.activatedRoute,
+        queryParams: { page: '1' }
+		  });
+    });
     
-    this.paginateProjects('1', null);
-		void this.router.navigate([], {
-			relativeTo: this.activatedRoute,
-			queryParams: { page: '1' }
-		});
 		this.activatedRoute.queryParams.subscribe((params: Params) => {
       if (params['page']) {
 				this.currentProjectPage = +params['page'];

@@ -8,6 +8,12 @@ import moment from 'moment';
  */
 export class JsonDateInterceptor implements HttpInterceptor {
 
+  /**
+   * Intercept an incoming http request and convert its body
+   * @param req the http request intercepted
+   * @param next the http handler
+   * @returns an observable of http event, most likely a response
+   */
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(map( (val: HttpEvent<any>) => {
       if (val instanceof HttpResponse){

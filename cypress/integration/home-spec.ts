@@ -10,6 +10,10 @@ import { BackendEndpointConstants } from 'src/app/constants/backend-endpoint-con
 import { SocialNetworksMocks } from "cypress/mocks/social-networks-mocks";
 import { SocialNetwork } from "src/app/models/social-network.model";
 import { HttpInterceptorAliasConstants } from "cypress/constants/http-interceptor-alias-constants";
+import { ProjectsMocks } from "cypress/mocks/projects-mocks";
+import { Project } from "src/app/models/project.model";
+import { ProjectDetailsMocks } from "cypress/mocks/project-details-mocks";
+import { ProjectDetail } from "src/app/models/project-detail.model";
 
 describe('The Home page end to end test', () => {
 
@@ -20,9 +24,20 @@ describe('The Home page end to end test', () => {
     cy.fixture<SocialNetwork[]>('social-networks.json',).then(socialNetworks => {
       SocialNetworksMocks.getSocialNetworks(environment.showcaseBackendUrl + BackendEndpointConstants.SOCIAL_NETWORK_ENDPOINT_URI, socialNetworks);
     });
+    cy.fixture<Project[]>('projects.json').then(projects => {
+      ProjectsMocks.getProjects(environment.showcaseBackendUrl + BackendEndpointConstants.PROJECTS_ENDPOINT_URI, projects);
+    });
+    cy.fixture<Project[]>('projects.json').then(projects => {
+      ProjectsMocks.getProjectById(environment.showcaseBackendUrl + BackendEndpointConstants.PROJECTS_ENDPOINT_URI, projects, '624736e7b97ff99dc964e4ca');
+    });
+
+    cy.fixture<ProjectDetail[]>('project-details.json').then(projectDetails => {
+        ProjectDetailsMocks.getProjectDetailsByProjectId(environment.showcaseBackendUrl + BackendEndpointConstants.PROJECT_DETAILS_ENDPOINT_URI, projectDetails, '624736e7b97ff99dc964e4ca');
+    });
     cy.visit('/');
     cy.wait('@' + HttpInterceptorAliasConstants.GET_NEWS_ALIAS);
     cy.wait('@' + HttpInterceptorAliasConstants.GET_SOCIAL_NETWORKS_ALIAS);
+    cy.wait('@' + HttpInterceptorAliasConstants.GET_PROJECTS_ALIAS);
   });
 
   it('Visits the home page', () => {
@@ -55,6 +70,8 @@ describe('The Home page end to end test', () => {
   it('Should navigate to the project detail page when clicking on the recommended projects caroussel', () => {
     cy.get(HomeDomConstants.HOME_PAGE_PROJECT_DISPLAY_SELECTOR).find(HomeDomConstants.HOME_PAGE_CAROUSEL_ELEMENT_PROJECT_TITLE_SELECTOR).invoke('text').then((h5Text) => {
       EndToEndTestUtils.clickElement(cy.get(HomeDomConstants.HOME_PAGE_PROJECT_DISPLAY_SELECTOR), true);
+      cy.wait('@' + HttpInterceptorAliasConstants.GET_PROJECT_BY_ID_ALIAS);
+      cy.wait('@' + HttpInterceptorAliasConstants.GET_PROJECT_DETAILS_BY_PROJECT_ID);
       cy.get(ProjectDomConstants.PROJECT_DETAILS_PAGE_TITLE).should('contain', h5Text);
     });
   });

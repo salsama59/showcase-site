@@ -1,0 +1,118 @@
+[
+    {
+        "projectDetailId": "62487ef1b97ff99dc964e4f0",
+        "projectDetailProjectId": "624736e7b97ff99dc964e4ca",
+        "projectDetailIntroduction": "Project 0 details introduction!!!",
+        "projectDetailInstructions": [
+            "Instruction 1!",
+            "Instruction 2!",
+            "Instruction 3!",
+            "Instruction 4!"
+        ],
+        "projectUrl": "#/",
+        "projectMetadatas": null
+    },
+    {
+        "projectDetailId": "62487ef1b97ff99dc964e4f1",
+        "projectDetailProjectId": "624736e7b97ff99dc964e4cb",
+        "projectDetailIntroduction": "Project 1 details introduction!!!",
+        "projectDetailInstructions": [
+            "Instruction 1!",
+            "Instruction 2!",
+            "Instruction 3!",
+            "Instruction 4!"
+        ],
+        "projectUrl": "the-pit-fall/index.html",
+        "projectMetadatas": {
+            "permissions": [
+                "autoplay",
+                "fullscreen",
+                "geolocation",
+                "microphone",
+                "camera",
+                "midi"
+            ],
+            "screenResolutionData": {
+                "screenWidth": 100,
+                "screenWidthUnit": "%",
+                "screenHeight": 640,
+                "screenHeightUnit": "px"
+            },
+            "fullScreenEnabled": true,
+            "transparencyEnabled": true,
+            "scrollingEnabled": true,
+            "autoPlayEnabled": true
+        }
+    },
+    {
+        "projectDetailId": "62487ef1b97ff99dc964e4f2",
+        "projectDetailProjectId": "624736e7b97ff99dc964e4cc",
+        "projectDetailIntroduction": "Project 2 details introduction!!!",
+        "projectDetailInstructions": [
+            "Instruction 1!",
+            "Instruction 2!",
+            "Instruction 3!",
+            "Instruction 4!"
+        ],
+        "projectUrl": "#/",
+        "projectMetadatas": null
+    },
+    {
+        "projectDetailId": "62487ef1b97ff99dc964e4f3",
+        "projectDetailProjectId": "624736e7b97ff99dc964e4cd",
+        "projectDetailIntroduction": "Project 3 details introduction!!!",
+        "projectDetailInstructions": [
+            "Instruction 1!",
+            "Instruction 2!",
+            "Instruction 3!",
+            "Instruction 4!"
+        ],
+        "projectUrl": "#/",
+        "projectMetadatas": null
+    },
+    {
+        "projectDetailId": "62487ef1b97ff99dc964e4f4",
+        "projectDetailProjectId": "624736e7b97ff99dc964e4ce",
+        "projectDetailIntroduction": "Project 4 details introduction!!!",
+        "projectDetailInstructions": [
+            "Instruction 1!",
+            "Instruction 2!",
+            "Instruction 3!",
+            "Instruction 4!"
+        ],
+        "projectUrl": "#/",
+        "projectMetadatas": null
+    },
+    {
+        "projectDetailId": "62487ef1b97ff99dc964e4f5",
+        "projectDetailProjectId": "624736e7b97ff99dc964e4cf",
+        "projectDetailIntroduction": "Project 5 details introduction!!!",
+        "projectDetailInstructions": [
+            "Instruction 1!",
+            "Instruction 2!",
+            "Instruction 3!",
+            "Instruction 4!"
+        ],
+        "projectUrl": "the-pit-fall/index.html",
+        "projectMetadatas": {
+            "permissions": [
+                "autoplay",
+                "fullscreen",
+                "geolocation",
+                "microphone",
+                "camera",
+                "midi"
+            ],
+            "screenResolutionData": {
+                "screenWidth": 100,
+                "screenWidthUnit": "%",
+                "screenHeight": 640,
+                "screenHeightUnit": "px"
+            },
+            "fullScreenEnabled": true,
+            "transparencyEnabled": true,
+            "scrollingEnabled": true,
+            "autoPlayEnabled": true
+        }
+    }
+]
