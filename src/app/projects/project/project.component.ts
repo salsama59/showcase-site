@@ -57,9 +57,7 @@ export class ProjectComponent implements OnInit {
       this.projectDetailsService.getProjectDetailByProjectId(currentProjectId)
       .subscribe((projectDetails: ProjectDetail | undefined) => {
         this.currentProjectDetail = projectDetails;
-      }, catchError(error => {
-        throw error;
-      }));
+      });
       
     }});
   }

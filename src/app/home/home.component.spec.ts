@@ -6,7 +6,10 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { Observable, of } from 'rxjs';
 import { RouteConstants } from '../constants/route-constants';
 import { NewsType } from '../enums/news-type';
+import { ProjectTechnologyEnum } from '../enums/project-technology-enum';
+import { ProjectTypeEnum } from '../enums/project-type-enum';
 import { News } from '../models/news.model';
+import { Project } from '../models/project.model';
 import { ProjectComponent } from '../projects/project/project.component';
 import { ProjectsComponent } from '../projects/projects.component';
 import { NewsService } from '../services/news.service';
@@ -16,12 +19,14 @@ import { ProjectUtilsService } from '../utils/project-utils.service';
 import { HomeComponent } from './home.component';
 
 describe('HomeComponent', () => {
-  let httpClientSpy: jasmine.SpyObj<HttpClient>;
+  let newsServiceSpy: jasmine.SpyObj<NewsService>;
+  let projectsServiceSpy: jasmine.SpyObj<ProjectsService>;
   let homeComponent: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
 
   beforeEach(async () => {
-    httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
+    newsServiceSpy = jasmine.createSpyObj('NewsService', ['getNews']);
+    projectsServiceSpy = jasmine.createSpyObj('ProjectsService', ['getProjects']);
     await TestBed.configureTestingModule({
       imports: [
         RouterTestingModule.withRoutes([
@@ -39,18 +44,16 @@ describe('HomeComponent', () => {
         ]), HttpClientModule
       ],
       declarations: [ HomeComponent ],
-			providers: [
-        ProjectsService, 
+			providers: [ 
         ProjectUtilsService, 
-        NewsService,
-        {provide: HttpClient, useValue: httpClientSpy}],
+        {provide: NewsService, useValue: newsServiceSpy},
+        {provide: ProjectsService, useValue: projectsServiceSpy}],
         schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    
     const expectedNews: Observable<News[]> = of([
       new News('4ssd4q6f4q', 'des', NewsType.CREATE, new Date(), true),
       new News('4ssd4q6f4q', 'des', NewsType.CREATE, new Date(), true),
@@ -58,7 +61,18 @@ describe('HomeComponent', () => {
       new News('4ssd4q6f4q', 'des', NewsType.CREATE, new Date(), true)
     ]);
 
-    httpClientSpy.get.and.returnValue(expectedNews);
+    const expectedProjects: Observable<Project[]> = of([
+      new Project('0', "Project 0 title", "This is the project 0 what else is there to say.", ProjectTypeEnum.WEB_DEVELOPEMENT, [ProjectTechnologyEnum.JAVA, ProjectTechnologyEnum.HTML, ProjectTechnologyEnum.CSS], new Date(2019,10, 20), new Date()),
+      new Project('1', "Project 1 title", "This is the project 1 what else is there to say.", ProjectTypeEnum.GAME_DEVELOPEMENT, [ProjectTechnologyEnum.JAVA, ProjectTechnologyEnum.SLICK2D], new Date(2014, 5, 11), new Date(2015, 8, 20)),
+      new Project('2', "Project 2 title", "This is the project 2 what else is there to say.", ProjectTypeEnum.WEB_DEVELOPEMENT, [ProjectTechnologyEnum.JAVA, ProjectTechnologyEnum.HTML, ProjectTechnologyEnum.CSS, ProjectTechnologyEnum.ANGULAR], new Date(2021,0, 10), new Date(2022,0, 10)),
+      new Project('3', "Project 3 title", "This is the project 3 what else is there to say.", ProjectTypeEnum.WEB_DEVELOPEMENT, [ProjectTechnologyEnum.C_SHARP, ProjectTechnologyEnum.HTML, ProjectTechnologyEnum.CSS, ProjectTechnologyEnum.DOT_NET], new Date(2010,11, 6), new Date(2011,10, 6)),
+      new Project('4', "Project 4 title", "This is the project 4 what else is there to say.", ProjectTypeEnum.WEB_DEVELOPEMENT, [ProjectTechnologyEnum.JAVA, ProjectTechnologyEnum.HTML, ProjectTechnologyEnum.CSS], new Date(2009,10, 20), new Date(2018,11, 24)),
+      new Project('5', "Project 5 title", "This is the project 5 what else is there to say.", ProjectTypeEnum.GAME_DEVELOPEMENT, [ProjectTechnologyEnum.C_SHARP, ProjectTechnologyEnum.UNITY], new Date(2000, 8, 20), new Date(2021, 8, 20))
+    ]);
+
+    newsServiceSpy.getNews.and.returnValues(expectedNews);
+    projectsServiceSpy.getProjects.and.returnValues(expectedProjects);
+    
     fixture = TestBed.createComponent(HomeComponent);
     homeComponent = fixture.componentInstance;
     fixture.detectChanges();
@@ -69,11 +83,12 @@ describe('HomeComponent', () => {
   });
 
   it('should update the current recommended project description', () => {
-    expect(homeComponent.currentRecommendedProjectDescription).toEqual(homeComponent.recommendedProjects[0].projectDescription);
+    
+    expect(homeComponent.currentRecommendedProjectDescription).toEqual(homeComponent.recommendedProjectsTodisplay[0].projectDescription);
     homeComponent.onCarouselSlideFinished({
       to: 1
     });
-    expect(homeComponent.currentRecommendedProjectDescription).toEqual(homeComponent.recommendedProjects[1].projectDescription);
+    expect(homeComponent.currentRecommendedProjectDescription).toEqual(homeComponent.recommendedProjectsTodisplay[1].projectDescription);
   });
 
   it('should return a full Elapsed time label representation', () => {
@@ -113,7 +128,7 @@ describe('HomeComponent', () => {
   });
 
   it('should render the recommended project detail selected from the caroussel', () => {
-    homeComponent.onProjectDetailNavigation(0);
+    homeComponent.onProjectDetailNavigation('0');
     expect(homeComponent).toBeTruthy();
   });
 });

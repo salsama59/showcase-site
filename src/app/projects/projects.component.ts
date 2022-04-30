@@ -112,10 +112,14 @@ export class ProjectsComponent implements OnInit {
       if (params['page']) {
 				this.currentProjectPage = +params['page'];
 			}
+      let updatedProjectList: Project[] | null = null;
+
       if(this.projectListToDisplay.length > 0){
         this.onProjectFilterChange(true);
+        updatedProjectList = this.projectListToDisplay;
       }
-			this.paginateProjects(params['page'], this.projectListToDisplay.length > 0 ? this.projectListToDisplay : null);
+     
+			this.paginateProjects(params['page'], updatedProjectList);
 		});
     this.initializeProjectTypeFilters();
     this.initializeProjectTechnologiesFilters();
@@ -210,13 +214,11 @@ export class ProjectsComponent implements OnInit {
    * @param projectId the desired project id 
    * @public
    */
-  onViewProjectElement(projectId: number): void {
+  onViewProjectElement(projectId: string): void {
     void this.router.navigate([projectId, RouteModeConstants.MODE_VIEW_CONSTANT], {
 			relativeTo: this.activatedRoute
 		});
   }
-
-  
 
   /**
    * Determines what happens when the project filter value change

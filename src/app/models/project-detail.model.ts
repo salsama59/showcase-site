@@ -16,8 +16,8 @@ export class ProjectDetail {
      * @public
      */
     constructor(
-        public projectDetailId: number, 
-        public projectDetailProjectId: number, 
+        public projectDetailId: string, 
+        public projectDetailProjectId: string, 
         public projectDetailIntroduction: string, 
         public projectDetailInstructions: string[], 
         public projectUrl: string, 

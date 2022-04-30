@@ -126,7 +126,7 @@ export class HomeComponent implements OnInit {
    * Determines what to do when the user click on the recommended projects carousel image
    * @param projectId  the project id
    */
-  onProjectDetailNavigation(projectId: number): void {
+  onProjectDetailNavigation(projectId: string): void {
     void this.router.navigate([RouteConstants.PROJECTS_ROUTE_PATH, projectId, RouteModeConstants.MODE_VIEW_CONSTANT]);
   }
 
