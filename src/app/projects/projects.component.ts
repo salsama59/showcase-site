@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { RouteModeConstants } from '../constants/route-mode-constants';
-import { TechnologyNameConstants } from '../constants/technology-name-constants';
 import { ProjectSortType } from '../enums/project-sort-type';
 import { ProjectTechnologyEnum } from '../enums/project-technology-enum';
 import { ProjectTypeEnum } from '../enums/project-type-enum';
@@ -26,7 +25,14 @@ export class ProjectsComponent implements OnInit {
    * Project list of projects component
    * @public
    */
-  public projectList: Project[] = [];
+  public projectListToDisplay: Project[] = [];
+
+
+  /**
+   * Project list of projects component
+   * @public
+   */
+   public originalProjectList: Project[] = [];
 
   /**
    * Project type filters of projects componen
@@ -92,20 +98,28 @@ export class ProjectsComponent implements OnInit {
    * @public
    */
   ngOnInit(): void {
-    this.projectList = this.projectsService.getProjects();
-    this.paginateProjects('1', null);
-		void this.router.navigate([], {
-			relativeTo: this.activatedRoute,
-			queryParams: { page: '1' }
-		});
+    this.projectsService.getProjects().subscribe(projects => {
+      this.projectListToDisplay = projects;
+      this.originalProjectList = projects;
+      this.paginateProjects('1', projects);
+		  void this.router.navigate([], {
+        relativeTo: this.activatedRoute,
+        queryParams: { page: '1' }
+		  });
+    });
+    
 		this.activatedRoute.queryParams.subscribe((params: Params) => {
       if (params['page']) {
 				this.currentProjectPage = +params['page'];
 			}
-      if(this.projectList.length > 0){
+      let updatedProjectList: Project[] | null = null;
+
+      if(this.projectListToDisplay.length > 0){
         this.onProjectFilterChange(true);
+        updatedProjectList = this.projectListToDisplay;
       }
-			this.paginateProjects(params['page'], this.projectList.length > 0 ? this.projectList : null);
+     
+			this.paginateProjects(params['page'], updatedProjectList);
 		});
     this.initializeProjectTypeFilters();
     this.initializeProjectTechnologiesFilters();
@@ -200,13 +214,11 @@ export class ProjectsComponent implements OnInit {
    * @param projectId the desired project id 
    * @public
    */
-  onViewProjectElement(projectId: number): void {
+  onViewProjectElement(projectId: string): void {
     void this.router.navigate([projectId, RouteModeConstants.MODE_VIEW_CONSTANT], {
 			relativeTo: this.activatedRoute
 		});
   }
-
-  
 
   /**
    * Determines what happens when the project filter value change
@@ -225,11 +237,11 @@ export class ProjectsComponent implements OnInit {
     let resultingProjectsFilteredByProjectType : Project[] = [];
 
     if(isSortAllowed) {
-      resultingProjectsFilteredByProjectType = this.projectsService.getProjects().filter((project: Project, index: number) => {
+      resultingProjectsFilteredByProjectType = this.originalProjectList.filter((project: Project, index: number) => {
         return selectedProjectTypeFilterEnums.includes(project.projectType);
       });
     } else {
-      resultingProjectsFilteredByProjectType = this.projectList.filter((project: Project, index: number) => {
+      resultingProjectsFilteredByProjectType = this.projectListToDisplay.filter((project: Project, index: number) => {
         return selectedProjectTypeFilterEnums.includes(project.projectType);
       });
     }
@@ -251,13 +263,13 @@ export class ProjectsComponent implements OnInit {
       }
     }
 
-    this.projectList = resultingProjectsFilteredByProjectTechnologies;
-    this.projectsService.projectListLengthChanged.next(this.projectList.length);
+    this.projectListToDisplay = resultingProjectsFilteredByProjectTechnologies;
+    this.projectsService.projectListLengthChanged.next(this.projectListToDisplay.length);
     if(isSortAllowed){
       this.onSortChoiceChange(false);
     }
     
-    this.paginateProjects(this.currentProjectPage, this.projectList);
+    this.paginateProjects(this.currentProjectPage, this.projectListToDisplay);
   }
 
   /**
@@ -289,29 +301,29 @@ export class ProjectsComponent implements OnInit {
     let listToUpdate: Project[] = [];
 
     if(isFilterAllowed) {
-      listToUpdate = this.projectsService.getProjects();
+      listToUpdate = this.originalProjectList;
     } else {
-      listToUpdate = this.projectList;
+      listToUpdate = this.projectListToDisplay;
     }
 
     switch (this.userSortChoice) {
       case ProjectSortType.CREATION_DATE:
-        this.projectList = listToUpdate.sort((firstProject: Project, secondProject: Project) => {
+        this.projectListToDisplay = listToUpdate.sort((firstProject: Project, secondProject: Project) => {
           return this.projectUtilsService.sortByProjectCreationDate(firstProject, secondProject, this.userSortOrderChoice);
         });
       break;
       case ProjectSortType.PROJECT_TYPE:
-        this.projectList = listToUpdate.sort((firstProject: Project, secondProject: Project) => {
+        this.projectListToDisplay = listToUpdate.sort((firstProject: Project, secondProject: Project) => {
           return this.projectUtilsService.sortByProjectType(firstProject, secondProject, this.userSortOrderChoice);
         });
       break;
       case ProjectSortType.TITLE:
-        this.projectList = listToUpdate.sort((firstProject: Project, secondProject: Project) => {
+        this.projectListToDisplay = listToUpdate.sort((firstProject: Project, secondProject: Project) => {
           return this.projectUtilsService.sortByProjectTitle(firstProject, secondProject, this.userSortOrderChoice);
         });
       break;
       case ProjectSortType.LAST_MODIFIED:
-        this.projectList = listToUpdate.sort((firstProject: Project, secondProject: Project) => {
+        this.projectListToDisplay = listToUpdate.sort((firstProject: Project, secondProject: Project) => {
           return this.projectUtilsService.sortByProjectLastModifiedDate(firstProject, secondProject, this.userSortOrderChoice);
         });
       break;
@@ -334,7 +346,7 @@ export class ProjectsComponent implements OnInit {
       if(updatedProjectList){
         currentProjectListLength = updatedProjectList.length;
       } else {
-        currentProjectListLength = this.projectsService.getProjects().length
+        currentProjectListLength = this.originalProjectList.length
       }
 
 			let newPageTotal: number = Math.ceil(
@@ -354,9 +366,9 @@ export class ProjectsComponent implements OnInit {
 				this.maximumProjectsPerPageCount;
 			const end: number = this.maximumProjectsPerPageCount * +pageNumber;
       if(updatedProjectList) {
-        this.projectList = updatedProjectList.slice(start, end);
+        this.projectListToDisplay = updatedProjectList.slice(start, end);
       } else {
-        this.projectList = this.projectsService.getProjects().slice(start, end);
+        this.projectListToDisplay = this.originalProjectList.slice(start, end);
       }
 		}
 	}
@@ -366,10 +378,10 @@ export class ProjectsComponent implements OnInit {
    * @returns the project list length
    */
   getProjectListLength(): number {
-    if(this.projectList.length > 0){
-      return this.projectList.length;
+    if(this.projectListToDisplay.length > 0){
+      return this.projectListToDisplay.length;
     } else {
-      return this.projectsService.getProjects().length;
+      return this.originalProjectList.length;
     }
   }
 }

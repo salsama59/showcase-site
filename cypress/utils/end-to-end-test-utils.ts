@@ -7,7 +7,7 @@ export class EndToEndTestUtils {
         cypressObject.visit('/' + RouteConstants.PROJECTS_ROUTE_PATH);
     }
 
-    public static goToProjectDetailPage(cypressObject : Cypress.cy, projectId: number): void {
+    public static goToProjectDetailPage(cypressObject : Cypress.cy, projectId: string): void {
         cypressObject.visit('/' + RouteConstants.PROJECTS_ROUTE_PATH + '/' + projectId + '/' + RouteModeConstants.MODE_VIEW_CONSTANT);
     }
 

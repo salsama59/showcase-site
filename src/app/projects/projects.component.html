@@ -34,7 +34,7 @@
   </aside>
   <div class="project-list-display">
     <section class="project-list-section">
-      <article *ngFor="let project of projectList; let i = index">
+      <article *ngFor="let project of projectListToDisplay; let i = index">
           <div class="card border-dark">
               <img [src]="projectUtilsService.getProjectImagePathByProjectType(project.projectType)" class="card-img-top project-image" [alt]="projectUtilsService.getProjectImageNameByProjectType(project.projectType)">
               <div class="card-body project-card">

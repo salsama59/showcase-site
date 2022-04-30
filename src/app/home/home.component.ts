@@ -11,7 +11,7 @@ import moment  from 'moment';
 import { Router } from '@angular/router';
 import { RouteModeConstants } from '../constants/route-mode-constants';
 import { map, catchError, tap } from "rxjs/operators";
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 /**
  * Home Component class responsible for the home page management.
@@ -25,9 +25,14 @@ import { Observable } from 'rxjs';
 export class HomeComponent implements OnInit {
 
   /**
-   * Recommended projects of home component
+   * Recommended projects observable of home component
    */
-  recommendedProjects: Array<Project> = [];
+  recommendedProjects: Observable<Project[]> = of([]);
+
+  /**
+   * Recommended projects to display of home component
+   */
+   recommendedProjectsTodisplay: Project[] = [];
 
   /**
    * Current recommended project description of home component
@@ -64,7 +69,11 @@ export class HomeComponent implements OnInit {
    */
   ngOnInit(): void {
     this.recommendedProjects = this.getRecommendedProjects();
-    this.currentRecommendedProjectDescription =this.recommendedProjects[0].projectDescription;
+    this.recommendedProjects.subscribe(projects => {
+      this.recommendedProjectsTodisplay = projects;
+      this.currentRecommendedProjectDescription = this.recommendedProjectsTodisplay[0].projectDescription;
+    });
+    
     this.newsListToDisplay = this.getFreshNews();
   }
 
@@ -91,10 +100,15 @@ export class HomeComponent implements OnInit {
    * @returns recommended projects
    * @private
    */
-  private getRecommendedProjects(): Array<Project> {
-    return this.projectsService.getProjects().sort((firstProject, secondProject) => {
-      return  this.projectUtilsService.sortByProjectLastModifiedDate(firstProject, secondProject, SortOrder.DESCENDING);
-    }).slice(0, 3);
+  private getRecommendedProjects(): Observable<Array<Project>> {
+    return this.projectsService.getProjects().pipe(
+      map(projects => {
+        projects.sort((firstProject, secondProject) => {
+          return  this.projectUtilsService.sortByProjectLastModifiedDate(firstProject, secondProject, SortOrder.DESCENDING);
+        });
+        return projects.slice(0, 3);
+      })
+    );
   }
 
 
@@ -105,14 +119,14 @@ export class HomeComponent implements OnInit {
    */
   onCarouselSlideFinished(event: any): void {
     const currentSildeIndex: number = event.to;
-    this.currentRecommendedProjectDescription = this.recommendedProjects[currentSildeIndex].projectDescription;
+    this.currentRecommendedProjectDescription = this.recommendedProjectsTodisplay[currentSildeIndex].projectDescription;
   }
 
   /**
    * Determines what to do when the user click on the recommended projects carousel image
    * @param projectId  the project id
    */
-  onProjectDetailNavigation(projectId: number): void {
+  onProjectDetailNavigation(projectId: string): void {
     void this.router.navigate([RouteConstants.PROJECTS_ROUTE_PATH, projectId, RouteModeConstants.MODE_VIEW_CONSTANT]);
   }
 

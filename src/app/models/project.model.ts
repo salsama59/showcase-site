@@ -18,7 +18,7 @@ export class Project {
  * @param projectLastModifiedDate the project last modified date
  */
  public constructor(
-	public projectId: number,
+	public projectId: string,
     public projectTitle: string,
     public projectDescription: string,
     public projectType: ProjectTypeEnum,

@@ -1,8 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute, UrlSegment } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-import { of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { RouteConstants } from 'src/app/constants/route-constants';
 import { RouteModeConstants } from 'src/app/constants/route-mode-constants';
 import { ProjectTechnologyEnum } from 'src/app/enums/project-technology-enum';
@@ -19,14 +19,15 @@ import { ProjectsComponent } from '../projects.component';
 import { ProjectComponent } from './project.component';
 
 describe('ProjectComponent', () => {
+  let httpClientSpy: jasmine.SpyObj<HttpClient>;
   let projectComponent: ProjectComponent;
   let fixture: ComponentFixture<ProjectComponent>;
   let projectDetailsService: ProjectDetailsService;
   let projectsService: ProjectsService;
-  const webDevelopmentProject = new Project(0, "Project 0 title [TEST]", "[TEST] 0 what else is there to say.", ProjectTypeEnum.WEB_DEVELOPEMENT, [ProjectTechnologyEnum.JAVA, ProjectTechnologyEnum.HTML, ProjectTechnologyEnum.CSS], new Date(2019,10, 20), new Date());
-  const gameDevelopmentProject = new Project(1, "Project 1 title [TEST]", "[TEST] 1 what else is there to say.", ProjectTypeEnum.GAME_DEVELOPEMENT, [ProjectTechnologyEnum.JAVA, ProjectTechnologyEnum.SLICK2D], new Date(2014, 5, 11), new Date(2015, 8, 20));
-  const webDevelopmentProjectDetail = new ProjectDetail(0, 0, '[TEST] 0 details introduction!!!', ['Instruction 1!', 'Instruction 2!', 'Instruction 3!', 'Instruction 4!'], 'http://15.236.131.250:8080/#/', null);
-  const gameDevelopmentProjectDetail = new ProjectDetail(1, 1, '[TEST] 1 details introduction!!!', ['Instruction 1!', 'Instruction 2!', 'Instruction 3!', 'Instruction 4!'], 'http://localhost/games-file/the-pit-fall/index.html', new ProjectMetadatas(true, true, true, true, ['autoplay', 'fullscreen', 'geolocation', 'microphone', 'camera', 'midi'], new ScreenRsolutionData(100, '%', 640, 'px')));
+  const webDevelopmentProject: Observable<Project> = of(new Project('0', "Project 0 title [TEST]", "[TEST] 0 what else is there to say.", ProjectTypeEnum.WEB_DEVELOPEMENT, [ProjectTechnologyEnum.JAVA, ProjectTechnologyEnum.HTML, ProjectTechnologyEnum.CSS], new Date(2019,10, 20), new Date()));
+  const gameDevelopmentProject: Observable<Project> = of(new Project('1', "Project 1 title [TEST]", "[TEST] 1 what else is there to say.", ProjectTypeEnum.GAME_DEVELOPEMENT, [ProjectTechnologyEnum.JAVA, ProjectTechnologyEnum.SLICK2D], new Date(2014, 5, 11), new Date(2015, 8, 20)));
+  const webDevelopmentProjectDetail: Observable<ProjectDetail> = of(new ProjectDetail('0', '0', '[TEST] 0 details introduction!!!', ['Instruction 1!', 'Instruction 2!', 'Instruction 3!', 'Instruction 4!'], 'http://15.236.131.250:8080/#/', null));
+  const gameDevelopmentProjectDetail: Observable<ProjectDetail> = of(new ProjectDetail('1', '1', '[TEST] 1 details introduction!!!', ['Instruction 1!', 'Instruction 2!', 'Instruction 3!', 'Instruction 4!'], 'http://localhost/games-file/the-pit-fall/index.html', new ProjectMetadatas(true, true, true, true, ['autoplay', 'fullscreen', 'geolocation', 'microphone', 'camera', 'midi'], new ScreenRsolutionData(100, '%', 640, 'px'))));
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -65,7 +66,8 @@ describe('ProjectComponent', () => {
         },
         {
           provide: ProjectDetailsService
-        }
+        },
+        {provide: HttpClient, useValue: httpClientSpy}
       ],
       declarations: [ ProjectComponent ]
     })
@@ -83,32 +85,32 @@ describe('ProjectComponent', () => {
   });
 
   it('should get a web development project url', () => {
-    spyOn(projectsService, 'getProjectById').withArgs(0).and.returnValue(webDevelopmentProject);
-    spyOn(projectDetailsService, 'getProjectDetailByProjectId').withArgs(0).and.returnValue(webDevelopmentProjectDetail);
+    spyOn(projectsService, 'getProjectById').withArgs("0").and.returnValue(webDevelopmentProject);
+    spyOn(projectDetailsService, 'getProjectDetailByProjectId').withArgs("0").and.returnValue(webDevelopmentProjectDetail);
     initComponent();
     const projectUrl: string  = projectComponent.getProjectUrl() as string;
     expect(projectUrl).toBeDefined();
   });
 
   it('should get a game development project url', () => {
-    spyOn(projectsService, 'getProjectById').withArgs(0).and.returnValue(gameDevelopmentProject);
-    spyOn(projectDetailsService, 'getProjectDetailByProjectId').withArgs(0).and.returnValue(gameDevelopmentProjectDetail);
+    spyOn(projectsService, 'getProjectById').withArgs("0").and.returnValue(gameDevelopmentProject);
+    spyOn(projectDetailsService, 'getProjectDetailByProjectId').withArgs("0").and.returnValue(gameDevelopmentProjectDetail);
     initComponent();
     const projectUrl: string  = projectComponent.getProjectUrl() as string;
     expect(projectUrl).toBeDefined();
   });
 
   it('should get a game development project permission', () => {
-    spyOn(projectsService, 'getProjectById').withArgs(0).and.returnValue(gameDevelopmentProject);
-    spyOn(projectDetailsService, 'getProjectDetailByProjectId').withArgs(0).and.returnValue(gameDevelopmentProjectDetail);
+    spyOn(projectsService, 'getProjectById').withArgs("0").and.returnValue(gameDevelopmentProject);
+    spyOn(projectDetailsService, 'getProjectDetailByProjectId').withArgs("0").and.returnValue(gameDevelopmentProjectDetail);
     initComponent();
     const projectPermissions: string  = projectComponent.getProjectPermissions();
     expect(projectPermissions).toBeDefined();
   });
 
   it('should get a web development project permission', () => {
-    spyOn(projectsService, 'getProjectById').withArgs(0).and.returnValue(webDevelopmentProject);
-    spyOn(projectDetailsService, 'getProjectDetailByProjectId').withArgs(0).and.returnValue(webDevelopmentProjectDetail);
+    spyOn(projectsService, 'getProjectById').withArgs("0").and.returnValue(webDevelopmentProject);
+    spyOn(projectDetailsService, 'getProjectDetailByProjectId').withArgs("0").and.returnValue(webDevelopmentProjectDetail);
     initComponent();
     const projectPermissions: string  = projectComponent.getProjectPermissions();
     expect(projectPermissions).toBeDefined();
@@ -116,48 +118,48 @@ describe('ProjectComponent', () => {
 
 
   it('should get an empty project url', () => {
-    spyOn(projectsService, 'getProjectById').withArgs(0).and.returnValue(undefined);
-    spyOn(projectDetailsService, 'getProjectDetailByProjectId').withArgs(0).and.returnValue(undefined);
+    spyOn(projectsService, 'getProjectById').withArgs("0").and.returnValue(of());
+    spyOn(projectDetailsService, 'getProjectDetailByProjectId').withArgs("0").and.returnValue(of());
     initComponent();
     const projectUrl: string  = projectComponent.getProjectUrl() as string;
     expect(projectUrl).toBeDefined();
   });
 
   it('should get an empty project permission', () => {
-    spyOn(projectsService, 'getProjectById').withArgs(0).and.returnValue(undefined);
-    spyOn(projectDetailsService, 'getProjectDetailByProjectId').withArgs(0).and.returnValue(undefined);
+    spyOn(projectsService, 'getProjectById').withArgs("0").and.returnValue(of());
+    spyOn(projectDetailsService, 'getProjectDetailByProjectId').withArgs("0").and.returnValue(of());
     initComponent();
     const projectPermissions: string  = projectComponent.getProjectPermissions();
     expect(projectPermissions).toBeDefined();
   });
 
   it('should get an empty project resolution data width with an undefined project', () => {
-    spyOn(projectsService, 'getProjectById').withArgs(0).and.returnValue(undefined);
-    spyOn(projectDetailsService, 'getProjectDetailByProjectId').withArgs(0).and.returnValue(gameDevelopmentProjectDetail);
+    spyOn(projectsService, 'getProjectById').withArgs("0").and.returnValue(of());
+    spyOn(projectDetailsService, 'getProjectDetailByProjectId').withArgs("0").and.returnValue(gameDevelopmentProjectDetail);
     initComponent();
     const projectDatawidth: string  = projectComponent.getProjectResolutionDataWidth();
     expect(projectDatawidth).toBeDefined();
   });
 
   it('should get an empty project resolution data width with an undefined project and project detail', () => {
-    spyOn(projectsService, 'getProjectById').withArgs(0).and.returnValue(undefined);
-    spyOn(projectDetailsService, 'getProjectDetailByProjectId').withArgs(0).and.returnValue(undefined);
+    spyOn(projectsService, 'getProjectById').withArgs("0").and.returnValue(of());
+    spyOn(projectDetailsService, 'getProjectDetailByProjectId').withArgs("0").and.returnValue(of());
     initComponent();
     const projectDatawidth: string  = projectComponent.getProjectResolutionDataWidth();
     expect(projectDatawidth).toBeDefined();
   });
 
   it('should get an empty project resolution data height with an undefined project', () => {
-    spyOn(projectsService, 'getProjectById').withArgs(0).and.returnValue(undefined);
-    spyOn(projectDetailsService, 'getProjectDetailByProjectId').withArgs(0).and.returnValue(gameDevelopmentProjectDetail);
+    spyOn(projectsService, 'getProjectById').withArgs("0").and.returnValue(of());
+    spyOn(projectDetailsService, 'getProjectDetailByProjectId').withArgs("0").and.returnValue(gameDevelopmentProjectDetail);
     initComponent();
     const projectDataHeight: string  = projectComponent.getProjectResolutionDataHeight();
     expect(projectDataHeight).toBeDefined();
   });
 
   it('should get an empty project resolution data height with an undefined project and project detail', () => {
-    spyOn(projectsService, 'getProjectById').withArgs(0).and.returnValue(undefined);
-    spyOn(projectDetailsService, 'getProjectDetailByProjectId').withArgs(0).and.returnValue(undefined);
+    spyOn(projectsService, 'getProjectById').withArgs("0").and.returnValue(of());
+    spyOn(projectDetailsService, 'getProjectDetailByProjectId').withArgs("0").and.returnValue(of());
     initComponent();
     const projectDataHeight: string  = projectComponent.getProjectResolutionDataHeight();
     expect(projectDataHeight).toBeDefined();
