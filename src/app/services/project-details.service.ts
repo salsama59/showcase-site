@@ -14,11 +14,6 @@ import { ProjectDetail } from '../models/project-detail.model';
 export class ProjectDetailsService {
 
   /**
-   * Project details of project details service
-   */
-  projectDetails: Array<ProjectDetail> = [];
-
-  /**
    * Creates an instance of project details service.
    */
   constructor(private httpClient: HttpClient) {}

@@ -24,7 +24,7 @@ export class Resume {
      * @constructor
      */
     public constructor(
-        public resumeId: number,
+        public resumeId: string,
         public isDefault: boolean,
         public detail: Detail,
         public skills: Skill[],
