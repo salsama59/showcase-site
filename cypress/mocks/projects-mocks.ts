@@ -4,11 +4,11 @@ import { Project } from "src/app/models/project.model";
 
 export class ProjectsMocks {
 
-    public static getProjects(url: string, response: Project[]) {
+    public static getProjects(url: string, response: Project[]): void {
         HttpRequestUtils.interceptHttpGetRequest(url, response, HttpInterceptorAliasConstants.GET_PROJECTS_ALIAS);
     };
 
-    public static getProjectById(url: string, response: Project[], id: string) {
+    public static getProjectById(url: string, response: Project[], id: string): void {
         const projectToGet: Project = <Project> response.find(project => {return project.projectId === id});
         HttpRequestUtils.interceptHttpGetRequest(url + '/' + id, projectToGet, HttpInterceptorAliasConstants.GET_PROJECT_BY_ID_ALIAS);
     };

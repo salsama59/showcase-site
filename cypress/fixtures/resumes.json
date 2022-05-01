@@ -1,0 +1,210 @@
+[
+    {
+        "resumeId": "62409b11411b32c3d7d6ce01",
+        "isDefault": false,
+        "detail": {
+            "title": "The resumee",
+            "person": {
+                "firstName": "My first name",
+                "familyName": "The family name",
+                "birthDate": "2022-03-06T19:19:57.383Z",
+                "contact": {
+                    "email": "myemail@test.com",
+                    "phoneNumber": "0123456974"
+                },
+                "address": {
+                    "street": "Street is here",
+                    "city": "City",
+                    "country": "France",
+                    "postalCode": "59000"
+                }
+            },
+            "socialNetworks": [
+                {
+                    "socialNetworkId": null,
+                    "socialNetworkLinkId": "fbSocialNetwork",
+                    "socialNetworkLinkName": "FB",
+                    "socialNetworkLinkUrl": "https://myFB-link/test",
+                    "socialNetworkImageName": "github.svg"
+                }
+            ]
+        },
+        "skills": [
+            {
+                "label": "Sleep",
+                "level": 3
+            },
+            {
+                "label": "Jump",
+                "level": 2
+            },
+            {
+                "label": "Investigation",
+                "level": 1
+            },
+            {
+                "label": "Bargain",
+                "level": 0
+            }
+        ],
+        "hobbies": [
+            "Doing things 1",
+            "Doing nothing"
+        ],
+        "languages": [
+            {
+                "label": "French",
+                "level": 2
+            },
+            {
+                "label": "English",
+                "level": 1
+            }
+        ],
+        "profile": "My profile",
+        "employmentHistories": [
+            {
+                "jobTitle": "My job title",
+                "company": "Fictive company",
+                "startDate": "2022-03-06T19:19:57.383Z",
+                "endDate": null,
+                "city": "A city",
+                "descriptions": [
+                    "Description 1",
+                    "Description 2"
+                ]
+            },
+            {
+                "jobTitle": "My job title extra",
+                "company": "Fictive company 2",
+                "startDate": "2022-03-06T19:19:57.383Z",
+                "endDate": "2022-03-06T19:19:57.383Z",
+                "city": "Another city",
+                "descriptions": [
+                    "Description extra 1",
+                    "Description extra 2"
+                ]
+            }
+        ],
+        "educations": [
+            {
+                "degree": "The degree",
+                "school": "The school",
+                "startDate": "2022-03-06T19:19:57.383Z",
+                "endDate": "2022-03-06T19:19:57.383Z",
+                "city": "The city",
+                "description": null
+            },
+            {
+                "degree": "The degree 2",
+                "school": "The school 2",
+                "startDate": "2022-03-06T19:19:57.383Z",
+                "endDate": null,
+                "city": "Another city",
+                "description": "Graduated for the sake of the country nothing more nothing less. Everyone was happy about this, except for me."
+            }
+        ]
+    },
+    {
+        "resumeId": "62409b11411b32c3d7d6ce02",
+        "isDefault": true,
+        "detail": {
+            "title": "Another resumee",
+            "person": {
+                "firstName": "My first name",
+                "familyName": "The family name",
+                "birthDate": "2022-03-06T19:19:57.383Z",
+                "contact": {
+                    "email": "myemail@test2.com",
+                    "phoneNumber": "0123456974"
+                },
+                "address": {
+                    "street": "Street is here",
+                    "city": "City",
+                    "country": "France",
+                    "postalCode": "59000"
+                }
+            },
+            "socialNetworks": [
+                {
+                    "socialNetworkId": null,
+                    "socialNetworkLinkId": "rasSocialNetwork",
+                    "socialNetworkLinkName": "RAS",
+                    "socialNetworkLinkUrl": "https://myras-link/test",
+                    "socialNetworkImageName": "linkedin.svg"
+                }
+            ]
+        },
+        "skills": [
+            {
+                "label": "Drink",
+                "level": 3
+            },
+            {
+                "label": "Eat",
+                "level": 2
+            },
+            {
+                "label": "Investigation",
+                "level": 1
+            },
+            {
+                "label": "Bargain",
+                "level": 0
+            }
+        ],
+        "hobbies": [
+            "Doing multiple things",
+            "Doing something new"
+        ],
+        "languages": [
+            {
+                "label": "English",
+                "level": 1
+            }
+        ],
+        "profile": "Another profile what else!?",
+        "employmentHistories": [
+            {
+                "jobTitle": "A new job title",
+                "company": "Fictive company 2",
+                "startDate": "2022-03-06T19:19:57.383Z",
+                "endDate": null,
+                "city": "A city",
+                "descriptions": [
+                    "Description 1",
+                    "Description 2"
+                ]
+            },
+            {
+                "jobTitle": "My job title extra",
+                "company": "Fictive company 2",
+                "startDate": "2022-03-06T19:19:57.383Z",
+                "endDate": "2022-03-06T19:19:57.383Z",
+                "city": "Another city",
+                "descriptions": [
+                    "Description extra 1",
+                    "Description extra 2"
+                ]
+            }
+        ],
+        "educations": [
+            {
+                "degree": "The specific degree",
+                "school": "The unknown school",
+                "startDate": "2022-03-06T19:19:57.383Z",
+                "endDate": "2022-03-06T19:19:57.383Z",
+                "city": "The city",
+                "description": null
+            },
+            {
+                "degree": "The degree 2",
+                "school": "The school 2",
+                "startDate": "2022-03-06T19:19:57.383Z",
+                "endDate": null,
+                "city": "Another city",
+                "description": "Graduated by giving money..."
+            }
+        ]
+    }
+]

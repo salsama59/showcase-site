@@ -18,8 +18,13 @@ export class BackendEndpointConstants {
      public static PROJECTS_ENDPOINT_URI: string = 'projects';
 
      /**
-     * Projects endpoint uri of backend endpoint constants
+     * Project details endpoint uri of backend endpoint constants
      */
      public static PROJECT_DETAILS_ENDPOINT_URI: string = 'project-details';
+
+     /**
+     * Resumes endpoint uri of backend endpoint constants
+     */
+      public static RESUMES_ENDPOINT_URI: string = 'resumes';
 
 }

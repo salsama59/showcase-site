@@ -47,8 +47,10 @@ export class ResumeComponent implements OnInit {
    */
   ngOnInit(): void {
     this.activatedRoute.params.subscribe({next: (params: Params) => {
-      const currentResumeId: number = +params['resumeId'];
-      this.currentResume = this.resumesService.getResumeById(currentResumeId);
+      const currentResumeId: string = params['resumeId'];
+     this.resumesService.getResumeById(currentResumeId).subscribe(resume => {
+      this.currentResume = resume;
+      });
     }});
   }
 

@@ -3,8 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { BackendEndpointConstants } from '../constants/backend-endpoint-constants';
-import { ProjectTechnologyEnum } from '../enums/project-technology-enum';
-import { ProjectTypeEnum } from '../enums/project-type-enum';
 import { Project } from '../models/project.model';
 
 /**
@@ -14,12 +12,6 @@ import { Project } from '../models/project.model';
   providedIn: 'root'
 })
 export class ProjectsService {
-
-  /**
-   * Projects  of projects service
-   * @private
-   */
-  private projects: Project[] = [];
 
   /**
 	 * Player list length changed event

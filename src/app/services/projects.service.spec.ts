@@ -3,7 +3,6 @@ import { TestBed } from '@angular/core/testing';
 import { Observable, of } from 'rxjs';
 import { ProjectTechnologyEnum } from '../enums/project-technology-enum';
 import { ProjectTypeEnum } from '../enums/project-type-enum';
-import { ProjectDetail } from '../models/project-detail.model';
 import { Project } from '../models/project.model';
 
 import { ProjectsService } from './projects.service';

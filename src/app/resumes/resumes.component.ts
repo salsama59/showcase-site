@@ -25,7 +25,7 @@ export class ResumesComponent implements OnInit {
    * Default resume id of resumes component
    * @public
    */
-  defaultResumeId: number = -1;
+  defaultResumeId: string = '';
 
   /**
    * Route constants of home component
@@ -47,9 +47,11 @@ export class ResumesComponent implements OnInit {
    * Initialize the component by fetching the resume list an calculationg the default resume in order to displays it by default
    */
   ngOnInit(): void {
-    this.resumes = this.resumesService.getResumes();
-    const defaultResume: Resume = <Resume>this.resumes.find((resume: Resume, index: number) => resume.isDefault === true);
-    this.defaultResumeId = defaultResume.resumeId;
-    this.router.navigate([this.defaultResumeId, RouteModeConstants.MODE_VIEW_CONSTANT], {relativeTo: this.activatedRoute});
+    this.resumesService.getResumes().subscribe(resumes => {
+      this.resumes = resumes;
+      const defaultResume: Resume = <Resume> this.resumes.find(resume => {return resume.isDefault === true});
+      this.defaultResumeId = defaultResume.resumeId;
+      this.router.navigate([this.defaultResumeId, RouteModeConstants.MODE_VIEW_CONSTANT], {relativeTo: this.activatedRoute});
+    });
   }
 }
