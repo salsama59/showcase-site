@@ -5,4 +5,6 @@ export class HttpInterceptorAliasConstants {
     public static GET_PROJECT_BY_ID_ALIAS : string = 'getProjectById';
     public static GET_PROJECT_DETAILS_LIST : string = 'getProjectDetailsList';
     public static GET_PROJECT_DETAILS_BY_PROJECT_ID : string = 'getProjectDetailsByProjectId';
+    public static GET_RESUMES : string = 'getResumes';
+    public static GET_RESUME_BY_ID : string = 'getResumeById';
 }

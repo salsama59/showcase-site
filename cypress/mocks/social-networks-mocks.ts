@@ -4,7 +4,7 @@ import { SocialNetwork } from "src/app/models/social-network.model";
 
 export class SocialNetworksMocks {
 
-    public static getSocialNetworks(url: string, response: SocialNetwork[]) {
+    public static getSocialNetworks(url: string, response: SocialNetwork[]): void {
         HttpRequestUtils.interceptHttpGetRequest(url, response, HttpInterceptorAliasConstants.GET_SOCIAL_NETWORKS_ALIAS);
     };
 
