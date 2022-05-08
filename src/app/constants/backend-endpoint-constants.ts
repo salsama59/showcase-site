@@ -25,6 +25,11 @@ export class BackendEndpointConstants {
      /**
      * Resumes endpoint uri of backend endpoint constants
      */
-      public static RESUMES_ENDPOINT_URI: string = 'resumes';
+     public static RESUMES_ENDPOINT_URI: string = 'resumes';
+
+      /**
+     * Translations endpoint uri of backend endpoint constants
+     */
+     public static TRANSLATIONS_ENDPOINT_URI: string = 'translations';
 
 }

@@ -14,6 +14,8 @@ import { ProjectsMocks } from "cypress/mocks/projects-mocks";
 import { Project } from "src/app/models/project.model";
 import { ProjectDetailsMocks } from "cypress/mocks/project-details-mocks";
 import { ProjectDetail } from "src/app/models/project-detail.model";
+import { Translation } from "src/app/models/translation.model";
+import { TranslationsMocks } from "cypress/mocks/translations-mocks";
 
 describe('The Home page end to end test', () => {
 
@@ -30,14 +32,19 @@ describe('The Home page end to end test', () => {
     cy.fixture<Project[]>('projects.json').then(projects => {
       ProjectsMocks.getProjectById(environment.showcaseBackendUrl + BackendEndpointConstants.PROJECTS_ENDPOINT_URI, projects, '624736e7b97ff99dc964e4ca');
     });
-
     cy.fixture<ProjectDetail[]>('project-details.json').then(projectDetails => {
         ProjectDetailsMocks.getProjectDetailsByProjectId(environment.showcaseBackendUrl + BackendEndpointConstants.PROJECT_DETAILS_ENDPOINT_URI, projectDetails, '624736e7b97ff99dc964e4ca');
     });
+
+    cy.fixture<Translation[]>('translations.json').then(translations => {
+      TranslationsMocks.getTranslationsByCurrentLocale(environment.showcaseBackendUrl + BackendEndpointConstants.TRANSLATIONS_ENDPOINT_URI, translations);
+    });
+    
     cy.visit('/');
     cy.wait('@' + HttpInterceptorAliasConstants.GET_NEWS_ALIAS);
     cy.wait('@' + HttpInterceptorAliasConstants.GET_SOCIAL_NETWORKS_ALIAS);
     cy.wait('@' + HttpInterceptorAliasConstants.GET_PROJECTS_ALIAS);
+    cy.wait('@' + HttpInterceptorAliasConstants.GET_TRANSLATIONS_BY_CURRENT_LOCALE);
   });
 
   it('Visits the home page', () => {

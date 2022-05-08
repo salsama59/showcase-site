@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 import { RouteModeConstants } from '../constants/route-mode-constants';
 import { map, catchError, tap } from "rxjs/operators";
 import { Observable, of } from 'rxjs';
+import { TranslationsService } from '../services/translations.service';
 
 /**
  * Home Component class responsible for the home page management.
@@ -60,14 +61,16 @@ export class HomeComponent implements OnInit {
    * @param projectUtilsService the project utility service
    * @param newsService the news service
    * @param router the router
+   * @param translationsService the translations service
    * @public
    */
-  constructor(private projectsService: ProjectsService, public projectUtilsService: ProjectUtilsService, private newsService: NewsService, private router: Router) { }
+  constructor(private projectsService: ProjectsService, public projectUtilsService: ProjectUtilsService, private newsService: NewsService, private router: Router, public translationsService: TranslationsService) { }
 
   /**
    * Initialize the recomended project list, the current recommended project description and the news list
    */
   ngOnInit(): void {
+    console.log("For key => home.news.section.title value is : " + this.translationsService.get('home.news.section.title'))
     this.recommendedProjects = this.getRecommendedProjects();
     this.recommendedProjects.subscribe(projects => {
       this.recommendedProjectsTodisplay = projects;

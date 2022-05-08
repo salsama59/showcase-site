@@ -1,0 +1,20 @@
+[
+    {
+        "translationId": "62485571b97ff99dc964e4e7",
+        "languageCode": "fr",
+        "translationKey": "home.news.section.title",
+        "translationValue": "Voici les nouveautés"
+    },
+    {
+        "translationId": "62485571b97ff99dc964e4e8",
+        "languageCode": "fr",
+        "translationKey": "home.projects.section.title",
+        "translationValue": "Projets à la une"
+    },
+    {
+        "translationId": "62485571b97ff99dc964e4e9",
+        "languageCode": "fr",
+        "translationKey": "resumes.page.title",
+        "translationValue": "Mes CV"
+    }
+]
