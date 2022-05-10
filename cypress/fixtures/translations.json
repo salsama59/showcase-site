@@ -1,20 +1,272 @@
 [
     {
-        "translationId": "62485571b97ff99dc964e4e7",
+        "translationId": "627aca13f322961b15ba736f",
         "languageCode": "fr",
-        "translationKey": "home.news.section.title",
-        "translationValue": "Voici les nouveautés"
+        "translationKey": "home.page.title",
+        "translationValue": "Bienvenue sur mon site vitrine"
     },
     {
-        "translationId": "62485571b97ff99dc964e4e8",
+        "translationId": "627aca13f322961b15ba7370",
         "languageCode": "fr",
-        "translationKey": "home.projects.section.title",
-        "translationValue": "Projets à la une"
+        "translationKey": "home.page.news.section.title",
+        "translationValue": "Voici les nouveautés :"
     },
     {
-        "translationId": "62485571b97ff99dc964e4e9",
+        "translationId": "627aca13f322961b15ba7371",
+        "languageCode": "fr",
+        "translationKey": "home.page.recommended.projects.section.title",
+        "translationValue": "Projets à la une : "
+    },
+    {
+        "translationId": "627aca13f322961b15ba7372",
+        "languageCode": "fr",
+        "translationKey": "home.page.introduction.section.title",
+        "translationValue": "Introduction :"
+    },
+    {
+        "translationId": "627aca13f322961b15ba7373",
+        "languageCode": "fr",
+        "translationKey": "home.page.introduction.section.list.text",
+        "translationValue": "Ce site est séparé en 3 sections : "
+    },
+    {
+        "translationId": "627aca13f322961b15ba7374",
+        "languageCode": "fr",
+        "translationKey": "home.page.introduction.section.list.element1",
+        "translationValue": "La page d'accueil"
+    },
+    {
+        "translationId": "627aca13f322961b15ba7375",
+        "languageCode": "fr",
+        "translationKey": "home.page.introduction.section.list.element2",
+        "translationValue": "La page des projets"
+    },
+    {
+        "translationId": "627aca13f322961b15ba7376",
+        "languageCode": "fr",
+        "translationKey": "home.page.introduction.section.list.element3",
+        "translationValue": "La page des CV"
+    },
+    {
+        "translationId": "627aca13f322961b15ba7377",
+        "languageCode": "fr",
+        "translationKey": "home.page.introduction.section.list.explanation",
+        "translationValue": "La section de la page d'accueil affichera les nouveautés du site et présentera également une sélection des derniers projets sur lesquels je travaille. Pour la partie CV vous pourrez voir mon cursus et mes compétences maîtrisées, enfin la section projets vous permettra de parcourir en détail mes différents projets de développement web ou de jeux, certains projets sont testables mais d'autres non."
+    },
+    {
+        "translationId": "627aca13f322961b15ba7378",
+        "languageCode": "fr",
+        "translationKey": "home.page.news.section.text",
+        "translationValue": "Voici les évènements du site qui on lieux ce mois-ci :"
+    },
+    {
+        "translationId": "627aca13f322961b15ba7379",
+        "languageCode": "fr",
+        "translationKey": "header.application.name.text",
+        "translationValue": "Showcase"
+    },
+    {
+        "translationId": "627aca13f322961b15ba737a",
+        "languageCode": "fr",
+        "translationKey": "header.home.link.text",
+        "translationValue": "Accueil"
+    },
+    {
+        "translationId": "627aca13f322961b15ba737b",
+        "languageCode": "fr",
+        "translationKey": "header.resumes.link.text",
+        "translationValue": "CV"
+    },
+    {
+        "translationId": "627aca13f322961b15ba737c",
+        "languageCode": "fr",
+        "translationKey": "header.projects.link.text",
+        "translationValue": "Projets"
+    },
+    {
+        "translationId": "627aca13f322961b15ba737d",
+        "languageCode": "fr",
+        "translationKey": "footer.follow.text",
+        "translationValue": "Me suivre :"
+    },
+    {
+        "translationId": "627aca13f322961b15ba737e",
         "languageCode": "fr",
         "translationKey": "resumes.page.title",
         "translationValue": "Mes CV"
+    },
+    {
+        "translationId": "627aca13f322961b15ba737f",
+        "languageCode": "fr",
+        "translationKey": "resumes.page.element.social.network.link.title",
+        "translationValue": "Liens"
+    },
+    {
+        "translationId": "627aca13f322961b15ba7380",
+        "languageCode": "fr",
+        "translationKey": "resumes.page.element.skills.title",
+        "translationValue": "Compétences"
+    },
+    {
+        "translationId": "627aca13f322961b15ba7381",
+        "languageCode": "fr",
+        "translationKey": "resumes.page.element.languages.title",
+        "translationValue": "Langues"
+    },
+    {
+        "translationId": "627aca13f322961b15ba7382",
+        "languageCode": "fr",
+        "translationKey": "resumes.page.element.profile.title",
+        "translationValue": "Profil"
+    },
+    {
+        "translationId": "627aca13f322961b15ba7383",
+        "languageCode": "fr",
+        "translationKey": "resumes.page.element.employment.history.title",
+        "translationValue": "Expériences professionnelles"
+    },
+    {
+        "translationId": "627aca13f322961b15ba7384",
+        "languageCode": "fr",
+        "translationKey": "resumes.page.element.education.title",
+        "translationValue": "Cursus scolaire"
+    },
+    {
+        "translationId": "627aca13f322961b15ba7385",
+        "languageCode": "fr",
+        "translationKey": "resumes.page.element.hobbies.title",
+        "translationValue": "Centre d'intérêts"
+    },
+    {
+        "translationId": "627aca13f322961b15ba7386",
+        "languageCode": "fr",
+        "translationKey": "projects.page.title",
+        "translationValue": "Liste des projets"
+    },
+    {
+        "translationId": "627aca13f322961b15ba7387",
+        "languageCode": "fr",
+        "translationKey": "projects.page.filters.title",
+        "translationValue": "Filtres"
+    },
+    {
+        "translationId": "627aca13f322961b15ba7388",
+        "languageCode": "fr",
+        "translationKey": "projects.page.filters.types.title",
+        "translationValue": "Types de projet"
+    },
+    {
+        "translationId": "627aca13f322961b15ba7389",
+        "languageCode": "fr",
+        "translationKey": "projects.page.filters.technologies.title",
+        "translationValue": "Thechnologies"
+    },
+    {
+        "translationId": "627aca13f322961b15ba738a",
+        "languageCode": "fr",
+        "translationKey": "projects.page.list.tags.title",
+        "translationValue": "Mots clés :"
+    },
+    {
+        "translationId": "627aca13f322961b15ba738b",
+        "languageCode": "fr",
+        "translationKey": "projects.page.filters.types.web.development",
+        "translationValue": "Developpement web"
+    },
+    {
+        "translationId": "627aca13f322961b15ba738c",
+        "languageCode": "fr",
+        "translationKey": "projects.page.filters.types.game.development",
+        "translationValue": "Developpement de jeux"
+    },
+    {
+        "translationId": "627aca13f322961b15ba738d",
+        "languageCode": "fr",
+        "translationKey": "projects.page.list.label.web.development",
+        "translationValue": "Projet de developpement web"
+    },
+    {
+        "translationId": "627aca13f322961b15ba738e",
+        "languageCode": "fr",
+        "translationKey": "projects.page.list.label.game.development",
+        "translationValue": "Projet de developpement de jeux"
+    },
+    {
+        "translationId": "627aca13f322961b15ba738f",
+        "languageCode": "fr",
+        "translationKey": "projects.page.sort.options.label.creation.date",
+        "translationValue": "Date de création"
+    },
+    {
+        "translationId": "627aca13f322961b15ba7390",
+        "languageCode": "fr",
+        "translationKey": "projects.page.sort.options.label.project.type",
+        "translationValue": "Type de projet"
+    },
+    {
+        "translationId": "627aca13f322961b15ba7391",
+        "languageCode": "fr",
+        "translationKey": "projects.page.sort.options.label.project.title",
+        "translationValue": "Titre de projet"
+    },
+    {
+        "translationId": "627aca13f322961b15ba7392",
+        "languageCode": "fr",
+        "translationKey": "projects.page.sort.options.label.last.modified",
+        "translationValue": "Date de modification"
+    },
+    {
+        "translationId": "627aca13f322961b15ba7393",
+        "languageCode": "fr",
+        "translationKey": "projects.page.sort.options.mode.ascending",
+        "translationValue": "CROISSANT"
+    },
+    {
+        "translationId": "627aca13f322961b15ba7394",
+        "languageCode": "fr",
+        "translationKey": "projects.page.sort.options.mode.descending",
+        "translationValue": "DECROISSANT"
+    },
+    {
+        "translationId": "627aca13f322961b15ba7395",
+        "languageCode": "fr",
+        "translationKey": "project.page.introduction.title",
+        "translationValue": "Introduction :"
+    },
+    {
+        "translationId": "627aca13f322961b15ba7396",
+        "languageCode": "fr",
+        "translationKey": "project.page.instructions.title",
+        "translationValue": "Instructions :"
+    },
+    {
+        "translationId": "627aca13f322961b15ba7397",
+        "languageCode": "fr",
+        "translationKey": "project.page.test.project.title",
+        "translationValue": "Tester le projet :"
+    },
+    {
+        "translationId": "627aca13f322961b15ba7398",
+        "languageCode": "fr",
+        "translationKey": "projects.page.list.project.access.button.label",
+        "translationValue": "Aller voir le projet"
+    },
+    {
+        "translationId": "627aca13f322961b15ba7399",
+        "languageCode": "fr",
+        "translationKey": "pagination.previous.button.label",
+        "translationValue": "Précédent"
+    },
+    {
+        "translationId": "627aca13f322961b15ba739a",
+        "languageCode": "fr",
+        "translationKey": "pagination.next.button.label",
+        "translationValue": "Suivant"
+    },
+    {
+        "translationId": "627aca13f322961b15ba739b",
+        "languageCode": "fr",
+        "translationKey": "project.page.web.link.text",
+        "translationValue": "Aller vers la page du projet"
     }
 ]
