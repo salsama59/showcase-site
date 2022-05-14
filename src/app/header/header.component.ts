@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { HeaderTranslationsConstants } from '../constants/header-translations-constants';
 import { RouteConstants } from '../constants/route-constants';
+import { TranslationsService } from '../services/translations.service';
 
 /**
  * Header component class managing the header element behaviour
@@ -18,7 +20,15 @@ export class HeaderComponent {
   public routeConstants = RouteConstants;
 
   /**
-   * Creates an instance of header component.
+   * Header translations constants of header component
    */
-  constructor() { }
+  public headerTranslationsConstants = HeaderTranslationsConstants;
+
+  /**
+   * Creates an instance of header component.
+   * @param translationsService the translation service
+   * @public
+   * @constructor
+   */
+  constructor(public translationsService: TranslationsService) { }
 }

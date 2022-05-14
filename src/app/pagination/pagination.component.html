@@ -11,7 +11,7 @@
 				routerLink="{{targetLink? targetLink : ['./']}}"
 				[queryParams]="{page: currentPageNumber - 1}"
 				(click)="onPageLinkClick(currentPageNumber - 1)"
-				>Previous</a
+				>{{translationsService.get(paginationTranslationsConstants.PAGINATION_PREVIOUS_BUTTON_LABEL_KEY)}}</a
 			>
 		</li>
 		<li
@@ -38,7 +38,7 @@
 				routerLink="{{targetLink? targetLink : ['./']}}"
 				[queryParams]="{page: currentPageNumber + 1}"
 				(click)="onPageLinkClick(currentPageNumber + 1)"
-				>Next</a
+				>{{translationsService.get(paginationTranslationsConstants.PAGINATION_NEXT_BUTTON_LABEL_KEY)}}</a
 			>
 		</li>
 	</ul>

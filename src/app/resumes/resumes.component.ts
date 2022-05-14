@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ResumesTranslationsConstants } from '../constants/resumes-translations-constants';
 import { RouteConstants } from '../constants/route-constants';
 import { RouteModeConstants } from '../constants/route-mode-constants';
 import { Resume } from '../models/resume.model';
 import { ResumesService } from '../services/resumes.service';
+import { TranslationsService } from '../services/translations.service';
 
 /**
  * Resumes component responsible for displaying the resume list
@@ -33,15 +35,22 @@ export class ResumesComponent implements OnInit {
    */
    public routeModeConstants = RouteModeConstants;
 
+   /**
+    * Resumes translations constants of resumes component
+    * @public
+    */
+   public resumesTranslationsConstants = ResumesTranslationsConstants;
+
   /**
    * Creates an instance of resumes component.
    * @param resumesService the resumes service
    * @param router the router
    * @param activatedRoute the activated route
+   * @param translationsService the translation service
    * @public
    * @constructor
    */
-  constructor(private resumesService: ResumesService, private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private resumesService: ResumesService, private router: Router, private activatedRoute: ActivatedRoute, public translationsService: TranslationsService) { }
 
   /**
    * Initialize the component by fetching the resume list an calculationg the default resume in order to displays it by default

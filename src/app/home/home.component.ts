@@ -10,9 +10,10 @@ import { ProjectUtilsService } from '../utils/project-utils.service';
 import moment  from 'moment';
 import { Router } from '@angular/router';
 import { RouteModeConstants } from '../constants/route-mode-constants';
-import { map, catchError, tap } from "rxjs/operators";
+import { map } from "rxjs/operators";
 import { Observable, of } from 'rxjs';
 import { TranslationsService } from '../services/translations.service';
+import { HomeTranslationsConstants } from '../constants/home-translations-constants';
 
 /**
  * Home Component class responsible for the home page management.
@@ -55,6 +56,12 @@ export class HomeComponent implements OnInit {
    */
    public newsType = NewsType;
 
+
+   /**
+    * Home translations constants of home component
+    */
+   public homeTranslationsConstants = HomeTranslationsConstants;
+
   /**
    * Creates an instance of home component.
    * @param projectsService the projects service
@@ -70,7 +77,6 @@ export class HomeComponent implements OnInit {
    * Initialize the recomended project list, the current recommended project description and the news list
    */
   ngOnInit(): void {
-    console.log("For key => home.news.section.title value is : " + this.translationsService.get('home.news.section.title'))
     this.recommendedProjects = this.getRecommendedProjects();
     this.recommendedProjects.subscribe(projects => {
       this.recommendedProjectsTodisplay = projects;

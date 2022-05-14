@@ -2,7 +2,7 @@
   <nav class="navbar fixed-top navbar-expand-lg navbar-ligth">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">
-        <img src="assets/images/crown_v1.png" alt="" width="24" height="24">Showcase</a>
+        <img src="assets/images/crown_v1.png" alt="" width="24" height="24">{{translationsService.get(headerTranslationsConstants.HEADER_APPLICATION_NAME_TEXT_KEY)}}</a>
       <button
 			class="navbar-toggler"
 			type="button"
@@ -19,16 +19,16 @@
           <li class="nav-item">
             <a id="homePageLink" class="nav-link" aria-current="page" routerLink="{{ routeConstants.HOME_ROUTE_PATH }}"
             routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }">Home</a>
+            [routerLinkActiveOptions]="{ exact: true }">{{translationsService.get(headerTranslationsConstants.HEADER_HOME_LINK_TEXT_KEY)}}</a>
           </li>
           <li class="nav-item">
             <a id="resumePageLink" class="nav-link" routerLink="{{ routeConstants.RESUMES_ROUTE_PATH }}"
-            routerLinkActive="active">Resumes</a>
+            routerLinkActive="active">{{translationsService.get(headerTranslationsConstants.HEADER_RESUMES_LINK_TEXT_KEY)}}</a>
           </li>
           <li class="nav-item">
             <a id="projectsPageLink" class="nav-link" routerLink="{{ routeConstants.PROJECTS_ROUTE_PATH }}"
             routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }">Projects</a>
+            [routerLinkActiveOptions]="{ exact: true }">{{translationsService.get(headerTranslationsConstants.HEADER_PROJECTS_LINK_TEXT_KEY)}}</a>
           </li>
         </ul>
       </div>

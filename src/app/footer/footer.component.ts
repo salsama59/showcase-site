@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import pkg from 'package.json';
 import { Observable } from 'rxjs';
+import { FooterTranslationsConstants } from '../constants/footer-translations-constants';
 import { SocialNetwork } from '../models/social-network.model';
 import { SocialNetworksService } from '../services/social-networks.service';
+import { TranslationsService } from '../services/translations.service';
 
 /**
  * Class representing the footer component.
@@ -39,11 +41,20 @@ export class FooterComponent implements OnInit {
 	 */
 	public socialNetworksToDisplay: Observable<SocialNetwork[]> = new Observable<SocialNetwork[]>();
 
+
+	/**
+	 * Footer translations constants of footer component
+	 */
+	public footerTranslationsConstants = FooterTranslationsConstants;
+
 	/**
 	 * Creates an instance of footer component.
 	 * @param socialNetworkService the social networks service
+	 * @param translationsService the translation service
+	 * @public
+	 * @constructor
 	 */
-	constructor(private socialNetworkService: SocialNetworksService){}
+	constructor(private socialNetworkService: SocialNetworksService, public translationsService: TranslationsService){}
 
 	/**
 	 * Initialize the copyright date for display purpose.

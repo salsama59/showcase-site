@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { ResumesTranslationsConstants } from 'src/app/constants/resumes-translations-constants';
+import { TranslationsService } from 'src/app/services/translations.service';
 import { LanguageLevelType } from '../../enums/language-level-type';
 import { SkillLevelType } from '../../enums/skill-level-type';
 import { Resume } from '../../models/resume.model';
@@ -35,12 +37,17 @@ export class ResumeComponent implements OnInit {
   public languageLevelType = LanguageLevelType;
 
   /**
+   * Resumes translations constants of resume component
+   */
+  public resumesTranslationsConstants = ResumesTranslationsConstants;
+
+  /**
    * Creates an instance of resume component.
    * @param resumesService the resumes service
    * @param enumUtilsService the enum utility service
    * @param activatedRoute  the activated route
    */
-  constructor(private resumesService: ResumesService, public enumUtilsService: EnumUtilsService, private activatedRoute: ActivatedRoute) { }
+  constructor(private resumesService: ResumesService, public enumUtilsService: EnumUtilsService, private activatedRoute: ActivatedRoute, public translationsService: TranslationsService) { }
 
   /**
    * Initialize the component by subscribing to the route params and fetching the resume to diplay given the resume id

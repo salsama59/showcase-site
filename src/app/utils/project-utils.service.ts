@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
+import { ProjectsTranslationsConstants } from '../constants/projects-translations-constants';
 import { TechnologyNameConstants } from '../constants/technology-name-constants';
 import { ProjectTechnologyEnum } from '../enums/project-technology-enum';
 import { ProjectTypeEnum } from '../enums/project-type-enum';
 import { SortOrder } from '../enums/sort-order';
 import { Project } from '../models/project.model';
+import { TranslationsService } from '../services/translations.service';
 
 /**
  * Service class providing utility methods to manage project sorting 
@@ -13,10 +15,19 @@ import { Project } from '../models/project.model';
 })
 export class ProjectUtilsService {
 
+
   /**
-   * Creates an instance of project utils service.
+   * Projects translations constants of project utils service
    */
-  constructor() { }
+  public projectsTranslationsConstants = ProjectsTranslationsConstants;
+
+  /**
+   * @public
+   * @constructor
+   * Creates an instance of project utils service.
+   * @param translationsService the translation service
+   */
+  constructor(public translationsService: TranslationsService) { }
 
 
   /**
@@ -71,10 +82,10 @@ export class ProjectUtilsService {
 
     switch (projectType) {
       case ProjectTypeEnum.WEB_DEVELOPEMENT:
-        projectTypeLabel = "Web development project";
+        projectTypeLabel = this.translationsService.get(this.projectsTranslationsConstants.PROJECTS_PAGE_LIST_LABEL_WEB_DEVELOPMENT_KEY);
         break;
       case ProjectTypeEnum.GAME_DEVELOPEMENT:
-        projectTypeLabel = "Game development project";
+        projectTypeLabel = this.translationsService.get(this.projectsTranslationsConstants.PROJECTS_PAGE_LIST_LABEL_GAME_DEVELOPMENT_KEY);
         break;
     }
 

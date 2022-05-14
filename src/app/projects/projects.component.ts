@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ProjectsTranslationsConstants } from '../constants/projects-translations-constants';
 import { RouteModeConstants } from '../constants/route-mode-constants';
 import { ProjectSortType } from '../enums/project-sort-type';
 import { ProjectTechnologyEnum } from '../enums/project-technology-enum';
@@ -9,6 +10,7 @@ import { ProjectTechnologyFilter } from '../interfaces/project-technology-filter
 import { ProjectTypeFilter } from '../interfaces/project-type-filter';
 import { Project } from '../models/project.model';
 import { ProjectsService } from '../services/projects.service';
+import { TranslationsService } from '../services/translations.service';
 import { ProjectUtilsService } from '../utils/project-utils.service';
 
 /**
@@ -68,7 +70,7 @@ export class ProjectsComponent implements OnInit {
    * Sort label of projects component
    * @public
    */
-  public sortLabel: string = "ASC";
+  public sortLabel: string = '';
 
   /**
 	 * Maximum projects per page count
@@ -81,14 +83,21 @@ export class ProjectsComponent implements OnInit {
 	private currentProjectPage: number = 1;
 
   /**
+   * Projects translations constants of projects component
+   */
+  public projectsTranslationsConstants = ProjectsTranslationsConstants;
+
+  /**
    * Creates an instance of projects component.
    * @constructor
+   * @public
    * @param projectsService  the projects service
    * @param router the router
    * @param activatedRoute the activated route
    * @param projectUtilsService the project utility service
+   * @param translationsService the translation service
    */
-  constructor(public projectsService: ProjectsService, private router: Router, private activatedRoute: ActivatedRoute, public projectUtilsService: ProjectUtilsService) { }
+  constructor(public projectsService: ProjectsService, private router: Router, private activatedRoute: ActivatedRoute, public projectUtilsService: ProjectUtilsService, public translationsService: TranslationsService) { }
 
   /**
    * Initialize the project list to diplay on the page.
@@ -98,6 +107,7 @@ export class ProjectsComponent implements OnInit {
    * @public
    */
   ngOnInit(): void {
+    this.sortLabel = this.translationsService.get(this.projectsTranslationsConstants.PROJECTS_PAGE_SORT_OPTIONS_MODE_ASCENDING_KEY);
     this.projectsService.getProjects().subscribe(projects => {
       this.projectListToDisplay = projects;
       this.originalProjectList = projects;
@@ -135,14 +145,14 @@ export class ProjectsComponent implements OnInit {
     this.projectTypeFilters.push({
       filterId: "webDevelopmentFilter",
       projectType: ProjectTypeEnum.WEB_DEVELOPEMENT,
-      filterName: "Web development",
+      filterName: this.translationsService.get(this.projectsTranslationsConstants.PROJECTS_PAGE_FILTERS_TYPES_WEB_DEVELOPMENT_KEY),
       isFilterActive: true
     });
 
     this.projectTypeFilters.push({
       filterId: "gameDevelopmentFilter",
       projectType: ProjectTypeEnum.GAME_DEVELOPEMENT,
-      filterName: "Game development",
+      filterName: this.translationsService.get(this.projectsTranslationsConstants.PROJECTS_PAGE_FILTERS_TYPES_GAME_DEVELOPMENT_KEY),
       isFilterActive: true
     });
   }
@@ -280,11 +290,11 @@ export class ProjectsComponent implements OnInit {
     switch (this.userSortOrderChoice) {
       case SortOrder.ASCENDING:
         this.userSortOrderChoice = SortOrder.DESCENDING;
-        this.sortLabel = "DESC";
+        this.sortLabel = this.translationsService.get(this.projectsTranslationsConstants.PROJECTS_PAGE_SORT_OPTIONS_MODE_DESCENDING_KEY);
       break;
       case SortOrder.DESCENDING:
         this.userSortOrderChoice = SortOrder.ASCENDING;
-        this.sortLabel = "ASC";
+        this.sortLabel = this.translationsService.get(this.projectsTranslationsConstants.PROJECTS_PAGE_SORT_OPTIONS_MODE_ASCENDING_KEY);
       break;
     }
     this.onSortChoiceChange(true);
