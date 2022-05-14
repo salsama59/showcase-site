@@ -69,6 +69,9 @@ export class PaginationComponent implements OnInit, OnDestroy {
 	 */
 	paginatedDataSubscription!: Subscription;
 
+	/**
+	 * Pagination translations constants of pagination component
+	 */
 	public paginationTranslationsConstants = PaginationTranslationsConstants;
 
 	/**

@@ -46,6 +46,7 @@ export class ResumeComponent implements OnInit {
    * @param resumesService the resumes service
    * @param enumUtilsService the enum utility service
    * @param activatedRoute  the activated route
+   * @param translationsService the translation service
    */
   constructor(private resumesService: ResumesService, public enumUtilsService: EnumUtilsService, private activatedRoute: ActivatedRoute, public translationsService: TranslationsService) { }
 

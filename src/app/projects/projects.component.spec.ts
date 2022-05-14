@@ -19,6 +19,7 @@ import { ProjectsComponent } from './projects.component';
 import { ResumesComponent } from '../resumes/resumes.component';
 import { ResumeComponent } from '../resumes/resume/resume.component';
 import { HttpClient } from '@angular/common/http';
+import { TranslationsService } from '../services/translations.service';
 
 describe('ProjectsComponent', () => {
   let projectsComponent: ProjectsComponent;
@@ -26,6 +27,7 @@ describe('ProjectsComponent', () => {
   let activatedRoute: ActivatedRoute;
 	let router: Router;
   let httpClientSpy: jasmine.SpyObj<HttpClient>;
+  let translationsServiceSpy: jasmine.SpyObj<TranslationsService> = jasmine.createSpyObj('TranslationsService', ['get']);
 
   beforeEach(async () => {
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
@@ -68,7 +70,8 @@ describe('ProjectsComponent', () => {
           }
         },
 				{provide: ProjectsService},
-        { provide: HttpClient, useValue: httpClientSpy }
+        { provide: HttpClient, useValue: httpClientSpy },
+        { provide: TranslationsService, useValue: translationsServiceSpy}
 			],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
@@ -86,6 +89,22 @@ describe('ProjectsComponent', () => {
     ]);
 
     httpClientSpy.get.and.returnValue(expectedProjects);
+
+    translationsServiceSpy.get.and.callFake((key) => {
+      if(key === 'projects.page.title') {
+        return 'Project list page';
+      }
+
+      if(key === 'projects.page.sort.options.mode.ascending') {
+        return 'ASC';
+      }
+
+      if(key === 'projects.page.sort.options.mode.descending') {
+        return 'DESC';
+      }
+      return '';
+    });
+
     fixture = TestBed.createComponent(ProjectsComponent);
     projectsComponent = fixture.componentInstance;
     
