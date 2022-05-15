@@ -14,6 +14,31 @@ export class HomeTranslationsConstants {
     public static HOME_PAGE_NEWS_SECTION_TITLE_KEY: string = 'home.page.news.section.title';
 
     /**
+     * Home page news section duration text key of home translations constants
+     */
+    public static HOME_PAGE_NEWS_SECTION_DURATION_TEXT_KEY: string = 'home.page.news.section.duration.text';
+
+    /**
+     * Home page news section duration details months text key of home translations constants
+     */
+    public static HOME_PAGE_NEWS_SECTION_DURATION_DETAILS_MONTHS_TEXT_KEY: string = 'home.page.news.section.duration.details.months.text';
+
+    /**
+     * Home page news section duration details days text key of home translations constants
+     */
+    public static HOME_PAGE_NEWS_SECTION_DURATION_DETAILS_DAYS_TEXT_KEY: string = 'home.page.news.section.duration.details.days.text';
+
+    /**
+     * Home page news section duration details hours text key of home translations constants
+     */
+    public static HOME_PAGE_NEWS_SECTION_DURATION_DETAILS_HOURS_TEXT_KEY: string = 'home.page.news.section.duration.details.hours.text';
+
+    /**
+     * Home page news section duration details minutes text key of home translations constants
+     */
+    public static HOME_PAGE_NEWS_SECTION_DURATION_DETAILS_MINUTES_TEXT_KEY: string = 'home.page.news.section.duration.details.minutes.text';
+
+    /**
      * Home page recommended projects section title key of home translations constants
      */
     public static HOME_PAGE_RECOMMENDED_PROJECTS_SECTION_TITLE_KEY: string = 'home.page.recommended.projects.section.title';

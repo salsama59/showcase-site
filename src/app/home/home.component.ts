@@ -14,6 +14,7 @@ import { map } from "rxjs/operators";
 import { Observable, of } from 'rxjs';
 import { TranslationsService } from '../services/translations.service';
 import { HomeTranslationsConstants } from '../constants/home-translations-constants';
+import { LocaleService } from '../services/locale.service';
 
 /**
  * Home Component class responsible for the home page management.
@@ -69,9 +70,10 @@ export class HomeComponent implements OnInit {
    * @param newsService the news service
    * @param router the router
    * @param translationsService the translations service
+   * @param localeService the locale service
    * @public
    */
-  constructor(private projectsService: ProjectsService, public projectUtilsService: ProjectUtilsService, private newsService: NewsService, private router: Router, public translationsService: TranslationsService) { }
+  constructor(private projectsService: ProjectsService, public projectUtilsService: ProjectUtilsService, private newsService: NewsService, private router: Router, public translationsService: TranslationsService, private localeService: LocaleService) { }
 
   /**
    * Initialize the recomended project list, the current recommended project description and the news list
@@ -148,22 +150,22 @@ export class HomeComponent implements OnInit {
     
     let durationRepresentation: string = '';
     const millisecondDuration: number = new Date().getTime() - startDate.getTime(); 
-    const duration: moment.Duration = moment.duration(millisecondDuration, "milliseconds");
+    const duration: moment.Duration = moment.duration(millisecondDuration, "milliseconds").locale(this.localeService.getCurrentLocale());
 
     if(duration.months() > 0){
-      durationRepresentation += duration.months() + ' month(s) ';
+      durationRepresentation += duration.months() + this.translationsService.get(this.homeTranslationsConstants.HOME_PAGE_NEWS_SECTION_DURATION_DETAILS_MONTHS_TEXT_KEY);
     }
 
     if(duration.days() > 0){
-      durationRepresentation += duration.days() + ' day(s) ';
+      durationRepresentation += duration.days() + this.translationsService.get(this.homeTranslationsConstants.HOME_PAGE_NEWS_SECTION_DURATION_DETAILS_DAYS_TEXT_KEY);
     }
 
     if(duration.hours() > 0){
-      durationRepresentation += duration.hours() + ' hour(s) ';
+      durationRepresentation += duration.hours() + this.translationsService.get(this.homeTranslationsConstants.HOME_PAGE_NEWS_SECTION_DURATION_DETAILS_HOURS_TEXT_KEY);
     }
 
     if(duration.minutes() > 0){
-      durationRepresentation += duration.minutes() + ' minute(s) ';
+      durationRepresentation += duration.minutes() + this.translationsService.get(this.homeTranslationsConstants.HOME_PAGE_NEWS_SECTION_DURATION_DETAILS_MINUTES_TEXT_KEY);
     }
 
     return durationRepresentation.trim();

@@ -24,7 +24,7 @@
     </h3>
     <p class="mb-3">{{translationsService.get(homeTranslationsConstants.HOME_PAGE_NEWS_SECTION_TEXT_KEY)}}</p>
     <div *ngFor="let news of newsListToDisplay | async" class="alert news-element-block" [ngClass]="{'alert-primary': news.newsType === newsType.UPDATE, 'alert-success': news.newsType === newsType.CREATE}" role="alert">
-      <small class="alert-heading">{{ getElapsedTimeLabelRepresentation(news.newsCreationDate) }} ago</small>
+      <small class="alert-heading">{{translationsService.get(homeTranslationsConstants.HOME_PAGE_NEWS_SECTION_DURATION_TEXT_KEY)}} {{ getElapsedTimeLabelRepresentation(news.newsCreationDate) }}</small>
       <hr>
       <div class="news-statement-block">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi flex-shrink-0 me-2" viewBox="0 0 16 16" aria-label="Info:">
