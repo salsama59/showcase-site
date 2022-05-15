@@ -194,16 +194,16 @@ export class ProjectUtilsService {
    public sortByProjectTitle(firstProject: Project, secondProject: Project, sortOrder: SortOrder){
     let result: number = 0;
 
-    if(firstProject.projectTitle === secondProject.projectTitle){
+    if(firstProject.projectTitleTranslationKey === secondProject.projectTitleTranslationKey){
       return result;
     }
 
     switch (sortOrder) {
       case SortOrder.ASCENDING:
-        result = firstProject.projectTitle > secondProject.projectTitle ? 1 : -1;
+        result = firstProject.projectTitleTranslationKey > secondProject.projectTitleTranslationKey ? 1 : -1;
       break;
       case SortOrder.DESCENDING:
-        result = secondProject.projectTitle > firstProject.projectTitle ? 1 : -1;
+        result = secondProject.projectTitleTranslationKey > firstProject.projectTitleTranslationKey ? 1 : -1;
       break;
     }
     return result;

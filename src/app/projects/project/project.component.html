@@ -1,4 +1,4 @@
-<h1 class="mb-5 project-detail-page-title text-center">{{ currentProject?.projectTitle }}</h1>
+<h1 class="mb-5 project-detail-page-title text-center">{{ translationsService.get(currentProject?.projectTitleTranslationKey) }}</h1>
 <section class="project-detail-introduction-section mb-4">
   <article>
     <h3 class="mb-3 project-detail-introduction-title">
@@ -6,7 +6,7 @@
         <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2V2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z"/>
       </svg>{{translationsService.get(projectsTranslationsConstants.PROJECT_PAGE_INTRODUCTION_TITLE_KEY)}}
     </h3>
-    <p>{{ currentProjectDetail?.projectDetailIntroduction }}</p>
+    <p>{{ translationsService.get(currentProjectDetail?.projectDetailIntroductionTranslationKey) }}</p>
   </article>
 </section>
 <section class="project-detail-instructions-section mb-4">
@@ -18,7 +18,7 @@
           </svg>{{translationsService.get(projectsTranslationsConstants.PROJECT_PAGE_INSTRUCTIONS_TITLE_KEY)}}
       </h3>
       <ol class="list-group list-group-numbered">
-        <li *ngFor="let instruction of currentProjectDetail?.projectDetailInstructions" class="list-group-item">{{ instruction }}</li>
+        <li *ngFor="let instruction of currentProjectDetail?.projectDetailInstructionsTranslationKeys" class="list-group-item">{{ translationsService.get(instruction) }}</li>
       </ol>
     </article>
 </section>

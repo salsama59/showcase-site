@@ -77,7 +77,7 @@ export class TranslationsService {
    * @param translationKey the translation key associated to the translation value
    * @returns the translation value if it exist otherwise return undefined 
    */
-  public get(translationKey: string): string {
-    return <string> this.translationMap.get(this.localeService.getCurrentLocale())?.get(translationKey);
+  public get(translationKey: string | undefined): string {
+    return <string> this.translationMap.get(this.localeService.getCurrentLocale())?.get(<string>translationKey);
   }
 }

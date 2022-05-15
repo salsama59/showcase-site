@@ -82,7 +82,7 @@ export class HomeComponent implements OnInit {
     this.recommendedProjects = this.getRecommendedProjects();
     this.recommendedProjects.subscribe(projects => {
       this.recommendedProjectsTodisplay = projects;
-      this.currentRecommendedProjectDescription = this.recommendedProjectsTodisplay[0].projectDescription;
+      this.currentRecommendedProjectDescription = this.translationsService.get(this.recommendedProjectsTodisplay[0].projectDescriptionTranslationKey);
     });
     
     this.newsListToDisplay = this.getFreshNews();
@@ -130,7 +130,7 @@ export class HomeComponent implements OnInit {
    */
   onCarouselSlideFinished(event: any): void {
     const currentSildeIndex: number = event.to;
-    this.currentRecommendedProjectDescription = this.recommendedProjectsTodisplay[currentSildeIndex].projectDescription;
+    this.currentRecommendedProjectDescription = this.translationsService.get(this.recommendedProjectsTodisplay[currentSildeIndex].projectDescriptionTranslationKey);
   }
 
   /**

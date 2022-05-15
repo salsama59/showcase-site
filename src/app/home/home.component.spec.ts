@@ -84,11 +84,11 @@ describe('HomeComponent', () => {
 
   it('should update the current recommended project description', () => {
     
-    expect(homeComponent.currentRecommendedProjectDescription).toEqual(homeComponent.recommendedProjectsTodisplay[0].projectDescription);
+    expect(homeComponent.currentRecommendedProjectDescription).toEqual(homeComponent.recommendedProjectsTodisplay[0].projectDescriptionTranslationKey);
     homeComponent.onCarouselSlideFinished({
       to: 1
     });
-    expect(homeComponent.currentRecommendedProjectDescription).toEqual(homeComponent.recommendedProjectsTodisplay[1].projectDescription);
+    expect(homeComponent.currentRecommendedProjectDescription).toEqual(homeComponent.recommendedProjectsTodisplay[1].projectDescriptionTranslationKey);
   });
 
   it('should return a full Elapsed time label representation', () => {

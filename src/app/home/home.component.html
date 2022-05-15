@@ -53,7 +53,7 @@
                 <img [src]="projectUtilsService.getProjectImagePathByProjectType(recommendedProject.projectType)" class="d-block w-100 home-recommended-project-images" [alt]="projectUtilsService.getProjectImageNameByProjectType(recommendedProject.projectType)">
                 <div class="carousel-caption d-none d-md-block">
                   <h4>{{ projectUtilsService.getProjectTypeLabelByProjectType(recommendedProject.projectType) }}</h4>
-                  <h5 id="carousselElementProjectTitle{{ i }}">{{ recommendedProject.projectTitle }}</h5>
+                  <h5 id="carousselElementProjectTitle{{ i }}">{{ translationsService.get(recommendedProject.projectTitleTranslationKey) }}</h5>
                 </div>
               </div>
             </div>

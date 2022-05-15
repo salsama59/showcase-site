@@ -2,8 +2,8 @@
     {
         "projectDetailId": "62487ef1b97ff99dc964e4f0",
         "projectDetailProjectId": "624736e7b97ff99dc964e4ca",
-        "projectDetailIntroduction": "Project 0 details introduction!!!",
-        "projectDetailInstructions": [
+        "projectDetailIntroductionTranslationKey": "Project 0 details introduction!!!",
+        "projectDetailInstructionsTranslationKeys": [
             "Instruction 1!",
             "Instruction 2!",
             "Instruction 3!",
@@ -15,8 +15,8 @@
     {
         "projectDetailId": "62487ef1b97ff99dc964e4f1",
         "projectDetailProjectId": "624736e7b97ff99dc964e4cb",
-        "projectDetailIntroduction": "Project 1 details introduction!!!",
-        "projectDetailInstructions": [
+        "projectDetailIntroductionTranslationKey": "Project 1 details introduction!!!",
+        "projectDetailInstructionsTranslationKeys": [
             "Instruction 1!",
             "Instruction 2!",
             "Instruction 3!",
@@ -47,8 +47,8 @@
     {
         "projectDetailId": "62487ef1b97ff99dc964e4f2",
         "projectDetailProjectId": "624736e7b97ff99dc964e4cc",
-        "projectDetailIntroduction": "Project 2 details introduction!!!",
-        "projectDetailInstructions": [
+        "projectDetailIntroductionTranslationKey": "Project 2 details introduction!!!",
+        "projectDetailInstructionsTranslationKeys": [
             "Instruction 1!",
             "Instruction 2!",
             "Instruction 3!",
@@ -60,8 +60,8 @@
     {
         "projectDetailId": "62487ef1b97ff99dc964e4f3",
         "projectDetailProjectId": "624736e7b97ff99dc964e4cd",
-        "projectDetailIntroduction": "Project 3 details introduction!!!",
-        "projectDetailInstructions": [
+        "projectDetailIntroductionTranslationKey": "Project 3 details introduction!!!",
+        "projectDetailInstructionsTranslationKeys": [
             "Instruction 1!",
             "Instruction 2!",
             "Instruction 3!",
@@ -73,8 +73,8 @@
     {
         "projectDetailId": "62487ef1b97ff99dc964e4f4",
         "projectDetailProjectId": "624736e7b97ff99dc964e4ce",
-        "projectDetailIntroduction": "Project 4 details introduction!!!",
-        "projectDetailInstructions": [
+        "projectDetailIntroductionTranslationKey": "Project 4 details introduction!!!",
+        "projectDetailInstructionsTranslationKeys": [
             "Instruction 1!",
             "Instruction 2!",
             "Instruction 3!",
@@ -86,8 +86,8 @@
     {
         "projectDetailId": "62487ef1b97ff99dc964e4f5",
         "projectDetailProjectId": "624736e7b97ff99dc964e4cf",
-        "projectDetailIntroduction": "Project 5 details introduction!!!",
-        "projectDetailInstructions": [
+        "projectDetailIntroductionTranslationKey": "Project 5 details introduction!!!",
+        "projectDetailInstructionsTranslationKeys": [
             "Instruction 1!",
             "Instruction 2!",
             "Instruction 3!",

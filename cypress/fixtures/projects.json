@@ -1,8 +1,8 @@
 [
     {
         "projectId": "624736e7b97ff99dc964e4ca",
-        "projectTitle": "Project 0 title",
-        "projectDescription": "This is the project 0 what else is there to say.",
+        "projectTitleTranslationKey": "Project 0 title",
+        "projectDescriptionTranslationKey": "This is the project 0 what else is there to say.",
         "projectType": 0,
         "projectTags": [
             0,
@@ -14,8 +14,8 @@
     },
     {
         "projectId": "624736e7b97ff99dc964e4cb",
-        "projectTitle": "Project 1 title",
-        "projectDescription": "This is the project 1 what else is there to say.",
+        "projectTitleTranslationKey": "Project 1 title",
+        "projectDescriptionTranslationKey": "This is the project 1 what else is there to say.",
         "projectType": 1,
         "projectTags": [
             0,
@@ -26,8 +26,8 @@
     },
     {
         "projectId": "624736e7b97ff99dc964e4cc",
-        "projectTitle": "Project 2 title",
-        "projectDescription": "This is the project 2 what else is there to say.",
+        "projectTitleTranslationKey": "Project 2 title",
+        "projectDescriptionTranslationKey": "This is the project 2 what else is there to say.",
         "projectType": 0,
         "projectTags": [
             0,
@@ -40,8 +40,8 @@
     },
     {
         "projectId": "624736e7b97ff99dc964e4cd",
-        "projectTitle": "Project 3 title",
-        "projectDescription": "This is the project 3 what else is there to say.",
+        "projectTitleTranslationKey": "Project 3 title",
+        "projectDescriptionTranslationKey": "This is the project 3 what else is there to say.",
         "projectType": 0,
         "projectTags": [
             4,
@@ -54,8 +54,8 @@
     },
     {
         "projectId": "624736e7b97ff99dc964e4ce",
-        "projectTitle": "Project 4 title",
-        "projectDescription": "This is the project 4 what else is there to say.",
+        "projectTitleTranslationKey": "Project 4 title",
+        "projectDescriptionTranslationKey": "This is the project 4 what else is there to say.",
         "projectType": 0,
         "projectTags": [
             0,
@@ -67,8 +67,8 @@
     },
     {
         "projectId": "624736e7b97ff99dc964e4cf",
-        "projectTitle": "Project 5 title",
-        "projectDescription": "This is the project 5 what else is there to say.",
+        "projectTitleTranslationKey": "Project 5 title",
+        "projectDescriptionTranslationKey": "This is the project 5 what else is there to say.",
         "projectType": 1,
         "projectTags": [
             4,
