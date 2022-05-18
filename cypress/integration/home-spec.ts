@@ -37,7 +37,7 @@ describe('The Home page end to end test', () => {
     });
 
     cy.fixture<Translation[]>('translations.json').then(translations => {
-      TranslationsMocks.getTranslationsByCurrentLocale(environment.showcaseBackendUrl + BackendEndpointConstants.TRANSLATIONS_ENDPOINT_URI, translations);
+      TranslationsMocks.getTranslationsByCurrentLocale(environment.showcaseBackendUrl + BackendEndpointConstants.TRANSLATIONS_ENDPOINT_URI, 'en-US', translations);
     });
     
     cy.visit('/');

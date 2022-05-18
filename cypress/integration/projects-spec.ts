@@ -32,7 +32,7 @@ describe('The Projects section end to end test', () => {
             ProjectDetailsMocks.getProjectDetailsByProjectId(environment.showcaseBackendUrl + BackendEndpointConstants.PROJECT_DETAILS_ENDPOINT_URI, projectDetails, '624736e7b97ff99dc964e4cf');
       });
       cy.fixture<Translation[]>('translations.json').then(translations => {
-        TranslationsMocks.getTranslationsByCurrentLocale(environment.showcaseBackendUrl + BackendEndpointConstants.TRANSLATIONS_ENDPOINT_URI, translations);
+        TranslationsMocks.getTranslationsByCurrentLocale(environment.showcaseBackendUrl + BackendEndpointConstants.TRANSLATIONS_ENDPOINT_URI, 'en-US', translations);
       });
 
       EndToEndTestUtils.goToProjectListPage(cy);
