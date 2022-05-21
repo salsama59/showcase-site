@@ -1,28 +1,28 @@
 [
   {
     "newsId": "62476e04b97ff99dc964e4d3",
-    "newsDescription": "Great news something is now created!!!",
+    "newsDescriptionTranslationKey": "news.element.0.description",
     "newsType": 0,
     "newsCreationDate": "2022-01-14T23:00:00.000Z",
     "isNewsActive": true
   },
   {
     "newsId": "62476e04b97ff99dc964e4d4",
-    "newsDescription": "Great news something is now updated!!!",
+    "newsDescriptionTranslationKey": "news.element.1.description",
     "newsType": 1,
     "newsCreationDate": "2022-01-15T23:00:00.000Z",
     "isNewsActive": true
   },
   {
     "newsId": "62476e04b97ff99dc964e4d5",
-    "newsDescription": "Great news another thing is now created!!!",
+    "newsDescriptionTranslationKey": "news.element.2.description",
     "newsType": 0,
     "newsCreationDate": "2021-04-09T22:00:00.000Z",
     "isNewsActive": false
   },
   {
     "newsId": "62476e04b97ff99dc964e4d6",
-    "newsDescription": "Great news another thing is now updated!!!",
+    "newsDescriptionTranslationKey": "news.element.3.description",
     "newsType": 1,
     "newsCreationDate": "2019-06-10T22:00:00.000Z",
     "isNewsActive": false
