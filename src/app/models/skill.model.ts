@@ -7,13 +7,13 @@ export class Skill {
 
     /**
      * Creates an instance of skill.
-     * @param label the label
+     * @param labelTranslationKey the label translation key
      * @param level the level
      * @public
      * @constructor
      */
     public constructor(
-        public label: string,
+        public labelTranslationKey: string,
         public level: SkillLevelType,
     ){}
 }

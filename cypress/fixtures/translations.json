@@ -1126,5 +1126,533 @@
         "languageCode": "fr",
         "translationKey": "project.details.element.5.instructions.3",
         "translationValue": "Instruction 4!"
+    },
+    {
+        "translationId": "6288b39e3967bf7237ba0aab",
+        "languageCode": "en",
+        "translationKey": "news.element.0.description",
+        "translationValue": "Great news something is now created!!!"
+    },
+    {
+        "translationId": "6288b39e3967bf7237ba0aac",
+        "languageCode": "en",
+        "translationKey": "news.element.1.description",
+        "translationValue": "Great news something is now updated!!!"
+    },
+    {
+        "translationId": "6288b39e3967bf7237ba0aad",
+        "languageCode": "en",
+        "translationKey": "news.element.2.description",
+        "translationValue": "Great news another thing is now created!!!"
+    },
+    {
+        "translationId": "6288b39e3967bf7237ba0aae",
+        "languageCode": "en",
+        "translationKey": "news.element.3.description",
+        "translationValue": "Great news another thing is now updated!!!"
+    },
+    {
+        "translationId": "6288b39e3967bf7237ba0ab0",
+        "languageCode": "fr",
+        "translationKey": "news.element.0.description",
+        "translationValue": "Bonne nouvelle quelque chose est maintenant créé!!!"
+    },
+    {
+        "translationId": "6288b39e3967bf7237ba0ab1",
+        "languageCode": "fr",
+        "translationKey": "news.element.1.description",
+        "translationValue": "Bonne nouvelle quelque chose est maintenant mis à jour!!!"
+    },
+    {
+        "translationId": "6288b39e3967bf7237ba0ab2",
+        "languageCode": "fr",
+        "translationKey": "news.element.2.description",
+        "translationValue": "Bonne nouvelle quelque chose d'autre est maintenant créé!!!"
+    },
+    {
+        "translationId": "6288b39e3967bf7237ba0ab3",
+        "languageCode": "fr",
+        "translationKey": "news.element.3.description",
+        "translationValue": "Bonne nouvelle autre chose est maintenant mis à jour!!!"
+    },
+    {
+        "translationId": "628a9531108675395dd823cd",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.detail.title",
+        "translationValue": "The resumee"
+    },
+    {
+        "translationId": "628a9531108675395dd823ce",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.profile",
+        "translationValue": "My profile"
+    },
+    {
+        "translationId": "628a9531108675395dd823cf",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.skills.0.label",
+        "translationValue": "Sleep"
+    },
+    {
+        "translationId": "628a9531108675395dd823d0",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.skills.1.label",
+        "translationValue": "Jump"
+    },
+    {
+        "translationId": "628a9531108675395dd823d1",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.skills.2.label",
+        "translationValue": "Investigation"
+    },
+    {
+        "translationId": "628a9531108675395dd823d2",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.skills.3.label",
+        "translationValue": "Bargain"
+    },
+    {
+        "translationId": "628a9531108675395dd823d3",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.languages.0.label",
+        "translationValue": "French"
+    },
+    {
+        "translationId": "628a9531108675395dd823d4",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.languages.1.label",
+        "translationValue": "English"
+    },
+    {
+        "translationId": "628a9531108675395dd823d5",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.employmentHistories.0.jobTitle",
+        "translationValue": "My job title"
+    },
+    {
+        "translationId": "628a9531108675395dd823d6",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.employmentHistories.0.descriptions.0",
+        "translationValue": "Description 1"
+    },
+    {
+        "translationId": "628a9531108675395dd823d7",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.employmentHistories.0.descriptions.1",
+        "translationValue": "Description 2"
+    },
+    {
+        "translationId": "628a9531108675395dd823d8",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.employmentHistories.1.jobTitle",
+        "translationValue": "My job title extra"
+    },
+    {
+        "translationId": "628a9531108675395dd823d9",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.employmentHistories.1.descriptions.0",
+        "translationValue": "Description extra 1"
+    },
+    {
+        "translationId": "628a9531108675395dd823da",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.employmentHistories.1.descriptions.1",
+        "translationValue": "Description extra 2"
+    },
+    {
+        "translationId": "628a9531108675395dd823db",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.educations.0.degree",
+        "translationValue": "The degree"
+    },
+    {
+        "translationId": "628a9531108675395dd823dc",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.educations.0.description",
+        "translationValue": ""
+    },
+    {
+        "translationId": "628a9531108675395dd823dd",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.educations.1.degree",
+        "translationValue": "The degree 2"
+    },
+    {
+        "translationId": "628a9531108675395dd823de",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.educations.1.description",
+        "translationValue": "Graduated for the sake of the country nothing more nothing less. Everyone was happy about this, except for me."
+    },
+    {
+        "translationId": "628a9531108675395dd823df",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.hobbies.0",
+        "translationValue": "Doing things 1"
+    },
+    {
+        "translationId": "628a9531108675395dd823e0",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.hobbies.1",
+        "translationValue": "Doing nothing"
+    },
+    {
+        "translationId": "628a9531108675395dd823e1",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.detail.title",
+        "translationValue": "Another resumee"
+    },
+    {
+        "translationId": "628a9531108675395dd823e2",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.profile",
+        "translationValue": "Another profile what else!?"
+    },
+    {
+        "translationId": "628a9531108675395dd823e3",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.skills.0.label",
+        "translationValue": "Drink"
+    },
+    {
+        "translationId": "628a9531108675395dd823e4",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.skills.1.label",
+        "translationValue": "Eat"
+    },
+    {
+        "translationId": "628a9531108675395dd823e5",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.skills.2.label",
+        "translationValue": "Investigation"
+    },
+    {
+        "translationId": "628a9531108675395dd823e6",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.skills.3.label",
+        "translationValue": "Bargain"
+    },
+    {
+        "translationId": "628a9531108675395dd823e7",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.languages.0.label",
+        "translationValue": "English"
+    },
+    {
+        "translationId": "628a9531108675395dd823e8",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.employmentHistories.0.jobTitle",
+        "translationValue": "A new job title"
+    },
+    {
+        "translationId": "628a9531108675395dd823e9",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.employmentHistories.0.descriptions.0",
+        "translationValue": "Description 1"
+    },
+    {
+        "translationId": "628a9531108675395dd823ea",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.employmentHistories.0.descriptions.1",
+        "translationValue": "Description 2"
+    },
+    {
+        "translationId": "628a9531108675395dd823eb",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.employmentHistories.1.jobTitle",
+        "translationValue": "My job title extra"
+    },
+    {
+        "translationId": "628a9531108675395dd823ec",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.employmentHistories.1.descriptions.0",
+        "translationValue": "Description extra 1"
+    },
+    {
+        "translationId": "628a9531108675395dd823ed",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.employmentHistories.1.descriptions.1",
+        "translationValue": "Description extra 2"
+    },
+    {
+        "translationId": "628a9531108675395dd823ee",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.educations.0.degree",
+        "translationValue": "The specific degree"
+    },
+    {
+        "translationId": "628a9531108675395dd823ef",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.educations.0.description",
+        "translationValue": ""
+    },
+    {
+        "translationId": "628a9531108675395dd823f0",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.educations.1.degree",
+        "translationValue": "The degree 2"
+    },
+    {
+        "translationId": "628a9531108675395dd823f1",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.educations.1.description",
+        "translationValue": "Graduated by giving money..."
+    },
+    {
+        "translationId": "628a9531108675395dd823f2",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.hobbies.0",
+        "translationValue": "Doing multiple things"
+    },
+    {
+        "translationId": "628a9531108675395dd823f3",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.hobbies.1",
+        "translationValue": "Doing something new"
+    },
+    {
+        "translationId": "628a9531108675395dd823f4",
+        "languageCode": "en",
+        "translationKey": "resumes.date.today",
+        "translationValue": "Today"
+    },
+    {
+        "translationId": "628a9531108675395dd823f6",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.detail.title",
+        "translationValue": "Le cv"
+    },
+    {
+        "translationId": "628a9531108675395dd823f7",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.profile",
+        "translationValue": "Mon profil"
+    },
+    {
+        "translationId": "628a9531108675395dd823f8",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.skills.0.label",
+        "translationValue": "Dormir"
+    },
+    {
+        "translationId": "628a9531108675395dd823f9",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.skills.1.label",
+        "translationValue": "Sauter"
+    },
+    {
+        "translationId": "628a9531108675395dd823fa",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.skills.2.label",
+        "translationValue": "Enquêter"
+    },
+    {
+        "translationId": "628a9531108675395dd823fb",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.skills.3.label",
+        "translationValue": "Marchander"
+    },
+    {
+        "translationId": "628a9531108675395dd823fc",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.languages.0.label",
+        "translationValue": "Français"
+    },
+    {
+        "translationId": "628a9531108675395dd823fd",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.languages.1.label",
+        "translationValue": "Anglais"
+    },
+    {
+        "translationId": "628a9531108675395dd823fe",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.employmentHistories.0.jobTitle",
+        "translationValue": "Mon intitulé de poste"
+    },
+    {
+        "translationId": "628a9531108675395dd823ff",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.employmentHistories.0.descriptions.0",
+        "translationValue": "Description 1"
+    },
+    {
+        "translationId": "628a9531108675395dd82400",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.employmentHistories.0.descriptions.1",
+        "translationValue": "Description 2"
+    },
+    {
+        "translationId": "628a9531108675395dd82401",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.employmentHistories.1.jobTitle",
+        "translationValue": "Mon intitulé de poste extra"
+    },
+    {
+        "translationId": "628a9531108675395dd82402",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.employmentHistories.1.descriptions.0",
+        "translationValue": "Description extra 1"
+    },
+    {
+        "translationId": "628a9531108675395dd82403",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.employmentHistories.1.descriptions.1",
+        "translationValue": "Description extra 2"
+    },
+    {
+        "translationId": "628a9531108675395dd82404",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.educations.0.degree",
+        "translationValue": "Le diplôme"
+    },
+    {
+        "translationId": "628a9531108675395dd82405",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.educations.0.description",
+        "translationValue": ""
+    },
+    {
+        "translationId": "628a9531108675395dd82406",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.educations.1.degree",
+        "translationValue": "Le diplôme 2"
+    },
+    {
+        "translationId": "628a9531108675395dd82407",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.educations.1.description",
+        "translationValue": "Diplômé pour le bien du pays rien de plus rien de moins. Tout le monde en était content, sauf moi."
+    },
+    {
+        "translationId": "628a9531108675395dd82408",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.hobbies.0",
+        "translationValue": "Faire des choses 1"
+    },
+    {
+        "translationId": "628a9531108675395dd82409",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.hobbies.1",
+        "translationValue": "Ne rien faire"
+    },
+    {
+        "translationId": "628a9531108675395dd8240a",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.detail.title",
+        "translationValue": "Autre cv"
+    },
+    {
+        "translationId": "628a9531108675395dd8240b",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.profile",
+        "translationValue": "Autre profil quoi d'autre!?"
+    },
+    {
+        "translationId": "628a9531108675395dd8240c",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.skills.0.label",
+        "translationValue": "Boire"
+    },
+    {
+        "translationId": "628a9531108675395dd8240d",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.skills.1.label",
+        "translationValue": "Manger"
+    },
+    {
+        "translationId": "628a9531108675395dd8240e",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.skills.2.label",
+        "translationValue": "Enquêter"
+    },
+    {
+        "translationId": "628a9531108675395dd8240f",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.skills.3.label",
+        "translationValue": "Marchander"
+    },
+    {
+        "translationId": "628a9531108675395dd82410",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.languages.0.label",
+        "translationValue": "Anglais"
+    },
+    {
+        "translationId": "628a9531108675395dd82411",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.employmentHistories.0.jobTitle",
+        "translationValue": "Un nouvel intitulé de poste"
+    },
+    {
+        "translationId": "628a9531108675395dd82412",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.employmentHistories.0.descriptions.0",
+        "translationValue": "Description 1"
+    },
+    {
+        "translationId": "628a9531108675395dd82413",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.employmentHistories.0.descriptions.1",
+        "translationValue": "Description 2"
+    },
+    {
+        "translationId": "628a9531108675395dd82414",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.employmentHistories.1.jobTitle",
+        "translationValue": "Mon intitulé de poste extra"
+    },
+    {
+        "translationId": "628a9531108675395dd82415",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.employmentHistories.1.descriptions.0",
+        "translationValue": "Description extra 1"
+    },
+    {
+        "translationId": "628a9531108675395dd82416",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.employmentHistories.1.descriptions.1",
+        "translationValue": "Description extra 2"
+    },
+    {
+        "translationId": "628a9531108675395dd82417",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.educations.0.degree",
+        "translationValue": "Le diplôme spécifique"
+    },
+    {
+        "translationId": "628a9531108675395dd82418",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.educations.0.description",
+        "translationValue": ""
+    },
+    {
+        "translationId": "628a9531108675395dd82419",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.educations.1.degree",
+        "translationValue": "Le diplôme 2"
+    },
+    {
+        "translationId": "628a9531108675395dd8241a",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.educations.1.description",
+        "translationValue": "Diplômé en donnant de l'argent..."
+    },
+    {
+        "translationId": "628a9531108675395dd8241b",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.hobbies.0",
+        "translationValue": "Faire de multiple chose"
+    },
+    {
+        "translationId": "628a9531108675395dd8241c",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.hobbies.1",
+        "translationValue": "Faire quelque chose de nouveau"
+    },
+    {
+        "translationId": "628a9531108675395dd8241d",
+        "languageCode": "fr",
+        "translationKey": "resumes.date.today",
+        "translationValue": "Aujourd'hui"
     }
 ]

@@ -7,13 +7,13 @@ export class Language {
 
    /**
     * Creates an instance of language.
-    * @param label the label
+    * @param labelTranslationKey the label translation key
     * @param level the level
     * @public
     * @constructor
     */
    public constructor(
-        public label: string,
+        public labelTranslationKey: string,
         public level: LanguageLevelType,
     ){}
 }

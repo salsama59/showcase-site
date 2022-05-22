@@ -90,7 +90,7 @@ describe('ResumesComponent', () => {
     , [new Language('French', LanguageLevelType.NATIVE_SPEAKER), new Language('English', LanguageLevelType.HIGHLY_PROFICIENT)]
     , 'My profile'
     , [new EmploymentHistory('My job title', 'Fictive company', new Date(), null, 'A city', ['Description 1', 'Description 2']), new EmploymentHistory('My job title extra', 'Fictive company 2', new Date(), new Date(), 'Another city', ['Description extra 1', 'Description extra 2'])]
-    , [new Education('The degree', 'The school', new Date(), new Date(), 'The city', null), new Education('The degree 2', 'The school 2', new Date(), null, 'Another city', "Graduated for the sake of the country nothing more nothing less. Everyone was happy about this, except for me.")]),
+    , [new Education('The degree', 'The school', new Date(), new Date(), 'The city', undefined), new Education('The degree 2', 'The school 2', new Date(), null, 'Another city', "Graduated for the sake of the country nothing more nothing less. Everyone was happy about this, except for me.")]),
     new Resume(
       '1',
       true,
@@ -104,7 +104,7 @@ describe('ResumesComponent', () => {
     , [new Language('English', LanguageLevelType.HIGHLY_PROFICIENT)]
     , 'Another profile what else!?'
     , [new EmploymentHistory('A new job title', 'Fictive company 2', new Date(), null, 'A city', ['Description 1', 'Description 2']), new EmploymentHistory('My job title extra', 'Fictive company 2', new Date(), new Date(), 'Another city', ['Description extra 1', 'Description extra 2'])]
-    , [new Education('The specific degree', 'The unknown school', new Date(), new Date(), 'The city', null), new Education('The degree 2', 'The school 2', new Date(), null, 'Another city', "Graduated by giving money...")])]);
+    , [new Education('The specific degree', 'The unknown school', new Date(), new Date(), 'The city', undefined), new Education('The degree 2', 'The school 2', new Date(), null, 'Another city', "Graduated by giving money...")])]);
 
     httpClientSpy.get.and.returnValue(expectedResumes);
     fixture = TestBed.createComponent(ResumesComponent);

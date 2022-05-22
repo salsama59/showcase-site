@@ -7,7 +7,7 @@
       routerLink="{{ resume.resumeId + '/' + routeModeConstants.MODE_VIEW_CONSTANT }}" 
       routerLinkActive="active"
       [routerLinkActiveOptions]="{ exact: true }"
-      >{{ resume.detail.title }}</a>
+      >{{ translationsService.get(resume.detail.titleTranslationKey) }}</a>
     </li>
 </ul>
 <br>

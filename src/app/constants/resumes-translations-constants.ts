@@ -42,4 +42,9 @@ export class ResumesTranslationsConstants {
      */
     public static RESUMES_PAGE_ELEMENT_HOBBIES_TITLE_KEY: string = 'resumes.page.element.hobbies.title';
 
+    /**
+     * Resumes date today key of resumes translations constants
+     */
+    public static RESUMES_DATE_TODAY_KEY: string = 'resumes.date.today';
+
 }

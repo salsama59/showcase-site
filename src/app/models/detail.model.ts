@@ -8,14 +8,14 @@ export class Detail {
 
     /**
      * Creates an instance of detail.
-     * @param title the title
+     * @param titleTranslationKey the title translation key
      * @param person the person
      * @param socialNetworks the social networks
      * @public
      * @constructor
      */
     public constructor(
-        public title: string,
+        public titleTranslationKey: string,
         public person: Person,
         public socialNetworks: SocialNetwork[]
     ){}
