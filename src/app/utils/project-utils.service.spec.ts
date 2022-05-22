@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { ProjectTypeEnum } from '../enums/project-type-enum';
 import { SortOrder } from '../enums/sort-order';
@@ -7,9 +8,13 @@ import { ProjectUtilsService } from './project-utils.service';
 
 describe('ProjectUtilsService', () => {
   let projectUtilsService: ProjectUtilsService;
+  let httpClientSpy: jasmine.SpyObj<HttpClient>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
+    TestBed.configureTestingModule({ providers: [
+      { provide: HttpClient, useValue: httpClientSpy }
+    ]});
     projectUtilsService = TestBed.inject(ProjectUtilsService);
   });
 

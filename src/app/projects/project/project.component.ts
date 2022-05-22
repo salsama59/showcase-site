@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Params } from '@angular/router';
 import { catchError } from 'rxjs/operators';
+import { ProjectsTranslationsConstants } from 'src/app/constants/projects-translations-constants';
 import { ProjectTypeEnum } from 'src/app/enums/project-type-enum';
 import { ProjectDetail } from 'src/app/models/project-detail.model';
 import { ProjectMetadatas } from 'src/app/models/project-metadatas.model';
 import { Project } from 'src/app/models/project.model';
 import { ProjectDetailsService } from 'src/app/services/project-details.service';
 import { ProjectsService } from 'src/app/services/projects.service';
+import { TranslationsService } from 'src/app/services/translations.service';
 import { environment } from 'src/environments/environment';
 
 /**
@@ -36,13 +38,21 @@ export class ProjectComponent implements OnInit {
   public projectTypeEnum = ProjectTypeEnum;
 
   /**
+   * Projects translations constants of project component
+   */
+  public projectsTranslationsConstants = ProjectsTranslationsConstants;
+
+  /**
+   * @public
+   * @constructor
    * Instanciate the projectComponent class
    * @param activatedRoute the activated route
    * @param projectsService the projects service
    * @param projectDetailsService  the project details service
    * @param domSanitizer the dom sanitizer
+   * @param translationsService the translation service
    */
-  constructor(private activatedRoute: ActivatedRoute, private projectsService: ProjectsService, private projectDetailsService: ProjectDetailsService, private domSanitizer: DomSanitizer) { }
+  constructor(private activatedRoute: ActivatedRoute, private projectsService: ProjectsService, private projectDetailsService: ProjectDetailsService, private domSanitizer: DomSanitizer, public translationsService: TranslationsService) { }
 
   /**
    * Initialize the project component by subscribing to the activated route params, which allows the current project and project detail calculation given the project Id.

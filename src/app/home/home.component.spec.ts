@@ -12,8 +12,10 @@ import { News } from '../models/news.model';
 import { Project } from '../models/project.model';
 import { ProjectComponent } from '../projects/project/project.component';
 import { ProjectsComponent } from '../projects/projects.component';
+import { LocaleService } from '../services/locale.service';
 import { NewsService } from '../services/news.service';
 import { ProjectsService } from '../services/projects.service';
+import { TranslationsService } from '../services/translations.service';
 import { ProjectUtilsService } from '../utils/project-utils.service';
 
 import { HomeComponent } from './home.component';
@@ -21,6 +23,7 @@ import { HomeComponent } from './home.component';
 describe('HomeComponent', () => {
   let newsServiceSpy: jasmine.SpyObj<NewsService>;
   let projectsServiceSpy: jasmine.SpyObj<ProjectsService>;
+  let translationsServiceSpy: jasmine.SpyObj<TranslationsService> = jasmine.createSpyObj('TranslationsService', ['get']);
   let homeComponent: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
 
@@ -47,7 +50,9 @@ describe('HomeComponent', () => {
 			providers: [ 
         ProjectUtilsService, 
         {provide: NewsService, useValue: newsServiceSpy},
-        {provide: ProjectsService, useValue: projectsServiceSpy}],
+        {provide: ProjectsService, useValue: projectsServiceSpy},
+        {provide: TranslationsService, useValue: translationsServiceSpy},
+        LocaleService],
         schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
@@ -72,6 +77,30 @@ describe('HomeComponent', () => {
 
     newsServiceSpy.getNews.and.returnValues(expectedNews);
     projectsServiceSpy.getProjects.and.returnValues(expectedProjects);
+
+    translationsServiceSpy.get.and.callFake((key) => {
+
+      if(key === 'project.element.0.description') {
+        return 'This is the project 0 what else is there to say.';
+      }
+      if(key === 'project.element.2.description') {
+        return 'This is the project 2 what else is there to say.';
+      }
+      if(key === 'home.page.news.section.duration.details.minutes.text') {
+        return 'minute(s)';
+      }
+      if(key === 'home.page.news.section.duration.details.hours.text') {
+        return 'hour(s)';
+      }
+      if(key === 'home.page.news.section.duration.details.days.text') {
+        return 'day(s)';
+      }
+      if(key === 'home.page.news.section.duration.details.months.text') {
+        return 'month(s)';
+      }
+      
+      return <string>key;
+    });
     
     fixture = TestBed.createComponent(HomeComponent);
     homeComponent = fixture.componentInstance;
@@ -84,11 +113,11 @@ describe('HomeComponent', () => {
 
   it('should update the current recommended project description', () => {
     
-    expect(homeComponent.currentRecommendedProjectDescription).toEqual(homeComponent.recommendedProjectsTodisplay[0].projectDescription);
+    expect(homeComponent.currentRecommendedProjectDescription).toEqual(homeComponent.recommendedProjectsTodisplay[0].projectDescriptionTranslationKey);
     homeComponent.onCarouselSlideFinished({
       to: 1
     });
-    expect(homeComponent.currentRecommendedProjectDescription).toEqual(homeComponent.recommendedProjectsTodisplay[1].projectDescription);
+    expect(homeComponent.currentRecommendedProjectDescription).toEqual(homeComponent.recommendedProjectsTodisplay[1].projectDescriptionTranslationKey);
   });
 
   it('should return a full Elapsed time label representation', () => {

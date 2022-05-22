@@ -15,9 +15,9 @@ export class Resume {
      * @param isDefault the default resume flag
      * @param detail the detail
      * @param skills the skills
-     * @param hobbies the hobbies
+     * @param hobbyTranslationKeys the hobby translation keys
      * @param languages the languages
-     * @param profile the profile
+     * @param profileTranslationKey the profile translation key
      * @param employmentHistories the employment histories 
      * @param educations the educations
      * @public
@@ -28,9 +28,9 @@ export class Resume {
         public isDefault: boolean,
         public detail: Detail,
         public skills: Skill[],
-        public hobbies: string[],
+        public hobbyTranslationKeys: string[],
         public languages: Language[],
-        public profile: string,
+        public profileTranslationKey: string,
         public employmentHistories: EmploymentHistory[],
         public educations: Education[]
     ){}

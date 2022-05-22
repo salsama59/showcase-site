@@ -1,0 +1,1658 @@
+[
+    {
+        "translationId": "6281615403a9504718bc07ad",
+        "languageCode": "fr",
+        "translationKey": "home.page.title",
+        "translationValue": "Bienvenue sur mon site vitrine"
+    },
+    {
+        "translationId": "6281615403a9504718bc07ae",
+        "languageCode": "fr",
+        "translationKey": "home.page.news.section.title",
+        "translationValue": "Voici les nouveautés :"
+    },
+    {
+        "translationId": "6281615403a9504718bc07af",
+        "languageCode": "fr",
+        "translationKey": "home.page.recommended.projects.section.title",
+        "translationValue": "Projets à la une : "
+    },
+    {
+        "translationId": "6281615403a9504718bc07b0",
+        "languageCode": "fr",
+        "translationKey": "home.page.introduction.section.title",
+        "translationValue": "Introduction :"
+    },
+    {
+        "translationId": "6281615403a9504718bc07b1",
+        "languageCode": "fr",
+        "translationKey": "home.page.introduction.section.list.text",
+        "translationValue": "Ce site est séparé en 3 sections : "
+    },
+    {
+        "translationId": "6281615403a9504718bc07b2",
+        "languageCode": "fr",
+        "translationKey": "home.page.introduction.section.list.element1",
+        "translationValue": "La page d'accueil"
+    },
+    {
+        "translationId": "6281615403a9504718bc07b3",
+        "languageCode": "fr",
+        "translationKey": "home.page.introduction.section.list.element2",
+        "translationValue": "La page des projets"
+    },
+    {
+        "translationId": "6281615403a9504718bc07b4",
+        "languageCode": "fr",
+        "translationKey": "home.page.introduction.section.list.element3",
+        "translationValue": "La page des CV"
+    },
+    {
+        "translationId": "6281615403a9504718bc07b5",
+        "languageCode": "fr",
+        "translationKey": "home.page.introduction.section.list.explanation",
+        "translationValue": "La section de la page d'accueil affichera les nouveautés du site et présentera également une sélection des derniers projets sur lesquels je travaille. Pour la partie CV vous pourrez voir mon cursus et mes compétences maîtrisées, enfin la section projets vous permettra de parcourir en détail mes différents projets de développement web ou de jeux, certains projets sont testables mais d'autres non."
+    },
+    {
+        "translationId": "6281615403a9504718bc07b6",
+        "languageCode": "fr",
+        "translationKey": "home.page.news.section.text",
+        "translationValue": "Voici les évènements du site qui on lieux ce mois-ci :"
+    },
+    {
+        "translationId": "6281615403a9504718bc07b7",
+        "languageCode": "fr",
+        "translationKey": "header.application.name.text",
+        "translationValue": "Showcase"
+    },
+    {
+        "translationId": "6281615403a9504718bc07b8",
+        "languageCode": "fr",
+        "translationKey": "header.home.link.text",
+        "translationValue": "Accueil"
+    },
+    {
+        "translationId": "6281615403a9504718bc07b9",
+        "languageCode": "fr",
+        "translationKey": "header.resumes.link.text",
+        "translationValue": "CV"
+    },
+    {
+        "translationId": "6281615403a9504718bc07ba",
+        "languageCode": "fr",
+        "translationKey": "header.projects.link.text",
+        "translationValue": "Projets"
+    },
+    {
+        "translationId": "6281615403a9504718bc07bb",
+        "languageCode": "fr",
+        "translationKey": "footer.follow.text",
+        "translationValue": "Me suivre :"
+    },
+    {
+        "translationId": "6281615403a9504718bc07bc",
+        "languageCode": "fr",
+        "translationKey": "resumes.page.title",
+        "translationValue": "Mes CV"
+    },
+    {
+        "translationId": "6281615403a9504718bc07bd",
+        "languageCode": "fr",
+        "translationKey": "resumes.page.element.social.network.link.title",
+        "translationValue": "Liens"
+    },
+    {
+        "translationId": "6281615403a9504718bc07be",
+        "languageCode": "fr",
+        "translationKey": "resumes.page.element.skills.title",
+        "translationValue": "Compétences"
+    },
+    {
+        "translationId": "6281615403a9504718bc07bf",
+        "languageCode": "fr",
+        "translationKey": "resumes.page.element.languages.title",
+        "translationValue": "Langues"
+    },
+    {
+        "translationId": "6281615403a9504718bc07c0",
+        "languageCode": "fr",
+        "translationKey": "resumes.page.element.profile.title",
+        "translationValue": "Profil"
+    },
+    {
+        "translationId": "6281615403a9504718bc07c1",
+        "languageCode": "fr",
+        "translationKey": "resumes.page.element.employment.history.title",
+        "translationValue": "Expériences professionnelles"
+    },
+    {
+        "translationId": "6281615403a9504718bc07c2",
+        "languageCode": "fr",
+        "translationKey": "resumes.page.element.education.title",
+        "translationValue": "Cursus scolaire"
+    },
+    {
+        "translationId": "6281615403a9504718bc07c3",
+        "languageCode": "fr",
+        "translationKey": "resumes.page.element.hobbies.title",
+        "translationValue": "Centre d'intérêts"
+    },
+    {
+        "translationId": "6281615403a9504718bc07c4",
+        "languageCode": "fr",
+        "translationKey": "projects.page.title",
+        "translationValue": "Liste des projets"
+    },
+    {
+        "translationId": "6281615403a9504718bc07c5",
+        "languageCode": "fr",
+        "translationKey": "projects.page.filters.title",
+        "translationValue": "Filtres"
+    },
+    {
+        "translationId": "6281615403a9504718bc07c6",
+        "languageCode": "fr",
+        "translationKey": "projects.page.filters.types.title",
+        "translationValue": "Types de projet"
+    },
+    {
+        "translationId": "6281615403a9504718bc07c7",
+        "languageCode": "fr",
+        "translationKey": "projects.page.filters.technologies.title",
+        "translationValue": "Thechnologies"
+    },
+    {
+        "translationId": "6281615403a9504718bc07c8",
+        "languageCode": "fr",
+        "translationKey": "projects.page.list.tags.title",
+        "translationValue": "Mots clés :"
+    },
+    {
+        "translationId": "6281615403a9504718bc07c9",
+        "languageCode": "fr",
+        "translationKey": "projects.page.filters.types.web.development",
+        "translationValue": "Developpement web"
+    },
+    {
+        "translationId": "6281615403a9504718bc07ca",
+        "languageCode": "fr",
+        "translationKey": "projects.page.filters.types.game.development",
+        "translationValue": "Developpement de jeux"
+    },
+    {
+        "translationId": "6281615403a9504718bc07cb",
+        "languageCode": "fr",
+        "translationKey": "projects.page.list.label.web.development",
+        "translationValue": "Projet de developpement web"
+    },
+    {
+        "translationId": "6281615403a9504718bc07cc",
+        "languageCode": "fr",
+        "translationKey": "projects.page.list.label.game.development",
+        "translationValue": "Projet de developpement de jeux"
+    },
+    {
+        "translationId": "6281615403a9504718bc07cd",
+        "languageCode": "fr",
+        "translationKey": "projects.page.sort.options.label.creation.date",
+        "translationValue": "Date de création"
+    },
+    {
+        "translationId": "6281615403a9504718bc07ce",
+        "languageCode": "fr",
+        "translationKey": "projects.page.sort.options.label.project.type",
+        "translationValue": "Type de projet"
+    },
+    {
+        "translationId": "6281615403a9504718bc07cf",
+        "languageCode": "fr",
+        "translationKey": "projects.page.sort.options.label.project.title",
+        "translationValue": "Titre de projet"
+    },
+    {
+        "translationId": "6281615403a9504718bc07d0",
+        "languageCode": "fr",
+        "translationKey": "projects.page.sort.options.label.last.modified",
+        "translationValue": "Date de modification"
+    },
+    {
+        "translationId": "6281615403a9504718bc07d1",
+        "languageCode": "fr",
+        "translationKey": "projects.page.sort.options.mode.ascending",
+        "translationValue": "CROISSANT"
+    },
+    {
+        "translationId": "6281615403a9504718bc07d2",
+        "languageCode": "fr",
+        "translationKey": "projects.page.sort.options.mode.descending",
+        "translationValue": "DECROISSANT"
+    },
+    {
+        "translationId": "6281615403a9504718bc07d3",
+        "languageCode": "fr",
+        "translationKey": "project.page.introduction.title",
+        "translationValue": "Introduction :"
+    },
+    {
+        "translationId": "6281615403a9504718bc07d4",
+        "languageCode": "fr",
+        "translationKey": "project.page.instructions.title",
+        "translationValue": "Instructions :"
+    },
+    {
+        "translationId": "6281615403a9504718bc07d5",
+        "languageCode": "fr",
+        "translationKey": "project.page.test.project.title",
+        "translationValue": "Tester le projet :"
+    },
+    {
+        "translationId": "6281615403a9504718bc07d6",
+        "languageCode": "fr",
+        "translationKey": "projects.page.list.project.access.button.label",
+        "translationValue": "Aller voir le projet"
+    },
+    {
+        "translationId": "6281615403a9504718bc07d7",
+        "languageCode": "fr",
+        "translationKey": "pagination.previous.button.label",
+        "translationValue": "Précédent"
+    },
+    {
+        "translationId": "6281615403a9504718bc07d8",
+        "languageCode": "fr",
+        "translationKey": "pagination.next.button.label",
+        "translationValue": "Suivant"
+    },
+    {
+        "translationId": "6281615403a9504718bc07d9",
+        "languageCode": "fr",
+        "translationKey": "project.page.web.link.text",
+        "translationValue": "Aller vers la page du projet"
+    },
+    {
+        "translationId": "6281615403a9504718bc07da",
+        "languageCode": "fr",
+        "translationKey": "projects.page.list.project.creation.date.label",
+        "translationValue": "Date de création : "
+    },
+    {
+        "translationId": "6281615403a9504718bc07db",
+        "languageCode": "fr",
+        "translationKey": "projects.page.list.project.last.modify.date.label",
+        "translationValue": "Dernière date de modification : "
+    },
+    {
+        "translationId": "6281615403a9504718bc07dc",
+        "languageCode": "fr",
+        "translationKey": "home.page.news.section.duration.text",
+        "translationValue": "Depuis"
+    },
+    {
+        "translationId": "6281615403a9504718bc07dd",
+        "languageCode": "fr",
+        "translationKey": "home.page.news.section.duration.details.months.text",
+        "translationValue": " mois "
+    },
+    {
+        "translationId": "6281615403a9504718bc07de",
+        "languageCode": "fr",
+        "translationKey": "home.page.news.section.duration.details.days.text",
+        "translationValue": " jour(s) "
+    },
+    {
+        "translationId": "6281615403a9504718bc07df",
+        "languageCode": "fr",
+        "translationKey": "home.page.news.section.duration.details.hours.text",
+        "translationValue": " heure(s) "
+    },
+    {
+        "translationId": "6281615403a9504718bc07e0",
+        "languageCode": "fr",
+        "translationKey": "home.page.news.section.duration.details.minutes.text",
+        "translationValue": " minute(s) "
+    },
+    {
+        "translationId": "6281615403a9504718bc07e2",
+        "languageCode": "en",
+        "translationKey": "home.page.title",
+        "translationValue": "Welcome to my showcase site"
+    },
+    {
+        "translationId": "6281615403a9504718bc07e3",
+        "languageCode": "en",
+        "translationKey": "home.page.news.section.title",
+        "translationValue": "What's new ?"
+    },
+    {
+        "translationId": "6281615403a9504718bc07e4",
+        "languageCode": "en",
+        "translationKey": "home.page.recommended.projects.section.title",
+        "translationValue": "Recommended projects :"
+    },
+    {
+        "translationId": "6281615403a9504718bc07e5",
+        "languageCode": "en",
+        "translationKey": "home.page.introduction.section.title",
+        "translationValue": "Introduction :"
+    },
+    {
+        "translationId": "6281615403a9504718bc07e6",
+        "languageCode": "en",
+        "translationKey": "home.page.introduction.section.list.text",
+        "translationValue": "This web site is separated in 3 sections : "
+    },
+    {
+        "translationId": "6281615403a9504718bc07e7",
+        "languageCode": "en",
+        "translationKey": "home.page.introduction.section.list.element1",
+        "translationValue": "The home page"
+    },
+    {
+        "translationId": "6281615403a9504718bc07e8",
+        "languageCode": "en",
+        "translationKey": "home.page.introduction.section.list.element2",
+        "translationValue": "The projects page"
+    },
+    {
+        "translationId": "6281615403a9504718bc07e9",
+        "languageCode": "en",
+        "translationKey": "home.page.introduction.section.list.element3",
+        "translationValue": "The resumes page"
+    },
+    {
+        "translationId": "6281615403a9504718bc07ea",
+        "languageCode": "en",
+        "translationKey": "home.page.introduction.section.list.explanation",
+        "translationValue": "The home page section will be displaying what's new on the website and also present a selection of the latests projects on wich i'm working. For the Resume part you will be able to see my curriculum and mastered skills, at last the projects section will allows you to browse through my different web or game developpement projects in detail, some projet are testable however some will be not."
+    },
+    {
+        "translationId": "6281615403a9504718bc07eb",
+        "languageCode": "en",
+        "translationKey": "home.page.news.section.text",
+        "translationValue": "This is what happened regarding the site this month :"
+    },
+    {
+        "translationId": "6281615403a9504718bc07ec",
+        "languageCode": "en",
+        "translationKey": "header.application.name.text",
+        "translationValue": "Showcase"
+    },
+    {
+        "translationId": "6281615403a9504718bc07ed",
+        "languageCode": "en",
+        "translationKey": "header.home.link.text",
+        "translationValue": "Home"
+    },
+    {
+        "translationId": "6281615403a9504718bc07ee",
+        "languageCode": "en",
+        "translationKey": "header.resumes.link.text",
+        "translationValue": "Resumes"
+    },
+    {
+        "translationId": "6281615403a9504718bc07ef",
+        "languageCode": "en",
+        "translationKey": "header.projects.link.text",
+        "translationValue": "Projects"
+    },
+    {
+        "translationId": "6281615403a9504718bc07f0",
+        "languageCode": "en",
+        "translationKey": "footer.follow.text",
+        "translationValue": "Follow Me :"
+    },
+    {
+        "translationId": "6281615403a9504718bc07f1",
+        "languageCode": "en",
+        "translationKey": "resumes.page.title",
+        "translationValue": "This is my resumes"
+    },
+    {
+        "translationId": "6281615403a9504718bc07f2",
+        "languageCode": "en",
+        "translationKey": "resumes.page.element.social.network.link.title",
+        "translationValue": "Links"
+    },
+    {
+        "translationId": "6281615403a9504718bc07f3",
+        "languageCode": "en",
+        "translationKey": "resumes.page.element.skills.title",
+        "translationValue": "Skills"
+    },
+    {
+        "translationId": "6281615403a9504718bc07f4",
+        "languageCode": "en",
+        "translationKey": "resumes.page.element.languages.title",
+        "translationValue": "Language"
+    },
+    {
+        "translationId": "6281615403a9504718bc07f5",
+        "languageCode": "en",
+        "translationKey": "resumes.page.element.profile.title",
+        "translationValue": "Profile"
+    },
+    {
+        "translationId": "6281615403a9504718bc07f6",
+        "languageCode": "en",
+        "translationKey": "resumes.page.element.employment.history.title",
+        "translationValue": "Employment history"
+    },
+    {
+        "translationId": "6281615403a9504718bc07f7",
+        "languageCode": "en",
+        "translationKey": "resumes.page.element.education.title",
+        "translationValue": "Education"
+    },
+    {
+        "translationId": "6281615403a9504718bc07f8",
+        "languageCode": "en",
+        "translationKey": "resumes.page.element.hobbies.title",
+        "translationValue": "Hobbies"
+    },
+    {
+        "translationId": "6281615403a9504718bc07f9",
+        "languageCode": "en",
+        "translationKey": "projects.page.title",
+        "translationValue": "Project list page"
+    },
+    {
+        "translationId": "6281615403a9504718bc07fa",
+        "languageCode": "en",
+        "translationKey": "projects.page.filters.title",
+        "translationValue": "Filters"
+    },
+    {
+        "translationId": "6281615403a9504718bc07fb",
+        "languageCode": "en",
+        "translationKey": "projects.page.filters.types.title",
+        "translationValue": "Project types"
+    },
+    {
+        "translationId": "6281615403a9504718bc07fc",
+        "languageCode": "en",
+        "translationKey": "projects.page.filters.technologies.title",
+        "translationValue": "Project technologies"
+    },
+    {
+        "translationId": "6281615403a9504718bc07fd",
+        "languageCode": "en",
+        "translationKey": "projects.page.list.tags.title",
+        "translationValue": "Tags :"
+    },
+    {
+        "translationId": "6281615403a9504718bc07fe",
+        "languageCode": "en",
+        "translationKey": "projects.page.filters.types.web.development",
+        "translationValue": "Web development"
+    },
+    {
+        "translationId": "6281615403a9504718bc07ff",
+        "languageCode": "en",
+        "translationKey": "projects.page.filters.types.game.development",
+        "translationValue": "Game development"
+    },
+    {
+        "translationId": "6281615403a9504718bc0800",
+        "languageCode": "en",
+        "translationKey": "projects.page.list.label.web.development",
+        "translationValue": "Web development project"
+    },
+    {
+        "translationId": "6281615403a9504718bc0801",
+        "languageCode": "en",
+        "translationKey": "projects.page.list.label.game.development",
+        "translationValue": "Game development project"
+    },
+    {
+        "translationId": "6281615403a9504718bc0802",
+        "languageCode": "en",
+        "translationKey": "projects.page.sort.options.label.creation.date",
+        "translationValue": "Creation date"
+    },
+    {
+        "translationId": "6281615403a9504718bc0803",
+        "languageCode": "en",
+        "translationKey": "projects.page.sort.options.label.project.type",
+        "translationValue": "Project type"
+    },
+    {
+        "translationId": "6281615403a9504718bc0804",
+        "languageCode": "en",
+        "translationKey": "projects.page.sort.options.label.project.title",
+        "translationValue": "Project title"
+    },
+    {
+        "translationId": "6281615403a9504718bc0805",
+        "languageCode": "en",
+        "translationKey": "projects.page.sort.options.label.last.modified",
+        "translationValue": "Last modified date"
+    },
+    {
+        "translationId": "6281615403a9504718bc0806",
+        "languageCode": "en",
+        "translationKey": "projects.page.sort.options.mode.ascending",
+        "translationValue": "ASC"
+    },
+    {
+        "translationId": "6281615403a9504718bc0807",
+        "languageCode": "en",
+        "translationKey": "projects.page.sort.options.mode.descending",
+        "translationValue": "DESC"
+    },
+    {
+        "translationId": "6281615403a9504718bc0808",
+        "languageCode": "en",
+        "translationKey": "project.page.introduction.title",
+        "translationValue": "Introduction :"
+    },
+    {
+        "translationId": "6281615403a9504718bc0809",
+        "languageCode": "en",
+        "translationKey": "project.page.instructions.title",
+        "translationValue": "Instructions :"
+    },
+    {
+        "translationId": "6281615403a9504718bc080a",
+        "languageCode": "en",
+        "translationKey": "project.page.test.project.title",
+        "translationValue": "Test the project :"
+    },
+    {
+        "translationId": "6281615403a9504718bc080b",
+        "languageCode": "en",
+        "translationKey": "projects.page.list.project.access.button.label",
+        "translationValue": "Go check the project"
+    },
+    {
+        "translationId": "6281615403a9504718bc080c",
+        "languageCode": "en",
+        "translationKey": "pagination.previous.button.label",
+        "translationValue": "Previous"
+    },
+    {
+        "translationId": "6281615403a9504718bc080d",
+        "languageCode": "en",
+        "translationKey": "pagination.next.button.label",
+        "translationValue": "Next"
+    },
+    {
+        "translationId": "6281615403a9504718bc080e",
+        "languageCode": "en",
+        "translationKey": "project.page.web.link.text",
+        "translationValue": "Go to the project page"
+    },
+    {
+        "translationId": "6281615403a9504718bc080f",
+        "languageCode": "en",
+        "translationKey": "projects.page.list.project.creation.date.label",
+        "translationValue": "Creation date : "
+    },
+    {
+        "translationId": "6281615403a9504718bc0810",
+        "languageCode": "en",
+        "translationKey": "projects.page.list.project.last.modify.date.label",
+        "translationValue": "Last modified date : "
+    },
+    {
+        "translationId": "6281615403a9504718bc0811",
+        "languageCode": "en",
+        "translationKey": "home.page.news.section.duration.text",
+        "translationValue": "Since"
+    },
+    {
+        "translationId": "6281615403a9504718bc0812",
+        "languageCode": "en",
+        "translationKey": "home.page.news.section.duration.details.months.text",
+        "translationValue": " month(s) "
+    },
+    {
+        "translationId": "6281615403a9504718bc0813",
+        "languageCode": "en",
+        "translationKey": "home.page.news.section.duration.details.days.text",
+        "translationValue": " day(s) "
+    },
+    {
+        "translationId": "6281615403a9504718bc0814",
+        "languageCode": "en",
+        "translationKey": "home.page.news.section.duration.details.hours.text",
+        "translationValue": " hour(s) "
+    },
+    {
+        "translationId": "6281615403a9504718bc0815",
+        "languageCode": "en",
+        "translationKey": "home.page.news.section.duration.details.minutes.text",
+        "translationValue": " minute(s) "
+    },
+    {
+        "translationId": "6281615403a9504718bc0819",
+        "languageCode": "en",
+        "translationKey": "project.element.0.title",
+        "translationValue": "Project 0 title"
+    },
+    {
+        "translationId": "6281615403a9504718bc081a",
+        "languageCode": "en",
+        "translationKey": "project.element.0.description",
+        "translationValue": "This is the project 0 what else is there to say."
+    },
+    {
+        "translationId": "6281615403a9504718bc081b",
+        "languageCode": "en",
+        "translationKey": "project.element.1.title",
+        "translationValue": "Project 1 title"
+    },
+    {
+        "translationId": "6281615403a9504718bc081c",
+        "languageCode": "en",
+        "translationKey": "project.element.1.description",
+        "translationValue": "This is the project 1 what else is there to say."
+    },
+    {
+        "translationId": "6281615403a9504718bc081d",
+        "languageCode": "en",
+        "translationKey": "project.element.2.title",
+        "translationValue": "Project 2 title"
+    },
+    {
+        "translationId": "6281615403a9504718bc081e",
+        "languageCode": "en",
+        "translationKey": "project.element.2.description",
+        "translationValue": "This is the project 2 what else is there to say."
+    },
+    {
+        "translationId": "6281615403a9504718bc081f",
+        "languageCode": "en",
+        "translationKey": "project.element.3.title",
+        "translationValue": "Project 3 title"
+    },
+    {
+        "translationId": "6281615403a9504718bc0820",
+        "languageCode": "en",
+        "translationKey": "project.element.3.description",
+        "translationValue": "This is the project 3 what else is there to say."
+    },
+    {
+        "translationId": "6281615403a9504718bc0821",
+        "languageCode": "en",
+        "translationKey": "project.element.4.title",
+        "translationValue": "Project 4 title"
+    },
+    {
+        "translationId": "6281615403a9504718bc0822",
+        "languageCode": "en",
+        "translationKey": "project.element.4.description",
+        "translationValue": "This is the project 4 what else is there to say."
+    },
+    {
+        "translationId": "6281615403a9504718bc0823",
+        "languageCode": "en",
+        "translationKey": "project.element.5.title",
+        "translationValue": "Project 5 title"
+    },
+    {
+        "translationId": "6281615403a9504718bc0824",
+        "languageCode": "en",
+        "translationKey": "project.element.5.description",
+        "translationValue": "This is the project 5 what else is there to say."
+    },
+    {
+        "translationId": "6281615403a9504718bc0826",
+        "languageCode": "fr",
+        "translationKey": "project.element.0.title",
+        "translationValue": "Titre du projet 0"
+    },
+    {
+        "translationId": "6281615403a9504718bc0827",
+        "languageCode": "fr",
+        "translationKey": "project.element.0.description",
+        "translationValue": "Voici le projet 0, que dire d'autre."
+    },
+    {
+        "translationId": "6281615403a9504718bc0828",
+        "languageCode": "fr",
+        "translationKey": "project.element.1.title",
+        "translationValue": "Titre du projet 1"
+    },
+    {
+        "translationId": "6281615403a9504718bc0829",
+        "languageCode": "fr",
+        "translationKey": "project.element.1.description",
+        "translationValue": "Voici le projet 1, que dire d'autre."
+    },
+    {
+        "translationId": "6281615403a9504718bc082a",
+        "languageCode": "fr",
+        "translationKey": "project.element.2.title",
+        "translationValue": "Titre du projet 2"
+    },
+    {
+        "translationId": "6281615403a9504718bc082b",
+        "languageCode": "fr",
+        "translationKey": "project.element.2.description",
+        "translationValue": "Voici le projet 2, que dire d'autre."
+    },
+    {
+        "translationId": "6281615403a9504718bc082c",
+        "languageCode": "fr",
+        "translationKey": "project.element.3.title",
+        "translationValue": "Titre du projet 3"
+    },
+    {
+        "translationId": "6281615403a9504718bc082d",
+        "languageCode": "fr",
+        "translationKey": "project.element.3.description",
+        "translationValue": "Voici le projet 3, que dire d'autre."
+    },
+    {
+        "translationId": "6281615403a9504718bc082e",
+        "languageCode": "fr",
+        "translationKey": "project.element.4.title",
+        "translationValue": "Titre du projet 4"
+    },
+    {
+        "translationId": "6281615403a9504718bc082f",
+        "languageCode": "fr",
+        "translationKey": "project.element.4.description",
+        "translationValue": "Voici le projet 4, que dire d'autre."
+    },
+    {
+        "translationId": "6281615403a9504718bc0830",
+        "languageCode": "fr",
+        "translationKey": "project.element.5.title",
+        "translationValue": "Titre du projet 5"
+    },
+    {
+        "translationId": "6281615403a9504718bc0831",
+        "languageCode": "fr",
+        "translationKey": "project.element.5.description",
+        "translationValue": "Voici le projet 5, que dire d'autre."
+    },
+    {
+        "translationId": "6281615403a9504718bc0834",
+        "languageCode": "en",
+        "translationKey": "project.details.element.0.introduction",
+        "translationValue": "Project 0 details introduction!!!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0835",
+        "languageCode": "en",
+        "translationKey": "project.details.element.0.instructions.0",
+        "translationValue": "Instruction 1!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0836",
+        "languageCode": "en",
+        "translationKey": "project.details.element.0.instructions.1",
+        "translationValue": "Instruction 2!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0837",
+        "languageCode": "en",
+        "translationKey": "project.details.element.0.instructions.2",
+        "translationValue": "Instruction 3!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0838",
+        "languageCode": "en",
+        "translationKey": "project.details.element.0.instructions.3",
+        "translationValue": "Instruction 4!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0839",
+        "languageCode": "en",
+        "translationKey": "project.details.element.1.introduction",
+        "translationValue": "Project 1 details introduction!!!"
+    },
+    {
+        "translationId": "6281615403a9504718bc083a",
+        "languageCode": "en",
+        "translationKey": "project.details.element.1.instructions.0",
+        "translationValue": "Instruction 1!"
+    },
+    {
+        "translationId": "6281615403a9504718bc083b",
+        "languageCode": "en",
+        "translationKey": "project.details.element.1.instructions.1",
+        "translationValue": "Instruction 2!"
+    },
+    {
+        "translationId": "6281615403a9504718bc083c",
+        "languageCode": "en",
+        "translationKey": "project.details.element.1.instructions.2",
+        "translationValue": "Instruction 3!"
+    },
+    {
+        "translationId": "6281615403a9504718bc083d",
+        "languageCode": "en",
+        "translationKey": "project.details.element.1.instructions.3",
+        "translationValue": "Instruction 4!"
+    },
+    {
+        "translationId": "6281615403a9504718bc083e",
+        "languageCode": "en",
+        "translationKey": "project.details.element.2.introduction",
+        "translationValue": "Project 2 details introduction!!!"
+    },
+    {
+        "translationId": "6281615403a9504718bc083f",
+        "languageCode": "en",
+        "translationKey": "project.details.element.2.instructions.0",
+        "translationValue": "Instruction 1!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0840",
+        "languageCode": "en",
+        "translationKey": "project.details.element.2.instructions.1",
+        "translationValue": "Instruction 2!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0841",
+        "languageCode": "en",
+        "translationKey": "project.details.element.2.instructions.2",
+        "translationValue": "Instruction 3!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0842",
+        "languageCode": "en",
+        "translationKey": "project.details.element.2.instructions.3",
+        "translationValue": "Instruction 4!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0843",
+        "languageCode": "en",
+        "translationKey": "project.details.element.3.introduction",
+        "translationValue": "Project 3 details introduction!!!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0844",
+        "languageCode": "en",
+        "translationKey": "project.details.element.3.instructions.0",
+        "translationValue": "Instruction 1!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0845",
+        "languageCode": "en",
+        "translationKey": "project.details.element.3.instructions.1",
+        "translationValue": "Instruction 2!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0846",
+        "languageCode": "en",
+        "translationKey": "project.details.element.3.instructions.2",
+        "translationValue": "Instruction 3!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0847",
+        "languageCode": "en",
+        "translationKey": "project.details.element.3.instructions.3",
+        "translationValue": "Instruction 4!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0848",
+        "languageCode": "en",
+        "translationKey": "project.details.element.4.introduction",
+        "translationValue": "Project 4 details introduction!!!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0849",
+        "languageCode": "en",
+        "translationKey": "project.details.element.4.instructions.0",
+        "translationValue": "Instruction 1!"
+    },
+    {
+        "translationId": "6281615403a9504718bc084a",
+        "languageCode": "en",
+        "translationKey": "project.details.element.4.instructions.1",
+        "translationValue": "Instruction 2!"
+    },
+    {
+        "translationId": "6281615403a9504718bc084b",
+        "languageCode": "en",
+        "translationKey": "project.details.element.4.instructions.2",
+        "translationValue": "Instruction 3!"
+    },
+    {
+        "translationId": "6281615403a9504718bc084c",
+        "languageCode": "en",
+        "translationKey": "project.details.element.4.instructions.3",
+        "translationValue": "Instruction 4!"
+    },
+    {
+        "translationId": "6281615403a9504718bc084d",
+        "languageCode": "en",
+        "translationKey": "project.details.element.5.introduction",
+        "translationValue": "Project 5 details introduction!!!"
+    },
+    {
+        "translationId": "6281615403a9504718bc084e",
+        "languageCode": "en",
+        "translationKey": "project.details.element.5.instructions.0",
+        "translationValue": "Instruction 1!"
+    },
+    {
+        "translationId": "6281615403a9504718bc084f",
+        "languageCode": "en",
+        "translationKey": "project.details.element.5.instructions.1",
+        "translationValue": "Instruction 2!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0850",
+        "languageCode": "en",
+        "translationKey": "project.details.element.5.instructions.2",
+        "translationValue": "Instruction 3!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0851",
+        "languageCode": "en",
+        "translationKey": "project.details.element.5.instructions.3",
+        "translationValue": "Instruction 4!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0853",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.0.introduction",
+        "translationValue": "Introduction du details du projet 0!!!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0854",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.0.instructions.0",
+        "translationValue": "Instruction 1!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0855",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.0.instructions.1",
+        "translationValue": "Instruction 2!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0856",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.0.instructions.2",
+        "translationValue": "Instruction 3!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0857",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.0.instructions.3",
+        "translationValue": "Instruction 4!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0858",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.1.introduction",
+        "translationValue": "Introduction du details du projet 1!!!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0859",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.1.instructions.0",
+        "translationValue": "Instruction 1!"
+    },
+    {
+        "translationId": "6281615403a9504718bc085a",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.1.instructions.1",
+        "translationValue": "Instruction 2!"
+    },
+    {
+        "translationId": "6281615403a9504718bc085b",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.1.instructions.2",
+        "translationValue": "Instruction 3!"
+    },
+    {
+        "translationId": "6281615403a9504718bc085c",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.1.instructions.3",
+        "translationValue": "Instruction 4!"
+    },
+    {
+        "translationId": "6281615403a9504718bc085d",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.2.introduction",
+        "translationValue": "Introduction du details du projet 2!!!"
+    },
+    {
+        "translationId": "6281615403a9504718bc085e",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.2.instructions.0",
+        "translationValue": "Instruction 1!"
+    },
+    {
+        "translationId": "6281615403a9504718bc085f",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.2.instructions.1",
+        "translationValue": "Instruction 2!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0860",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.2.instructions.2",
+        "translationValue": "Instruction 3!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0861",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.2.instructions.3",
+        "translationValue": "Instruction 4!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0862",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.3.introduction",
+        "translationValue": "Introduction du details du projet 3!!!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0863",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.3.instructions.0",
+        "translationValue": "Instruction 1!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0864",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.3.instructions.1",
+        "translationValue": "Instruction 2!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0865",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.3.instructions.2",
+        "translationValue": "Instruction 3!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0866",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.3.instructions.3",
+        "translationValue": "Instruction 4!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0867",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.4.introduction",
+        "translationValue": "Introduction du details du projet 4!!!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0868",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.4.instructions.0",
+        "translationValue": "Instruction 1!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0869",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.4.instructions.1",
+        "translationValue": "Instruction 2!"
+    },
+    {
+        "translationId": "6281615403a9504718bc086a",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.4.instructions.2",
+        "translationValue": "Instruction 3!"
+    },
+    {
+        "translationId": "6281615403a9504718bc086b",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.4.instructions.3",
+        "translationValue": "Instruction 4!"
+    },
+    {
+        "translationId": "6281615403a9504718bc086c",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.5.introduction",
+        "translationValue": "Introduction du details du projet 5!!!"
+    },
+    {
+        "translationId": "6281615403a9504718bc086d",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.5.instructions.0",
+        "translationValue": "Instruction 1!"
+    },
+    {
+        "translationId": "6281615403a9504718bc086e",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.5.instructions.1",
+        "translationValue": "Instruction 2!"
+    },
+    {
+        "translationId": "6281615403a9504718bc086f",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.5.instructions.2",
+        "translationValue": "Instruction 3!"
+    },
+    {
+        "translationId": "6281615403a9504718bc0870",
+        "languageCode": "fr",
+        "translationKey": "project.details.element.5.instructions.3",
+        "translationValue": "Instruction 4!"
+    },
+    {
+        "translationId": "6288b39e3967bf7237ba0aab",
+        "languageCode": "en",
+        "translationKey": "news.element.0.description",
+        "translationValue": "Great news something is now created!!!"
+    },
+    {
+        "translationId": "6288b39e3967bf7237ba0aac",
+        "languageCode": "en",
+        "translationKey": "news.element.1.description",
+        "translationValue": "Great news something is now updated!!!"
+    },
+    {
+        "translationId": "6288b39e3967bf7237ba0aad",
+        "languageCode": "en",
+        "translationKey": "news.element.2.description",
+        "translationValue": "Great news another thing is now created!!!"
+    },
+    {
+        "translationId": "6288b39e3967bf7237ba0aae",
+        "languageCode": "en",
+        "translationKey": "news.element.3.description",
+        "translationValue": "Great news another thing is now updated!!!"
+    },
+    {
+        "translationId": "6288b39e3967bf7237ba0ab0",
+        "languageCode": "fr",
+        "translationKey": "news.element.0.description",
+        "translationValue": "Bonne nouvelle quelque chose est maintenant créé!!!"
+    },
+    {
+        "translationId": "6288b39e3967bf7237ba0ab1",
+        "languageCode": "fr",
+        "translationKey": "news.element.1.description",
+        "translationValue": "Bonne nouvelle quelque chose est maintenant mis à jour!!!"
+    },
+    {
+        "translationId": "6288b39e3967bf7237ba0ab2",
+        "languageCode": "fr",
+        "translationKey": "news.element.2.description",
+        "translationValue": "Bonne nouvelle quelque chose d'autre est maintenant créé!!!"
+    },
+    {
+        "translationId": "6288b39e3967bf7237ba0ab3",
+        "languageCode": "fr",
+        "translationKey": "news.element.3.description",
+        "translationValue": "Bonne nouvelle autre chose est maintenant mis à jour!!!"
+    },
+    {
+        "translationId": "628a9531108675395dd823cd",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.detail.title",
+        "translationValue": "The resumee"
+    },
+    {
+        "translationId": "628a9531108675395dd823ce",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.profile",
+        "translationValue": "My profile"
+    },
+    {
+        "translationId": "628a9531108675395dd823cf",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.skills.0.label",
+        "translationValue": "Sleep"
+    },
+    {
+        "translationId": "628a9531108675395dd823d0",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.skills.1.label",
+        "translationValue": "Jump"
+    },
+    {
+        "translationId": "628a9531108675395dd823d1",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.skills.2.label",
+        "translationValue": "Investigation"
+    },
+    {
+        "translationId": "628a9531108675395dd823d2",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.skills.3.label",
+        "translationValue": "Bargain"
+    },
+    {
+        "translationId": "628a9531108675395dd823d3",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.languages.0.label",
+        "translationValue": "French"
+    },
+    {
+        "translationId": "628a9531108675395dd823d4",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.languages.1.label",
+        "translationValue": "English"
+    },
+    {
+        "translationId": "628a9531108675395dd823d5",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.employmentHistories.0.jobTitle",
+        "translationValue": "My job title"
+    },
+    {
+        "translationId": "628a9531108675395dd823d6",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.employmentHistories.0.descriptions.0",
+        "translationValue": "Description 1"
+    },
+    {
+        "translationId": "628a9531108675395dd823d7",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.employmentHistories.0.descriptions.1",
+        "translationValue": "Description 2"
+    },
+    {
+        "translationId": "628a9531108675395dd823d8",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.employmentHistories.1.jobTitle",
+        "translationValue": "My job title extra"
+    },
+    {
+        "translationId": "628a9531108675395dd823d9",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.employmentHistories.1.descriptions.0",
+        "translationValue": "Description extra 1"
+    },
+    {
+        "translationId": "628a9531108675395dd823da",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.employmentHistories.1.descriptions.1",
+        "translationValue": "Description extra 2"
+    },
+    {
+        "translationId": "628a9531108675395dd823db",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.educations.0.degree",
+        "translationValue": "The degree"
+    },
+    {
+        "translationId": "628a9531108675395dd823dc",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.educations.0.description",
+        "translationValue": ""
+    },
+    {
+        "translationId": "628a9531108675395dd823dd",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.educations.1.degree",
+        "translationValue": "The degree 2"
+    },
+    {
+        "translationId": "628a9531108675395dd823de",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.educations.1.description",
+        "translationValue": "Graduated for the sake of the country nothing more nothing less. Everyone was happy about this, except for me."
+    },
+    {
+        "translationId": "628a9531108675395dd823df",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.hobbies.0",
+        "translationValue": "Doing things 1"
+    },
+    {
+        "translationId": "628a9531108675395dd823e0",
+        "languageCode": "en",
+        "translationKey": "resumes.element.0.hobbies.1",
+        "translationValue": "Doing nothing"
+    },
+    {
+        "translationId": "628a9531108675395dd823e1",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.detail.title",
+        "translationValue": "Another resumee"
+    },
+    {
+        "translationId": "628a9531108675395dd823e2",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.profile",
+        "translationValue": "Another profile what else!?"
+    },
+    {
+        "translationId": "628a9531108675395dd823e3",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.skills.0.label",
+        "translationValue": "Drink"
+    },
+    {
+        "translationId": "628a9531108675395dd823e4",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.skills.1.label",
+        "translationValue": "Eat"
+    },
+    {
+        "translationId": "628a9531108675395dd823e5",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.skills.2.label",
+        "translationValue": "Investigation"
+    },
+    {
+        "translationId": "628a9531108675395dd823e6",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.skills.3.label",
+        "translationValue": "Bargain"
+    },
+    {
+        "translationId": "628a9531108675395dd823e7",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.languages.0.label",
+        "translationValue": "English"
+    },
+    {
+        "translationId": "628a9531108675395dd823e8",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.employmentHistories.0.jobTitle",
+        "translationValue": "A new job title"
+    },
+    {
+        "translationId": "628a9531108675395dd823e9",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.employmentHistories.0.descriptions.0",
+        "translationValue": "Description 1"
+    },
+    {
+        "translationId": "628a9531108675395dd823ea",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.employmentHistories.0.descriptions.1",
+        "translationValue": "Description 2"
+    },
+    {
+        "translationId": "628a9531108675395dd823eb",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.employmentHistories.1.jobTitle",
+        "translationValue": "My job title extra"
+    },
+    {
+        "translationId": "628a9531108675395dd823ec",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.employmentHistories.1.descriptions.0",
+        "translationValue": "Description extra 1"
+    },
+    {
+        "translationId": "628a9531108675395dd823ed",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.employmentHistories.1.descriptions.1",
+        "translationValue": "Description extra 2"
+    },
+    {
+        "translationId": "628a9531108675395dd823ee",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.educations.0.degree",
+        "translationValue": "The specific degree"
+    },
+    {
+        "translationId": "628a9531108675395dd823ef",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.educations.0.description",
+        "translationValue": ""
+    },
+    {
+        "translationId": "628a9531108675395dd823f0",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.educations.1.degree",
+        "translationValue": "The degree 2"
+    },
+    {
+        "translationId": "628a9531108675395dd823f1",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.educations.1.description",
+        "translationValue": "Graduated by giving money..."
+    },
+    {
+        "translationId": "628a9531108675395dd823f2",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.hobbies.0",
+        "translationValue": "Doing multiple things"
+    },
+    {
+        "translationId": "628a9531108675395dd823f3",
+        "languageCode": "en",
+        "translationKey": "resumes.element.1.hobbies.1",
+        "translationValue": "Doing something new"
+    },
+    {
+        "translationId": "628a9531108675395dd823f4",
+        "languageCode": "en",
+        "translationKey": "resumes.date.today",
+        "translationValue": "Today"
+    },
+    {
+        "translationId": "628a9531108675395dd823f6",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.detail.title",
+        "translationValue": "Le cv"
+    },
+    {
+        "translationId": "628a9531108675395dd823f7",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.profile",
+        "translationValue": "Mon profil"
+    },
+    {
+        "translationId": "628a9531108675395dd823f8",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.skills.0.label",
+        "translationValue": "Dormir"
+    },
+    {
+        "translationId": "628a9531108675395dd823f9",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.skills.1.label",
+        "translationValue": "Sauter"
+    },
+    {
+        "translationId": "628a9531108675395dd823fa",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.skills.2.label",
+        "translationValue": "Enquêter"
+    },
+    {
+        "translationId": "628a9531108675395dd823fb",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.skills.3.label",
+        "translationValue": "Marchander"
+    },
+    {
+        "translationId": "628a9531108675395dd823fc",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.languages.0.label",
+        "translationValue": "Français"
+    },
+    {
+        "translationId": "628a9531108675395dd823fd",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.languages.1.label",
+        "translationValue": "Anglais"
+    },
+    {
+        "translationId": "628a9531108675395dd823fe",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.employmentHistories.0.jobTitle",
+        "translationValue": "Mon intitulé de poste"
+    },
+    {
+        "translationId": "628a9531108675395dd823ff",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.employmentHistories.0.descriptions.0",
+        "translationValue": "Description 1"
+    },
+    {
+        "translationId": "628a9531108675395dd82400",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.employmentHistories.0.descriptions.1",
+        "translationValue": "Description 2"
+    },
+    {
+        "translationId": "628a9531108675395dd82401",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.employmentHistories.1.jobTitle",
+        "translationValue": "Mon intitulé de poste extra"
+    },
+    {
+        "translationId": "628a9531108675395dd82402",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.employmentHistories.1.descriptions.0",
+        "translationValue": "Description extra 1"
+    },
+    {
+        "translationId": "628a9531108675395dd82403",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.employmentHistories.1.descriptions.1",
+        "translationValue": "Description extra 2"
+    },
+    {
+        "translationId": "628a9531108675395dd82404",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.educations.0.degree",
+        "translationValue": "Le diplôme"
+    },
+    {
+        "translationId": "628a9531108675395dd82405",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.educations.0.description",
+        "translationValue": ""
+    },
+    {
+        "translationId": "628a9531108675395dd82406",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.educations.1.degree",
+        "translationValue": "Le diplôme 2"
+    },
+    {
+        "translationId": "628a9531108675395dd82407",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.educations.1.description",
+        "translationValue": "Diplômé pour le bien du pays rien de plus rien de moins. Tout le monde en était content, sauf moi."
+    },
+    {
+        "translationId": "628a9531108675395dd82408",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.hobbies.0",
+        "translationValue": "Faire des choses 1"
+    },
+    {
+        "translationId": "628a9531108675395dd82409",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.0.hobbies.1",
+        "translationValue": "Ne rien faire"
+    },
+    {
+        "translationId": "628a9531108675395dd8240a",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.detail.title",
+        "translationValue": "Autre cv"
+    },
+    {
+        "translationId": "628a9531108675395dd8240b",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.profile",
+        "translationValue": "Autre profil quoi d'autre!?"
+    },
+    {
+        "translationId": "628a9531108675395dd8240c",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.skills.0.label",
+        "translationValue": "Boire"
+    },
+    {
+        "translationId": "628a9531108675395dd8240d",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.skills.1.label",
+        "translationValue": "Manger"
+    },
+    {
+        "translationId": "628a9531108675395dd8240e",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.skills.2.label",
+        "translationValue": "Enquêter"
+    },
+    {
+        "translationId": "628a9531108675395dd8240f",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.skills.3.label",
+        "translationValue": "Marchander"
+    },
+    {
+        "translationId": "628a9531108675395dd82410",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.languages.0.label",
+        "translationValue": "Anglais"
+    },
+    {
+        "translationId": "628a9531108675395dd82411",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.employmentHistories.0.jobTitle",
+        "translationValue": "Un nouvel intitulé de poste"
+    },
+    {
+        "translationId": "628a9531108675395dd82412",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.employmentHistories.0.descriptions.0",
+        "translationValue": "Description 1"
+    },
+    {
+        "translationId": "628a9531108675395dd82413",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.employmentHistories.0.descriptions.1",
+        "translationValue": "Description 2"
+    },
+    {
+        "translationId": "628a9531108675395dd82414",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.employmentHistories.1.jobTitle",
+        "translationValue": "Mon intitulé de poste extra"
+    },
+    {
+        "translationId": "628a9531108675395dd82415",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.employmentHistories.1.descriptions.0",
+        "translationValue": "Description extra 1"
+    },
+    {
+        "translationId": "628a9531108675395dd82416",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.employmentHistories.1.descriptions.1",
+        "translationValue": "Description extra 2"
+    },
+    {
+        "translationId": "628a9531108675395dd82417",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.educations.0.degree",
+        "translationValue": "Le diplôme spécifique"
+    },
+    {
+        "translationId": "628a9531108675395dd82418",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.educations.0.description",
+        "translationValue": ""
+    },
+    {
+        "translationId": "628a9531108675395dd82419",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.educations.1.degree",
+        "translationValue": "Le diplôme 2"
+    },
+    {
+        "translationId": "628a9531108675395dd8241a",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.educations.1.description",
+        "translationValue": "Diplômé en donnant de l'argent..."
+    },
+    {
+        "translationId": "628a9531108675395dd8241b",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.hobbies.0",
+        "translationValue": "Faire de multiple chose"
+    },
+    {
+        "translationId": "628a9531108675395dd8241c",
+        "languageCode": "fr",
+        "translationKey": "resumes.element.1.hobbies.1",
+        "translationValue": "Faire quelque chose de nouveau"
+    },
+    {
+        "translationId": "628a9531108675395dd8241d",
+        "languageCode": "fr",
+        "translationKey": "resumes.date.today",
+        "translationValue": "Aujourd'hui"
+    }
+]

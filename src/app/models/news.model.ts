@@ -8,7 +8,7 @@ export class News {
     /**
      * Creates an instance of news.
      * @param newsId the news id
-     * @param newsDescription the news description
+     * @param newsDescriptionTranslationKey the news description translation key
      * @param newsType the news type
      * @param newsCreationDate the news creation date
      * @param isNewsActive the news state
@@ -17,7 +17,7 @@ export class News {
      */
     public constructor(
         public newsId: string, 
-        public newsDescription: string, 
+        public newsDescriptionTranslationKey: string, 
         public newsType: NewsType, 
         public newsCreationDate: Date, 
         public isNewsActive: boolean

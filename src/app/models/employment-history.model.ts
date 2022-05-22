@@ -7,21 +7,21 @@ export class EmploymentHistory {
 
     /**
      * Creates an instance of employment history.
-     * @param jobTitle the job title
+     * @param jobTitleTranslationKey the job title translation key
      * @param company the company
      * @param startDate the start date
      * @param endDate the end date
      * @param city the city
-     * @param descriptions the descriptions
+     * @param descriptionTranslationKeys the description translation keys
      * @public
      * @constructor
      */
     public constructor(
-        public jobTitle: string,
+        public jobTitleTranslationKey: string,
         public company: string,
         public startDate: Date,
         public endDate: Date | null,
         public city: string,
-        public descriptions: string[]
+        public descriptionTranslationKeys: string[]
     ){}
 }

@@ -3,7 +3,7 @@
         "resumeId": "62409b11411b32c3d7d6ce01",
         "isDefault": false,
         "detail": {
-            "title": "The resumee",
+            "titleTranslationKey": "resumes.element.0.detail.title",
             "person": {
                 "firstName": "My first name",
                 "familyName": "The family name",
@@ -31,77 +31,75 @@
         },
         "skills": [
             {
-                "label": "Sleep",
+                "labelTranslationKey": "resumes.element.0.skills.0.label",
                 "level": 3
             },
             {
-                "label": "Jump",
+                "labelTranslationKey": "resumes.element.0.skills.1.label",
                 "level": 2
             },
             {
-                "label": "Investigation",
+                "labelTranslationKey": "resumes.element.0.skills.2.label",
                 "level": 1
             },
             {
-                "label": "Bargain",
+                "labelTranslationKey": "resumes.element.0.skills.3.label",
                 "level": 0
             }
         ],
-        "hobbies": [
-            "Doing things 1",
-            "Doing nothing"
+        "hobbyTranslationKeys": [
+            "resumes.element.0.hobbies.0",
+            "resumes.element.0.hobbies.1"
         ],
         "languages": [
             {
-                "label": "French",
+                "labelTranslationKey": "resumes.element.0.languages.0.label",
                 "level": 2
             },
             {
-                "label": "English",
+                "labelTranslationKey": "resumes.element.0.languages.1.label",
                 "level": 1
             }
         ],
-        "profile": "My profile",
+        "profileTranslationKey": "resumes.element.0.profile",
         "employmentHistories": [
             {
-                "jobTitle": "My job title",
+                "jobTitleTranslationKey": "resumes.element.0.employmentHistories.0.jobTitle",
                 "company": "Fictive company",
                 "startDate": "2022-03-06T19:19:57.383Z",
                 "endDate": null,
                 "city": "A city",
-                "descriptions": [
-                    "Description 1",
-                    "Description 2"
+                "descriptionTranslationKeys": [
+                    "resumes.element.0.employmentHistories.0.descriptions.0"
                 ]
             },
             {
-                "jobTitle": "My job title extra",
+                "jobTitleTranslationKey": "resumes.element.0.employmentHistories.1.jobTitle",
                 "company": "Fictive company 2",
                 "startDate": "2022-03-06T19:19:57.383Z",
                 "endDate": "2022-03-06T19:19:57.383Z",
                 "city": "Another city",
-                "descriptions": [
-                    "Description extra 1",
-                    "Description extra 2"
+                "descriptionTranslationKeys": [
+                    "resumes.element.0.employmentHistories.1.descriptions.0"
                 ]
             }
         ],
         "educations": [
             {
-                "degree": "The degree",
+                "degreeTranslationKey": "resumes.element.0.educations.0.degree",
                 "school": "The school",
                 "startDate": "2022-03-06T19:19:57.383Z",
                 "endDate": "2022-03-06T19:19:57.383Z",
                 "city": "The city",
-                "description": null
+                "descriptionTranslationKey": "resumes.element.0.educations.0.description"
             },
             {
-                "degree": "The degree 2",
+                "degreeTranslationKey": "resumes.element.0.educations.1.degree",
                 "school": "The school 2",
                 "startDate": "2022-03-06T19:19:57.383Z",
                 "endDate": null,
                 "city": "Another city",
-                "description": "Graduated for the sake of the country nothing more nothing less. Everyone was happy about this, except for me."
+                "descriptionTranslationKey": "resumes.element.0.educations.1.description"
             }
         ]
     },
@@ -109,7 +107,7 @@
         "resumeId": "62409b11411b32c3d7d6ce02",
         "isDefault": true,
         "detail": {
-            "title": "Another resumee",
+            "titleTranslationKey": "resumes.element.1.detail.title",
             "person": {
                 "firstName": "My first name",
                 "familyName": "The family name",
@@ -137,73 +135,71 @@
         },
         "skills": [
             {
-                "label": "Drink",
+                "labelTranslationKey": "resumes.element.1.skills.0.label",
                 "level": 3
             },
             {
-                "label": "Eat",
+                "labelTranslationKey": "resumes.element.1.skills.1.label",
                 "level": 2
             },
             {
-                "label": "Investigation",
+                "labelTranslationKey": "resumes.element.1.skills.2.label",
                 "level": 1
             },
             {
-                "label": "Bargain",
+                "labelTranslationKey": "resumes.element.1.skills.3.label",
                 "level": 0
             }
         ],
-        "hobbies": [
-            "Doing multiple things",
-            "Doing something new"
+        "hobbyTranslationKeys": [
+            "resumes.element.1.hobbies.0",
+            "resumes.element.1.hobbies.1"
         ],
         "languages": [
             {
-                "label": "English",
+                "labelTranslationKey": "resumes.element.1.languages.0.label",
                 "level": 1
             }
         ],
-        "profile": "Another profile what else!?",
+        "profileTranslationKey": "resumes.element.1.profile",
         "employmentHistories": [
             {
-                "jobTitle": "A new job title",
+                "jobTitleTranslationKey": "resumes.element.1.employmentHistories.0.jobTitle",
                 "company": "Fictive company 2",
                 "startDate": "2022-03-06T19:19:57.383Z",
                 "endDate": null,
                 "city": "A city",
-                "descriptions": [
-                    "Description 1",
-                    "Description 2"
+                "descriptionTranslationKeys": [
+                    "resumes.element.1.employmentHistories.0.descriptions.0"
                 ]
             },
             {
-                "jobTitle": "My job title extra",
+                "jobTitleTranslationKey": "resumes.element.1.employmentHistories.1.jobTitle",
                 "company": "Fictive company 2",
                 "startDate": "2022-03-06T19:19:57.383Z",
                 "endDate": "2022-03-06T19:19:57.383Z",
                 "city": "Another city",
-                "descriptions": [
-                    "Description extra 1",
-                    "Description extra 2"
+                "descriptionTranslationKeys": [
+                    "resumes.element.1.employmentHistories.1.descriptions.0"
                 ]
             }
         ],
         "educations": [
             {
-                "degree": "The specific degree",
+                "degreeTranslationKey": "resumes.element.1.educations.0.degree",
                 "school": "The unknown school",
                 "startDate": "2022-03-06T19:19:57.383Z",
                 "endDate": "2022-03-06T19:19:57.383Z",
                 "city": "The city",
-                "description": null
+                "descriptionTranslationKey": "resumes.element.1.educations.0.description"
             },
             {
-                "degree": "The degree 2",
+                "degreeTranslationKey": "resumes.element.1.educations.1.degree",
                 "school": "The school 2",
                 "startDate": "2022-03-06T19:19:57.383Z",
                 "endDate": null,
                 "city": "Another city",
-                "description": "Graduated by giving money..."
+                "descriptionTranslationKey": "resumes.element.1.educations.1.description"
             }
         ]
     }

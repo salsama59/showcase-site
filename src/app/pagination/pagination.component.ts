@@ -1,7 +1,9 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subject, Subscription } from 'rxjs';
+import { PaginationTranslationsConstants } from '../constants/pagination-translations-constants';
 import { PaginationLink } from '../models/pagination-link.model';
+import { TranslationsService } from '../services/translations.service';
 
 /**
  * Component used to manage the sections pagination
@@ -68,11 +70,18 @@ export class PaginationComponent implements OnInit, OnDestroy {
 	paginatedDataSubscription!: Subscription;
 
 	/**
+	 * Pagination translations constants of pagination component
+	 */
+	public paginationTranslationsConstants = PaginationTranslationsConstants;
+
+	/**
 	 * Creates an instance of pagination component.
+	 * @public
 	 * @constructor
 	 * @param activatedRoute  the activated route
+	 * @param translationsService the translation service
 	 */
-	constructor(private activatedRoute: ActivatedRoute) {}
+	constructor(private activatedRoute: ActivatedRoute, public translationsService: TranslationsService) {}
 
 	/**
 	 * Subscribe to the query params of the activated route to update the current page number.

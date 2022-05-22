@@ -4,7 +4,7 @@
             <p>
                 <strong>{{ currentResume?.detail?.person?.firstName }} {{ currentResume?.detail?.person?.familyName }}</strong>
             </p>
-            <p id="resumeElementTitle">{{ currentResume?.detail?.title }}</p>
+            <p id="resumeElementTitle">{{ translationsService.get(currentResume?.detail?.titleTranslationKey) }}</p>
             <p>{{ currentResume?.detail?.person?.address?.street }}, {{ currentResume?.detail?.person?.address?.city }}, {{ currentResume?.detail?.person?.address?.postalCode }}, {{ currentResume?.detail?.person?.address?.country | uppercase }}</p>
             <p>{{ currentResume?.detail?.person?.contact?.phoneNumber }} &nbsp; {{ currentResume?.detail?.person?.contact?.email }}</p>
         </article>
@@ -13,14 +13,14 @@
     <div class="resume-second-layout-block">
         <section class="resume-left-section">
             <article>
-                <h5>Links</h5>
+                <h5>{{translationsService.get(resumesTranslationsConstants.RESUMES_PAGE_ELEMENT_SOCIAL_NETWORK_LINK_TITLE_KEY)}}</h5>
                 <p><a id="{{ socialNetWork.socialNetworkLinkId }}" *ngFor="let socialNetWork of currentResume?.detail?.socialNetworks" [href]="socialNetWork.socialNetworkLinkUrl"><img src="assets/images/{{ socialNetWork.socialNetworkImageName }}" class="img-fluid social-link-image" alt="{{ socialNetWork.socialNetworkImageName }}"/>&nbsp;{{ socialNetWork.socialNetworkLinkName }}</a></p>
             </article>
             <article>
-                <h5>Skills</h5>
+                <h5>{{translationsService.get(resumesTranslationsConstants.RESUMES_PAGE_ELEMENT_SKILLS_TITLE_KEY)}}</h5>
                 <div *ngFor="let skill of currentResume?.skills">
                     <p>
-                        <span>{{ skill.label }}</span>
+                        <span>{{ translationsService.get(skill.labelTranslationKey) }}</span>
                     </p>
                     <p>
                         <span *ngFor="let i of enumUtilsService.getEnumLength(skillLevelType) | numberToArray; let currentLevelNumber = index" [ngClass]="{'level-opacity': isLevelOpacityEnabled(skill.level, currentLevelNumber)}">
@@ -33,10 +33,10 @@
                 </div>
             </article>
             <article>
-                <h5>Language</h5>
+                <h5>{{translationsService.get(resumesTranslationsConstants.RESUMES_PAGE_ELEMENT_LANGUAGES_TITLE_KEY)}}</h5>
                 <div *ngFor="let language of currentResume?.languages">
                     <p>
-                        <span>{{ language.label }}</span>
+                        <span>{{ translationsService.get(language.labelTranslationKey) }}</span>
                     </p>
                     <p>
                         <span *ngFor="let i of enumUtilsService.getEnumLength(languageLevelType) | numberToArray; let currentLevelNumber = index" [ngClass]="{'level-opacity': isLevelOpacityEnabled(language.level, currentLevelNumber)}">
@@ -52,32 +52,32 @@
         
         <section class="resume-rigth-section">
             <article>
-                <h2>Profile</h2>
-                <p>{{ currentResume?.profile }}</p>
+                <h2>{{translationsService.get(resumesTranslationsConstants.RESUMES_PAGE_ELEMENT_PROFILE_TITLE_KEY)}}</h2>
+                <p>{{ translationsService.get(currentResume?.profileTranslationKey) }}</p>
             </article>
             <article>
-                <h2>Employment history</h2>
+                <h2>{{translationsService.get(resumesTranslationsConstants.RESUMES_PAGE_ELEMENT_EMPLOYMENT_HISTORY_TITLE_KEY)}}</h2>
                 <div *ngFor="let employmentHistory of currentResume?.employmentHistories">
-                    <strong>{{ employmentHistory.jobTitle }}, {{ employmentHistory.company }}, {{ employmentHistory.city }}</strong>
-                    <p>{{ employmentHistory.startDate | date: 'dd/MM/yyyy' }} - {{ employmentHistory.endDate ? (employmentHistory.endDate | date: 'dd/MM/yyyy') : 'Today' }}</p>
+                    <strong>{{ translationsService.get(employmentHistory.jobTitleTranslationKey) }}, {{ employmentHistory.company }}, {{ employmentHistory.city }}</strong>
+                    <p>{{ employmentHistory.startDate | date: 'dd/MM/yyyy' }} - {{ employmentHistory.endDate ? (employmentHistory.endDate | date: 'dd/MM/yyyy') : translationsService.get(resumesTranslationsConstants.RESUMES_DATE_TODAY_KEY) }}</p>
                     <ul>
-                        <li *ngFor="let description of employmentHistory.descriptions">
-                            {{ description }}
+                        <li *ngFor="let description of employmentHistory.descriptionTranslationKeys">
+                            {{ translationsService.get(description) }}
                         </li>
                     </ul>
                 </div>
             </article>
             <article>
-                <h2>Education</h2>
+                <h2>{{translationsService.get(resumesTranslationsConstants.RESUMES_PAGE_ELEMENT_EDUCATION_TITLE_KEY)}}</h2>
                 <div *ngFor="let education of currentResume?.educations">
-                    <strong>{{ education.degree }}, {{ education.school }}, {{ education.city }}</strong>
-                    <p>{{ education.startDate | date: 'dd/MM/yyyy' }} - {{ education.endDate ? (education.endDate | date: 'dd/MM/yyyy') : 'Today' }}</p>
-                    <p>{{ education.description }}</p>
+                    <strong>{{ translationsService.get(education.degreeTranslationKey) }}, {{ education.school }}, {{ education.city }}</strong>
+                    <p>{{ education.startDate | date: 'dd/MM/yyyy' }} - {{ education.endDate ? (education.endDate | date: 'dd/MM/yyyy') : translationsService.get(resumesTranslationsConstants.RESUMES_DATE_TODAY_KEY) }}</p>
+                    <p>{{ translationsService.get(education.descriptionTranslationKey) }}</p>
                 </div>
             </article>
             <article>
-                <h2>Hobbies</h2>
-                <p *ngFor="let hobby of currentResume?.hobbies">{{ hobby }}</p>
+                <h2>{{translationsService.get(resumesTranslationsConstants.RESUMES_PAGE_ELEMENT_HOBBIES_TITLE_KEY)}}</h2>
+                <p *ngFor="let hobby of currentResume?.hobbyTranslationKeys">{{ translationsService.get(hobby) }}</p>
             </article>
         </section>    
     </div>
