@@ -67,10 +67,10 @@ export class ProjectsComponent implements OnInit {
   public projectSortType = ProjectSortType;
 
   /**
-   * Sort label of projects component
+   * Sort label translation key of projects component
    * @public
    */
-  public sortLabel: string = '';
+  public sortLabelTranslationKey: string = '';
 
   /**
 	 * Maximum projects per page count
@@ -107,7 +107,7 @@ export class ProjectsComponent implements OnInit {
    * @public
    */
   ngOnInit(): void {
-    this.sortLabel = this.translationsService.get(this.projectsTranslationsConstants.PROJECTS_PAGE_SORT_OPTIONS_MODE_ASCENDING_KEY);
+    this.sortLabelTranslationKey = this.projectsTranslationsConstants.PROJECTS_PAGE_SORT_OPTIONS_MODE_ASCENDING_KEY;
     this.projectsService.getProjects().subscribe(projects => {
       this.projectListToDisplay = projects;
       this.originalProjectList = projects;
@@ -290,11 +290,11 @@ export class ProjectsComponent implements OnInit {
     switch (this.userSortOrderChoice) {
       case SortOrder.ASCENDING:
         this.userSortOrderChoice = SortOrder.DESCENDING;
-        this.sortLabel = this.translationsService.get(this.projectsTranslationsConstants.PROJECTS_PAGE_SORT_OPTIONS_MODE_DESCENDING_KEY);
+        this.sortLabelTranslationKey = this.projectsTranslationsConstants.PROJECTS_PAGE_SORT_OPTIONS_MODE_DESCENDING_KEY;
       break;
       case SortOrder.DESCENDING:
         this.userSortOrderChoice = SortOrder.ASCENDING;
-        this.sortLabel = this.translationsService.get(this.projectsTranslationsConstants.PROJECTS_PAGE_SORT_OPTIONS_MODE_ASCENDING_KEY);
+        this.sortLabelTranslationKey = this.projectsTranslationsConstants.PROJECTS_PAGE_SORT_OPTIONS_MODE_ASCENDING_KEY;
       break;
     }
     this.onSortChoiceChange(true);

@@ -24,3 +24,10 @@ nav a:hover {
 .navbar-brand > img {
 	margin-right: 5%;
 }
+
+.language-dropdown-block{
+	background-color: #6535ca;
+    width: 18%;
+    border: 1px solid white;
+    color: rgba(255, 255, 255, 0.7);
+}

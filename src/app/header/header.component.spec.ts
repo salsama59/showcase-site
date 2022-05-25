@@ -4,6 +4,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
+import { of } from 'rxjs';
 import { RouteConstants } from '../constants/route-constants';
 import { HomeComponent } from '../home/home.component';
 import { ProjectComponent } from '../projects/project/project.component';
@@ -15,9 +16,9 @@ import { TranslationsService } from '../services/translations.service';
 import { HeaderComponent } from './header.component';
 
 describe('HeaderComponent', () => {
-  let component: HeaderComponent;
+  let headerComponent: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
-  let translationsServiceSpy: jasmine.SpyObj<TranslationsService> = jasmine.createSpyObj('TranslationsService', ['get']);
+  let translationsServiceSpy: jasmine.SpyObj<TranslationsService> = jasmine.createSpyObj('TranslationsService', ['get', 'loadTranslationsByLocale']);
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -72,13 +73,15 @@ describe('HeaderComponent', () => {
       }
       return '';
     });
+
+    translationsServiceSpy.loadTranslationsByLocale.and.callFake(() => of(true));
     fixture = TestBed.createComponent(HeaderComponent);
-    component = fixture.componentInstance;
+    headerComponent = fixture.componentInstance;
     fixture.detectChanges();
   });
 
   it('should create the header component', () => {
-    expect(component).toBeTruthy();
+    expect(headerComponent).toBeTruthy();
   });
 
   it('should render the Home link', () => {
@@ -93,6 +96,12 @@ describe('HeaderComponent', () => {
 
   it('should render the Projects link', () => {
     const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelectorAll('header nav div#navbarNav ul > li a').item(2).textContent).toContain('Projects');
+  });
+
+  it('should switch language', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    headerComponent.onLanguageSwitch();
     expect(compiled.querySelectorAll('header nav div#navbarNav ul > li a').item(2).textContent).toContain('Projects');
   });
 });
