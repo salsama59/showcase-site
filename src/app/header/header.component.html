@@ -31,10 +31,14 @@
           </li>
         </ul>
       </div>
-      <select class="form-select language-dropdown-block" id="languageChoiceDropdown" aria-label="language dropdown" [(ngModel)]="userLanguageChoice" (change)="onLanguageSwitch()">
-        <option [ngValue]="'fr-FR'">Français</option>
-        <option [ngValue]="'en-US'">Anglais</option>
-      </select>
+      <div class="dropstart language-dropdown-block">
+        <a class="btn dropdown-toggle" role="button" id="languageDropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+          {{ localeService.getCurrentLanguageLabel() | titlecase }}
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="languageDropdownMenuLink">
+          <li *ngFor="let locale of localeService.getLocales()" (click)="onLanguageSwitch(locale.localeCode, locale.languageLabel)"><a class="dropdown-item">{{ locale.languageLabel | titlecase }}</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 </header>
