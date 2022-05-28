@@ -16,6 +16,8 @@ import { ProjectDetailsMocks } from "cypress/mocks/project-details-mocks";
 import { ProjectDetail } from "src/app/models/project-detail.model";
 import { Translation } from "src/app/models/translation.model";
 import { TranslationsMocks } from "cypress/mocks/translations-mocks";
+import { LocalesMocks } from "cypress/mocks/locales-mocks";
+import { Locale } from "src/app/models/locales.model";
 
 describe('The Home page end to end test', () => {
 
@@ -39,12 +41,17 @@ describe('The Home page end to end test', () => {
     cy.fixture<Translation[]>('translations.json').then(translations => {
       TranslationsMocks.getTranslationsByCurrentLocale(environment.showcaseBackendUrl + BackendEndpointConstants.TRANSLATIONS_ENDPOINT_URI, 'en-US', translations);
     });
+
+    cy.fixture<Locale[]>('locales.json').then(locales => {
+      LocalesMocks.getLocales(environment.showcaseBackendUrl + BackendEndpointConstants.LOCALES_ENDPOINT_URI, 'en-US', locales);
+    });
     
     cy.visit('/');
     cy.wait('@' + HttpInterceptorAliasConstants.GET_NEWS_ALIAS);
     cy.wait('@' + HttpInterceptorAliasConstants.GET_SOCIAL_NETWORKS_ALIAS);
     cy.wait('@' + HttpInterceptorAliasConstants.GET_PROJECTS_ALIAS);
     cy.wait('@' + HttpInterceptorAliasConstants.GET_TRANSLATIONS_BY_CURRENT_LOCALE);
+    //cy.wait('@' + HttpInterceptorAliasConstants.GET_LOCALES);
   });
 
   it('Visits the home page', () => {

@@ -1,10 +1,12 @@
 import { HttpInterceptorAliasConstants } from "cypress/constants/http-interceptor-alias-constants";
 import { ResumesDomConstants } from "cypress/constants/resumes-dom-constants";
+import { LocalesMocks } from "cypress/mocks/locales-mocks";
 import { ResumesMocks } from "cypress/mocks/resumes-mocks";
 import { SocialNetworksMocks } from "cypress/mocks/social-networks-mocks";
 import { TranslationsMocks } from "cypress/mocks/translations-mocks";
 import { EndToEndTestUtils } from "cypress/utils/end-to-end-test-utils";
 import { BackendEndpointConstants } from "src/app/constants/backend-endpoint-constants";
+import { Locale } from "src/app/models/locales.model";
 import { Resume } from "src/app/models/resume.model";
 import { SocialNetwork } from "src/app/models/social-network.model";
 import { Translation } from "src/app/models/translation.model";
@@ -22,22 +24,26 @@ describe('The Resumes section end to end test', () => {
     cy.fixture<Translation[]>('translations.json').then(translations => {
       TranslationsMocks.getTranslationsByCurrentLocale(environment.showcaseBackendUrl + BackendEndpointConstants.TRANSLATIONS_ENDPOINT_URI, 'en-US', translations);
     });
+    cy.fixture<Locale[]>('locales.json').then(locales => {
+      LocalesMocks.getLocales(environment.showcaseBackendUrl + BackendEndpointConstants.LOCALES_ENDPOINT_URI, 'en-US', locales);
+    });
     EndToEndTestUtils.goToResumesPage(cy);
     cy.wait('@' + HttpInterceptorAliasConstants.GET_SOCIAL_NETWORKS_ALIAS);
     cy.wait('@' + HttpInterceptorAliasConstants.GET_RESUMES);
     cy.wait('@' + HttpInterceptorAliasConstants.GET_RESUME_BY_ID);
     cy.wait('@' + HttpInterceptorAliasConstants.GET_TRANSLATIONS_BY_CURRENT_LOCALE);
+    //cy.wait('@' + HttpInterceptorAliasConstants.GET_LOCALES);
   });
 
-    it('should display the resumes page title', () => {
-      EndToEndTestUtils.goToResumesPage(cy);
-      cy.get(ResumesDomConstants.RESUMES_LIST_PAGE_TITLE).should('contain', 'This is my resumes');
-    });
+  it('should display the resumes page title', () => {
+    EndToEndTestUtils.goToResumesPage(cy);
+    cy.get(ResumesDomConstants.RESUMES_LIST_PAGE_TITLE).should('contain', 'This is my resumes');
+  });
 
-    it('should display two resumes link', () => {
-        EndToEndTestUtils.goToResumesPage(cy);
-        cy.get(ResumesDomConstants.RESUMES_LINKS).should('have.length', 2);
-        EndToEndTestUtils.getNthElement(cy, ResumesDomConstants.RESUMES_LINKS, 0).should('contain', 'The resumee');
-        EndToEndTestUtils.getNthElement(cy, ResumesDomConstants.RESUMES_LINKS, 1).should('contain', 'Another resumee');
-      });
+  it('should display two resumes link', () => {
+      EndToEndTestUtils.goToResumesPage(cy);
+      cy.get(ResumesDomConstants.RESUMES_LINKS).should('have.length', 2);
+      EndToEndTestUtils.getNthElement(cy, ResumesDomConstants.RESUMES_LINKS, 0).should('contain', 'The resumee');
+      EndToEndTestUtils.getNthElement(cy, ResumesDomConstants.RESUMES_LINKS, 1).should('contain', 'Another resumee');
+  });
 });

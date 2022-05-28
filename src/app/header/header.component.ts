@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component } from '@angular/core';
 import { HeaderTranslationsConstants } from '../constants/header-translations-constants';
 import { RouteConstants } from '../constants/route-constants';
 import { Locale } from '../models/locales.model';
@@ -25,9 +24,6 @@ export class HeaderComponent {
    * Header translations constants of header component
    */
   public headerTranslationsConstants = HeaderTranslationsConstants;
-
-
-  public LocaleListToDisplay: Observable<Locale[]> = new Observable<Locale[]>()
 
   /**
    * Creates an instance of header component.

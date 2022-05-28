@@ -1,8 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Resolve,
-  RouterStateSnapshot,
-  ActivatedRouteSnapshot
-} from '@angular/router';
+import { Resolve } from '@angular/router';
 import { Observable } from 'rxjs';
 import { LocaleService } from '../services/locale.service';
 
@@ -24,7 +21,7 @@ export class LocalesResolver implements Resolve<boolean> {
    * Resolves the loclales by loading them from the backend
    * @returns an observable of boolean 
    */
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
+  resolve(): Observable<boolean> {
     return this.localeService.loadLocales();
   }
 }

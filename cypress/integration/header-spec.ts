@@ -2,12 +2,14 @@ import { HeaderDomConstants } from "cypress/constants/header-dom-constants"
 import { HomeDomConstants } from "cypress/constants/home-dom-constants";
 import { HttpInterceptorAliasConstants } from "cypress/constants/http-interceptor-alias-constants";
 import { ProjectsDomConstants } from "cypress/constants/projects-dom-constants";
+import { LocalesMocks } from "cypress/mocks/locales-mocks";
 import { NewsMocks } from "cypress/mocks/news-mocks";
 import { ProjectsMocks } from "cypress/mocks/projects-mocks";
 import { SocialNetworksMocks } from "cypress/mocks/social-networks-mocks";
 import { TranslationsMocks } from "cypress/mocks/translations-mocks";
 import { EndToEndTestUtils } from "cypress/utils/end-to-end-test-utils"
 import { BackendEndpointConstants } from "src/app/constants/backend-endpoint-constants";
+import { Locale } from "src/app/models/locales.model";
 import { News } from "src/app/models/news.model";
 import { Project } from "src/app/models/project.model";
 import { SocialNetwork } from "src/app/models/social-network.model";
@@ -29,11 +31,15 @@ describe('The header element end to end test', () => {
         cy.fixture<Project[]>('projects.json').then(projects => {
             ProjectsMocks.getProjects(environment.showcaseBackendUrl + BackendEndpointConstants.PROJECTS_ENDPOINT_URI, projects);
         });
+        cy.fixture<Locale[]>('locales.json').then(locales => {
+            LocalesMocks.getLocales(environment.showcaseBackendUrl + BackendEndpointConstants.LOCALES_ENDPOINT_URI, 'en-US', locales);
+        });
         cy.visit('/');
         cy.wait('@' + HttpInterceptorAliasConstants.GET_NEWS_ALIAS);
         cy.wait('@' + HttpInterceptorAliasConstants.GET_SOCIAL_NETWORKS_ALIAS);
         cy.wait('@' + HttpInterceptorAliasConstants.GET_TRANSLATIONS_BY_CURRENT_LOCALE);
         cy.wait('@' + HttpInterceptorAliasConstants.GET_PROJECTS_ALIAS);
+        //cy.wait('@' + HttpInterceptorAliasConstants.GET_LOCALES);
     });
     it('Visits the application home page and check the Home link existence', () => {
       cy.visit('/')
