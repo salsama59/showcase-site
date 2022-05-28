@@ -6,7 +6,7 @@ export class LocalesMocks {
 
     public static getLocales(url: string, locale: string, response: Locale[]): void {
         const localesToGet: Locale[] = <Locale[]> response.filter(filteredLocale => {return filteredLocale.localeCode === locale})
-        HttpRequestUtils.interceptHttpGetRequest(url + '/locales', localesToGet, HttpInterceptorAliasConstants.GET_LOCALES);
+        HttpRequestUtils.interceptHttpGetRequest(url , localesToGet, HttpInterceptorAliasConstants.GET_LOCALES);
     };
 
 }

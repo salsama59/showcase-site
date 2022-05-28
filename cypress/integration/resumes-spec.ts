@@ -32,7 +32,7 @@ describe('The Resumes section end to end test', () => {
     cy.wait('@' + HttpInterceptorAliasConstants.GET_RESUMES);
     cy.wait('@' + HttpInterceptorAliasConstants.GET_RESUME_BY_ID);
     cy.wait('@' + HttpInterceptorAliasConstants.GET_TRANSLATIONS_BY_CURRENT_LOCALE);
-    //cy.wait('@' + HttpInterceptorAliasConstants.GET_LOCALES);
+    cy.wait('@' + HttpInterceptorAliasConstants.GET_LOCALES);
   });
 
   it('should display the resumes page title', () => {
