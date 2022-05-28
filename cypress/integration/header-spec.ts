@@ -39,7 +39,7 @@ describe('The header element end to end test', () => {
         cy.wait('@' + HttpInterceptorAliasConstants.GET_SOCIAL_NETWORKS_ALIAS);
         cy.wait('@' + HttpInterceptorAliasConstants.GET_TRANSLATIONS_BY_CURRENT_LOCALE);
         cy.wait('@' + HttpInterceptorAliasConstants.GET_PROJECTS_ALIAS);
-        //cy.wait('@' + HttpInterceptorAliasConstants.GET_LOCALES);
+        cy.wait('@' + HttpInterceptorAliasConstants.GET_LOCALES);
     });
     it('Visits the application home page and check the Home link existence', () => {
       cy.visit('/')
