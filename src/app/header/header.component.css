@@ -24,3 +24,19 @@ nav a:hover {
 .navbar-brand > img {
 	margin-right: 5%;
 }
+
+a#languageDropdownMenuLink, .language-dropdown-block > ul > a {
+	color: #fff;
+}
+
+.language-dropdown-block > ul, .language-dropdown-block > a{
+	background-color: #6535ca;
+}
+
+.language-dropdown-block > a:focus {
+	box-shadow: none;
+}
+
+div.language-dropdown-block > ul > li a:hover,  div.language-dropdown-block > ul > li a:focus {
+	background-color: rgba(255, 255, 255, .3);
+}

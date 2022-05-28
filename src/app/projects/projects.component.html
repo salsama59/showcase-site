@@ -8,7 +8,7 @@
         <option [ngValue]="projectSortType.TITLE">{{translationsService.get(projectsTranslationsConstants.PROJECTS_PAGE_SORT_OPTIONS_LABEL_PROJECT_TITLE_KEY)}}</option>
         <option [ngValue]="projectSortType.LAST_MODIFIED">{{translationsService.get(projectsTranslationsConstants.PROJECTS_PAGE_SORT_OPTIONS_LABEL_LAST_MODIFIED_KEY)}}</option>
       </select>
-      <button class="btn btn-primary" id="sortOrderButton" type="button" (click)="onSortOrderUpdate()">{{ sortLabel }}</button>
+      <button class="btn btn-primary" id="sortOrderButton" type="button" (click)="onSortOrderUpdate()">{{ this.translationsService.get(sortLabelTranslationKey) }}</button>
     </div>
   </article>
 </section>

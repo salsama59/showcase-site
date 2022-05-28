@@ -153,26 +153,26 @@ describe('ProjectsComponent', () => {
     expect(projectsComponent.projectListToDisplay).toBeDefined();
     expect(projectsComponent.userSortChoice).toBeDefined();
     expect(projectsComponent.userSortOrderChoice).toBeDefined();
-    expect(projectsComponent.sortLabel).toBeDefined();
+    expect(projectsComponent.sortLabelTranslationKey).toBeDefined();
 
 		expect(projectsComponent.projectListToDisplay).toHaveSize(4);
     expect(projectsComponent.userSortChoice).toEqual(ProjectSortType.CREATION_DATE);
     expect(projectsComponent.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
-    expect(projectsComponent.sortLabel).toEqual('ASC');
+    expect(projectsComponent.sortLabelTranslationKey).toEqual('projects.page.sort.options.mode.ascending');
 
 		projectsComponent.onSortOrderUpdate();
 
     expect(projectsComponent.projectListToDisplay).toHaveSize(4);
     expect(projectsComponent.userSortChoice).toEqual(ProjectSortType.CREATION_DATE);
     expect(projectsComponent.userSortOrderChoice).toEqual(SortOrder.DESCENDING);
-    expect(projectsComponent.sortLabel).toEqual('DESC');
+    expect(projectsComponent.sortLabelTranslationKey).toEqual('projects.page.sort.options.mode.descending');
 
     projectsComponent.onSortOrderUpdate();
 
     expect(projectsComponent.projectListToDisplay).toHaveSize(4);
     expect(projectsComponent.userSortChoice).toEqual(ProjectSortType.CREATION_DATE);
     expect(projectsComponent.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
-    expect(projectsComponent.sortLabel).toEqual('ASC');
+    expect(projectsComponent.sortLabelTranslationKey).toEqual('projects.page.sort.options.mode.ascending');
 
 	});
 
@@ -180,26 +180,26 @@ describe('ProjectsComponent', () => {
     expect(projectsComponent.projectListToDisplay).toBeDefined();
     expect(projectsComponent.userSortChoice).toBeDefined();
     expect(projectsComponent.userSortOrderChoice).toBeDefined();
-    expect(projectsComponent.sortLabel).toBeDefined();
+    expect(projectsComponent.sortLabelTranslationKey).toBeDefined();
 
 		expect(projectsComponent.projectListToDisplay).toHaveSize(4);
     projectsComponent.userSortChoice = ProjectSortType.PROJECT_TYPE;
     expect(projectsComponent.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
-    expect(projectsComponent.sortLabel).toEqual('ASC');
+    expect(projectsComponent.sortLabelTranslationKey).toEqual('projects.page.sort.options.mode.ascending');
 
 		projectsComponent.onSortOrderUpdate();
 
     expect(projectsComponent.projectListToDisplay).toHaveSize(4);
     expect(projectsComponent.userSortChoice).toEqual(ProjectSortType.PROJECT_TYPE);
     expect(projectsComponent.userSortOrderChoice).toEqual(SortOrder.DESCENDING);
-    expect(projectsComponent.sortLabel).toEqual('DESC');
+    expect(projectsComponent.sortLabelTranslationKey).toEqual('projects.page.sort.options.mode.descending');
 
     projectsComponent.onSortOrderUpdate();
 
     expect(projectsComponent.projectListToDisplay).toHaveSize(4);
     expect(projectsComponent.userSortChoice).toEqual(ProjectSortType.PROJECT_TYPE);
     expect(projectsComponent.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
-    expect(projectsComponent.sortLabel).toEqual('ASC');
+    expect(projectsComponent.sortLabelTranslationKey).toEqual('projects.page.sort.options.mode.ascending');
 
 	});
 
@@ -207,26 +207,26 @@ describe('ProjectsComponent', () => {
     expect(projectsComponent.projectListToDisplay).toBeDefined();
     expect(projectsComponent.userSortChoice).toBeDefined();
     expect(projectsComponent.userSortOrderChoice).toBeDefined();
-    expect(projectsComponent.sortLabel).toBeDefined();
+    expect(projectsComponent.sortLabelTranslationKey).toBeDefined();
 
 		expect(projectsComponent.projectListToDisplay).toHaveSize(4);
     projectsComponent.userSortChoice = ProjectSortType.TITLE;
     expect(projectsComponent.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
-    expect(projectsComponent.sortLabel).toEqual('ASC');
+    expect(projectsComponent.sortLabelTranslationKey).toEqual('projects.page.sort.options.mode.ascending');
 
 		projectsComponent.onSortOrderUpdate();
 
     expect(projectsComponent.projectListToDisplay).toHaveSize(4);
     expect(projectsComponent.userSortChoice).toEqual(ProjectSortType.TITLE);
     expect(projectsComponent.userSortOrderChoice).toEqual(SortOrder.DESCENDING);
-    expect(projectsComponent.sortLabel).toEqual('DESC');
+    expect(projectsComponent.sortLabelTranslationKey).toEqual('projects.page.sort.options.mode.descending');
 
     projectsComponent.onSortOrderUpdate();
 
     expect(projectsComponent.projectListToDisplay).toHaveSize(4);
     expect(projectsComponent.userSortChoice).toEqual(ProjectSortType.TITLE);
     expect(projectsComponent.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
-    expect(projectsComponent.sortLabel).toEqual('ASC');
+    expect(projectsComponent.sortLabelTranslationKey).toEqual('projects.page.sort.options.mode.ascending');
 
 	});
 
@@ -235,26 +235,26 @@ describe('ProjectsComponent', () => {
     expect(projectsComponent.projectListToDisplay).toBeDefined();
     expect(projectsComponent.userSortChoice).toBeDefined();
     expect(projectsComponent.userSortOrderChoice).toBeDefined();
-    expect(projectsComponent.sortLabel).toBeDefined();
+    expect(projectsComponent.sortLabelTranslationKey).toBeDefined();
 
 		expect(projectsComponent.projectListToDisplay).toHaveSize(4);
     projectsComponent.userSortChoice = ProjectSortType.LAST_MODIFIED;
     expect(projectsComponent.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
-    expect(projectsComponent.sortLabel).toEqual('ASC');
+    expect(projectsComponent.sortLabelTranslationKey).toEqual('projects.page.sort.options.mode.ascending');
 
 		projectsComponent.onSortOrderUpdate();
 
     expect(projectsComponent.projectListToDisplay).toHaveSize(4);
     expect(projectsComponent.userSortChoice).toEqual(ProjectSortType.LAST_MODIFIED);
     expect(projectsComponent.userSortOrderChoice).toEqual(SortOrder.DESCENDING);
-    expect(projectsComponent.sortLabel).toEqual('DESC');
+    expect(projectsComponent.sortLabelTranslationKey).toEqual('projects.page.sort.options.mode.descending');
 
     projectsComponent.onSortOrderUpdate();
 
     expect(projectsComponent.projectListToDisplay).toHaveSize(4);
     expect(projectsComponent.userSortChoice).toEqual(ProjectSortType.LAST_MODIFIED);
     expect(projectsComponent.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
-    expect(projectsComponent.sortLabel).toEqual('ASC');
+    expect(projectsComponent.sortLabelTranslationKey).toEqual('projects.page.sort.options.mode.ascending');
 
 	});
 

@@ -64,7 +64,7 @@ describe('TranslationsService', () => {
       expect(translationsService.get('my.fake.translation.key2')).toEqual('Second value');
       translationsService.loadTranslationsByLocale().subscribe(isLoadedSecondTime => {
         done();
-        expect(isLoaded).toBeTrue();
+        expect(isLoadedSecondTime).toBeTrue();
       });
     });
   });
