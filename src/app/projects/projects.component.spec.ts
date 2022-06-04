@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router, UrlSegment } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 import { RouteConstants } from '../constants/route-constants';
 import { RouteModeConstants } from '../constants/route-mode-constants';
 import { ProjectSortType } from '../enums/project-sort-type';
@@ -90,6 +90,8 @@ describe('ProjectsComponent', () => {
 
     httpClientSpy.get.and.returnValue(expectedProjects);
 
+    translationsServiceSpy.translationsLoadedSubject = new Subject<void>();
+
     translationsServiceSpy.get.and.callFake((key) => {
       if(key === 'projects.page.title') {
         return 'Project list page';
@@ -128,6 +130,11 @@ describe('ProjectsComponent', () => {
 		expect(spy).toHaveBeenCalledWith(['0', RouteModeConstants.MODE_VIEW_CONSTANT], {
 			relativeTo: activatedRoute
 		});
+	});
+
+  it('should initialize the project type filter when translations are loaded', () => {
+    translationsServiceSpy.translationsLoadedSubject.next();
+    expect(projectsComponent.projectTypeFilters.length).toBeGreaterThan(0);
 	});
 
   it('should posess six projects', () => {

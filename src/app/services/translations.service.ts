@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 import { Translation } from '../models/translation.model';
 import { map } from "rxjs/operators";
 import { LocaleService } from './locale.service';
@@ -21,6 +21,11 @@ export class TranslationsService {
    * @private
    */
   private translationMap: Map<string, Map<string, string>>;
+
+  /**
+   * Translations loaded subject of translations service
+   */
+  public translationsLoadedSubject: Subject<void> = new Subject<void>();
 
   /**
    * Creates an instance of translations service.
@@ -52,6 +57,7 @@ export class TranslationsService {
     .set('Content-Type','application/json')
     .set('Accept-Language', locale);
     if(this.translationMap.has(locale)){
+      this.translationsLoadedSubject.next();
       return of(true);
     } else {
       return this.httpClient
@@ -67,6 +73,7 @@ export class TranslationsService {
          currentTranslationMap.set(translation.translationKey, translation.translationValue);
          this.translationMap.set(locale, currentTranslationMap);
        });
+       this.translationsLoadedSubject.next();
        return true;
      }));
     }

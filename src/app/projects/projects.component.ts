@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { ProjectsTranslationsConstants } from '../constants/projects-translations-constants';
 import { RouteModeConstants } from '../constants/route-mode-constants';
 import { ProjectSortType } from '../enums/project-sort-type';
@@ -21,7 +22,7 @@ import { ProjectUtilsService } from '../utils/project-utils.service';
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css']
 })
-export class ProjectsComponent implements OnInit {
+export class ProjectsComponent implements OnInit, OnDestroy {
 
   /**
    * Project list of projects component
@@ -88,6 +89,11 @@ export class ProjectsComponent implements OnInit {
   public projectsTranslationsConstants = ProjectsTranslationsConstants;
 
   /**
+   * Translation loaded subscription of projects component
+   */
+  private translationLoadedSubscription!: Subscription;
+
+  /**
    * Creates an instance of projects component.
    * @constructor
    * @public
@@ -135,6 +141,15 @@ export class ProjectsComponent implements OnInit {
     this.initializeProjectTypeFilters();
     this.initializeProjectTechnologiesFilters();
     this.onSortChoiceChange(true);
+    this.translationLoadedSubscription = this.translationsService.translationsLoadedSubject.subscribe(() => this.initializeProjectTypeFilters());
+  }
+
+  /**
+   * Determine what happen during the destroy lifecycle :
+   * Unsubscribe to the translationsLoadedSubject subject.
+   */
+  ngOnDestroy(): void {
+    this.translationLoadedSubscription.unsubscribe();
   }
 
 
@@ -143,6 +158,9 @@ export class ProjectsComponent implements OnInit {
    * @private
    */
   private initializeProjectTypeFilters(): void {
+    if(this.projectTypeFilters.length > 0) {
+      this.projectTypeFilters = [];
+    }
     this.projectTypeFilters.push({
       filterId: "webDevelopmentFilter",
       projectType: ProjectTypeEnum.WEB_DEVELOPEMENT,
