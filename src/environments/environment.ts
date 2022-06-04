@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   gameProjectBaseUrl: 'http://localhost/games-file/',
   webProjectBaseUrl: 'http://localhost:4200/',
-  showcaseBackendUrl: 'http://localhost:8080/'
+  showcaseBackendUrl: 'http://localhost/backend/endpoint/'
 };
 
 /*
