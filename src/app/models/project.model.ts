@@ -10,17 +10,17 @@ export class Project {
  * Creates an instance of Project.
  * @constructor
  * @param projectId  the project id
- * @param projectTitle  the project title
- * @param projectDescription the project description
+ * @param projectTitleTranslationKey  the project title translation key
+ * @param projectDescriptionTranslationKey the project description translation key
  * @param projectType the project type
  * @param projectTags the project tags
  * @param projectCreationDate the project creation date
  * @param projectLastModifiedDate the project last modified date
  */
  public constructor(
-	public projectId: number,
-    public projectTitle: string,
-    public projectDescription: string,
+	public projectId: string,
+    public projectTitleTranslationKey: string,
+    public projectDescriptionTranslationKey: string,
     public projectType: ProjectTypeEnum,
     public projectTags: ProjectTechnologyEnum[],
     public projectCreationDate: Date,

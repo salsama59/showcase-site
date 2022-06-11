@@ -1,18 +1,34 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Observable, of } from 'rxjs';
+import { SocialNetwork } from '../models/social-network.model';
+import { SocialNetworksService } from '../services/social-networks.service';
 
 import { FooterComponent } from './footer.component';
 
 describe('FooterComponent', () => {
+	let httpClientSpy: jasmine.SpyObj<HttpClient>;
 	let footerComponent: FooterComponent;
 	let fixture: ComponentFixture<FooterComponent>;
 
 	beforeEach(async () => {
+		httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
 		await TestBed.configureTestingModule({
-			declarations: [FooterComponent]
+			imports: [HttpClientModule],
+			declarations: [FooterComponent],
+			providers: [SocialNetworksService, {provide: HttpClient, useValue: httpClientSpy}],
+			schemas: [CUSTOM_ELEMENTS_SCHEMA]
 		}).compileComponents();
 	});
 
 	beforeEach(() => {
+		const expectedSocialNetworks: Observable<SocialNetwork[]> = of([
+			new SocialNetwork('4ssd4q6f4q', 'des', 'link', 'url', 'image.png'),
+			new SocialNetwork('4ssd4q6f4q', 'des', 'link', 'url', 'image.png')
+		]);
+	  
+		httpClientSpy.get.and.returnValue(expectedSocialNetworks);
 		fixture = TestBed.createComponent(FooterComponent);
 		footerComponent = fixture.componentInstance;
 		fixture.detectChanges();
@@ -52,13 +68,16 @@ describe('FooterComponent', () => {
 		);
 	});
 
-	it('should display the social networks links', () => {
+	it('should display the social networks links', (done: DoneFn) => {
 		const compiled = fixture.nativeElement;
-		expect(footerComponent.socialNetworksToDisplay).toBeDefined();
-		expect(footerComponent.socialNetworksToDisplay).toHaveSize(2);
-		for (const socialNetwork of footerComponent.socialNetworksToDisplay) {
-			expect(compiled.querySelector('#social-link-' + socialNetwork.socialNetworkLinkId).textContent).toContain(socialNetwork.socialNetworkLinkName);
-		}
+		footerComponent.socialNetworksToDisplay.subscribe(socialNetworks => {
+			expect(socialNetworks).toBeDefined();
+			expect(socialNetworks).toHaveSize(2);
+			for (const socialNetwork of socialNetworks) {
+				expect(compiled.querySelector('#social-link-' + socialNetwork.socialNetworkLinkId).textContent).toContain(socialNetwork.socialNetworkLinkName);
+			}
+			done();
+		});
 	});
 });
 

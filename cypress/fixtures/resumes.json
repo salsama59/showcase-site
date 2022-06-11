@@ -1,0 +1,206 @@
+[
+    {
+        "resumeId": "62409b11411b32c3d7d6ce01",
+        "isDefault": false,
+        "detail": {
+            "titleTranslationKey": "resumes.element.0.detail.title",
+            "person": {
+                "firstName": "My first name",
+                "familyName": "The family name",
+                "birthDate": "2022-03-06T19:19:57.383Z",
+                "contact": {
+                    "email": "myemail@test.com",
+                    "phoneNumber": "0123456974"
+                },
+                "address": {
+                    "street": "Street is here",
+                    "city": "City",
+                    "country": "France",
+                    "postalCode": "59000"
+                }
+            },
+            "socialNetworks": [
+                {
+                    "socialNetworkId": null,
+                    "socialNetworkLinkId": "fbSocialNetwork",
+                    "socialNetworkLinkName": "FB",
+                    "socialNetworkLinkUrl": "https://myFB-link/test",
+                    "socialNetworkImageName": "github.svg"
+                }
+            ]
+        },
+        "skills": [
+            {
+                "labelTranslationKey": "resumes.element.0.skills.0.label",
+                "level": 3
+            },
+            {
+                "labelTranslationKey": "resumes.element.0.skills.1.label",
+                "level": 2
+            },
+            {
+                "labelTranslationKey": "resumes.element.0.skills.2.label",
+                "level": 1
+            },
+            {
+                "labelTranslationKey": "resumes.element.0.skills.3.label",
+                "level": 0
+            }
+        ],
+        "hobbyTranslationKeys": [
+            "resumes.element.0.hobbies.0",
+            "resumes.element.0.hobbies.1"
+        ],
+        "languages": [
+            {
+                "labelTranslationKey": "resumes.element.0.languages.0.label",
+                "level": 2
+            },
+            {
+                "labelTranslationKey": "resumes.element.0.languages.1.label",
+                "level": 1
+            }
+        ],
+        "profileTranslationKey": "resumes.element.0.profile",
+        "employmentHistories": [
+            {
+                "jobTitleTranslationKey": "resumes.element.0.employmentHistories.0.jobTitle",
+                "company": "Fictive company",
+                "startDate": "2022-03-06T19:19:57.383Z",
+                "endDate": null,
+                "city": "A city",
+                "descriptionTranslationKeys": [
+                    "resumes.element.0.employmentHistories.0.descriptions.0"
+                ]
+            },
+            {
+                "jobTitleTranslationKey": "resumes.element.0.employmentHistories.1.jobTitle",
+                "company": "Fictive company 2",
+                "startDate": "2022-03-06T19:19:57.383Z",
+                "endDate": "2022-03-06T19:19:57.383Z",
+                "city": "Another city",
+                "descriptionTranslationKeys": [
+                    "resumes.element.0.employmentHistories.1.descriptions.0"
+                ]
+            }
+        ],
+        "educations": [
+            {
+                "degreeTranslationKey": "resumes.element.0.educations.0.degree",
+                "school": "The school",
+                "startDate": "2022-03-06T19:19:57.383Z",
+                "endDate": "2022-03-06T19:19:57.383Z",
+                "city": "The city",
+                "descriptionTranslationKey": "resumes.element.0.educations.0.description"
+            },
+            {
+                "degreeTranslationKey": "resumes.element.0.educations.1.degree",
+                "school": "The school 2",
+                "startDate": "2022-03-06T19:19:57.383Z",
+                "endDate": null,
+                "city": "Another city",
+                "descriptionTranslationKey": "resumes.element.0.educations.1.description"
+            }
+        ]
+    },
+    {
+        "resumeId": "62409b11411b32c3d7d6ce02",
+        "isDefault": true,
+        "detail": {
+            "titleTranslationKey": "resumes.element.1.detail.title",
+            "person": {
+                "firstName": "My first name",
+                "familyName": "The family name",
+                "birthDate": "2022-03-06T19:19:57.383Z",
+                "contact": {
+                    "email": "myemail@test2.com",
+                    "phoneNumber": "0123456974"
+                },
+                "address": {
+                    "street": "Street is here",
+                    "city": "City",
+                    "country": "France",
+                    "postalCode": "59000"
+                }
+            },
+            "socialNetworks": [
+                {
+                    "socialNetworkId": null,
+                    "socialNetworkLinkId": "rasSocialNetwork",
+                    "socialNetworkLinkName": "RAS",
+                    "socialNetworkLinkUrl": "https://myras-link/test",
+                    "socialNetworkImageName": "linkedin.svg"
+                }
+            ]
+        },
+        "skills": [
+            {
+                "labelTranslationKey": "resumes.element.1.skills.0.label",
+                "level": 3
+            },
+            {
+                "labelTranslationKey": "resumes.element.1.skills.1.label",
+                "level": 2
+            },
+            {
+                "labelTranslationKey": "resumes.element.1.skills.2.label",
+                "level": 1
+            },
+            {
+                "labelTranslationKey": "resumes.element.1.skills.3.label",
+                "level": 0
+            }
+        ],
+        "hobbyTranslationKeys": [
+            "resumes.element.1.hobbies.0",
+            "resumes.element.1.hobbies.1"
+        ],
+        "languages": [
+            {
+                "labelTranslationKey": "resumes.element.1.languages.0.label",
+                "level": 1
+            }
+        ],
+        "profileTranslationKey": "resumes.element.1.profile",
+        "employmentHistories": [
+            {
+                "jobTitleTranslationKey": "resumes.element.1.employmentHistories.0.jobTitle",
+                "company": "Fictive company 2",
+                "startDate": "2022-03-06T19:19:57.383Z",
+                "endDate": null,
+                "city": "A city",
+                "descriptionTranslationKeys": [
+                    "resumes.element.1.employmentHistories.0.descriptions.0"
+                ]
+            },
+            {
+                "jobTitleTranslationKey": "resumes.element.1.employmentHistories.1.jobTitle",
+                "company": "Fictive company 2",
+                "startDate": "2022-03-06T19:19:57.383Z",
+                "endDate": "2022-03-06T19:19:57.383Z",
+                "city": "Another city",
+                "descriptionTranslationKeys": [
+                    "resumes.element.1.employmentHistories.1.descriptions.0"
+                ]
+            }
+        ],
+        "educations": [
+            {
+                "degreeTranslationKey": "resumes.element.1.educations.0.degree",
+                "school": "The unknown school",
+                "startDate": "2022-03-06T19:19:57.383Z",
+                "endDate": "2022-03-06T19:19:57.383Z",
+                "city": "The city",
+                "descriptionTranslationKey": "resumes.element.1.educations.0.description"
+            },
+            {
+                "degreeTranslationKey": "resumes.element.1.educations.1.degree",
+                "school": "The school 2",
+                "startDate": "2022-03-06T19:19:57.383Z",
+                "endDate": null,
+                "city": "Another city",
+                "descriptionTranslationKey": "resumes.element.1.educations.1.description"
+            }
+        ]
+    }
+]

@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
-import { NewsType } from '../enums/news-type';
 import { News } from '../models/news.model';
+import { HttpClient, HttpHeaders} from "@angular/common/http";
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { BackendEndpointConstants } from '../constants/backend-endpoint-constants';
 
 /**
  * News service providing method to manage news datas.
@@ -9,28 +12,16 @@ import { News } from '../models/news.model';
   providedIn: 'root'
 })
 export class NewsService {
-
-  /**
-   * News of news service
-   * @private
-   */
-  private news: Array<News> = [];
-
   /**
    * Creates an instance of news service.
    */
-  constructor() {
-    this.news.push(new News(0, 'Great news something is now created!!!', NewsType.CREATE, new Date(2022, 0, 15), true));
-    this.news.push(new News(0, 'Great news something is now updated!!!', NewsType.UPDATE, new Date(2022, 0, 16), true));
-    this.news.push(new News(0, 'Great news another thing is now created!!!', NewsType.CREATE, new Date(2021, 3, 10), false));
-    this.news.push(new News(0, 'Great news another thing is now updated!!!', NewsType.UPDATE, new Date(2019, 5, 11), false));
-  }
+  constructor(private httpClient: HttpClient) {}
 
   /**
    * Gets news
-   * @returns news 
+   * @returns an observable of News 
    */
-  getNews(): Array<News> {
-    return this.news.slice();
+  getNews(): Observable<Array<News>> {
+    return this.httpClient.get<News[]>(environment.showcaseBackendUrl + BackendEndpointConstants.NEWS_ENDPOINT_URI, {headers: new HttpHeaders({ 'Content-Type': 'application/json' })});
   }
 }

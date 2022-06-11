@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ResumesTranslationsConstants } from '../constants/resumes-translations-constants';
 import { RouteConstants } from '../constants/route-constants';
 import { RouteModeConstants } from '../constants/route-mode-constants';
 import { Resume } from '../models/resume.model';
 import { ResumesService } from '../services/resumes.service';
+import { TranslationsService } from '../services/translations.service';
 
 /**
  * Resumes component responsible for displaying the resume list
@@ -25,7 +27,7 @@ export class ResumesComponent implements OnInit {
    * Default resume id of resumes component
    * @public
    */
-  defaultResumeId: number = -1;
+  defaultResumeId: string = '';
 
   /**
    * Route constants of home component
@@ -33,23 +35,32 @@ export class ResumesComponent implements OnInit {
    */
    public routeModeConstants = RouteModeConstants;
 
+   /**
+    * Resumes translations constants of resumes component
+    * @public
+    */
+   public resumesTranslationsConstants = ResumesTranslationsConstants;
+
   /**
    * Creates an instance of resumes component.
    * @param resumesService the resumes service
    * @param router the router
    * @param activatedRoute the activated route
+   * @param translationsService the translation service
    * @public
    * @constructor
    */
-  constructor(private resumesService: ResumesService, private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private resumesService: ResumesService, private router: Router, private activatedRoute: ActivatedRoute, public translationsService: TranslationsService) { }
 
   /**
    * Initialize the component by fetching the resume list an calculationg the default resume in order to displays it by default
    */
   ngOnInit(): void {
-    this.resumes = this.resumesService.getResumes();
-    const defaultResume: Resume = <Resume>this.resumes.find((resume: Resume, index: number) => resume.isDefault === true);
-    this.defaultResumeId = defaultResume.resumeId;
-    this.router.navigate([this.defaultResumeId, RouteModeConstants.MODE_VIEW_CONSTANT], {relativeTo: this.activatedRoute});
+    this.resumesService.getResumes().subscribe(resumes => {
+      this.resumes = resumes;
+      const defaultResume: Resume = <Resume> this.resumes.find(resume => {return resume.isDefault === true});
+      this.defaultResumeId = defaultResume.resumeId;
+      this.router.navigate([this.defaultResumeId, RouteModeConstants.MODE_VIEW_CONSTANT], {relativeTo: this.activatedRoute});
+    });
   }
 }

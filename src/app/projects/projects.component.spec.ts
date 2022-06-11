@@ -1,28 +1,39 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, UrlSegment } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { Observable, of, Subject } from 'rxjs';
 import { RouteConstants } from '../constants/route-constants';
 import { RouteModeConstants } from '../constants/route-mode-constants';
 import { ProjectSortType } from '../enums/project-sort-type';
+import { ProjectTechnologyEnum } from '../enums/project-technology-enum';
+import { ProjectTypeEnum } from '../enums/project-type-enum';
 import { SortOrder } from '../enums/sort-order';
 import { HomeComponent } from '../home/home.component';
+import { Project } from '../models/project.model';
 import { ProjectsService } from '../services/projects.service';
 import { ProjectComponent } from './project/project.component';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ProjectsComponent } from './projects.component';
+import { ResumesComponent } from '../resumes/resumes.component';
+import { ResumeComponent } from '../resumes/resume/resume.component';
+import { HttpClient } from '@angular/common/http';
+import { TranslationsService } from '../services/translations.service';
 
 describe('ProjectsComponent', () => {
-  let component: ProjectsComponent;
+  let projectsComponent: ProjectsComponent;
   let fixture: ComponentFixture<ProjectsComponent>;
   let activatedRoute: ActivatedRoute;
 	let router: Router;
-  let projectsService: ProjectsService;
+  let httpClientSpy: jasmine.SpyObj<HttpClient>;
+  let translationsServiceSpy: jasmine.SpyObj<TranslationsService> = jasmine.createSpyObj('TranslationsService', ['get']);
 
   beforeEach(async () => {
+    httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
     await TestBed.configureTestingModule({
       imports: [
+        HttpClientTestingModule,
         RouterTestingModule.withRoutes([
           {
             path: RouteConstants.HOME_ROUTE_PATH,
@@ -34,15 +45,33 @@ describe('ProjectsComponent', () => {
           },
           { path: RouteConstants.PROJECT_VIEW_MODE_ROUTE_PATH, 
             component: ProjectComponent 
+          },
+          { path: RouteConstants.RESUMES_ROUTE_PATH, 
+            component: ResumesComponent, children: [
+              { path: RouteConstants.RESUME_VIEW_MODE_ROUTE_PATH, component: ResumeComponent }
+            ]
           }
         ]),
         FormsModule
       ],
       declarations: [ ProjectsComponent ],
       providers: [
-				{
-					provide: ProjectsService
-				}
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            params: of({ projectId: '0', mode: 'view', page: '1'}),
+            queryParams: of({ projectId: '0', mode: 'view', page: '1'}),
+            snapshot: { params: { projectId: '0', mode: 'view', page: '1'} },
+            url: of([
+              new UrlSegment('/', {}),
+              new UrlSegment(RouteConstants.PROJECTS_ROUTE_PATH, { projectId: '0', mode: 'view', page: '1' })
+            ]),
+            fragment: of('/' + RouteConstants.PROJECTS_ROUTE_PATH)
+          }
+        },
+				{provide: ProjectsService},
+        { provide: HttpClient, useValue: httpClientSpy },
+        { provide: TranslationsService, useValue: translationsServiceSpy}
 			],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
@@ -50,16 +79,44 @@ describe('ProjectsComponent', () => {
   });
 
   beforeEach(() => {
+    const expectedProjects: Observable<Project[]> = of([
+      new Project('0', "Project 0 title", "This is the project 0 what else is there to say.", ProjectTypeEnum.WEB_DEVELOPEMENT, [ProjectTechnologyEnum.JAVA, ProjectTechnologyEnum.HTML, ProjectTechnologyEnum.CSS], new Date(2019,10, 20), new Date()),
+      new Project('1', "Project 1 title", "This is the project 1 what else is there to say.", ProjectTypeEnum.GAME_DEVELOPEMENT, [ProjectTechnologyEnum.JAVA, ProjectTechnologyEnum.SLICK2D], new Date(2014, 5, 11), new Date(2015, 8, 20)),
+      new Project('2', "Project 2 title", "This is the project 2 what else is there to say.", ProjectTypeEnum.WEB_DEVELOPEMENT, [ProjectTechnologyEnum.JAVA, ProjectTechnologyEnum.HTML, ProjectTechnologyEnum.CSS, ProjectTechnologyEnum.ANGULAR], new Date(2021,0, 10), new Date(2022,0, 10)),
+      new Project('3', "Project 3 title", "This is the project 3 what else is there to say.", ProjectTypeEnum.WEB_DEVELOPEMENT, [ProjectTechnologyEnum.C_SHARP, ProjectTechnologyEnum.HTML, ProjectTechnologyEnum.CSS, ProjectTechnologyEnum.DOT_NET], new Date(2010,11, 6), new Date(2011,10, 6)),
+      new Project('4', "Project 4 title", "This is the project 4 what else is there to say.", ProjectTypeEnum.WEB_DEVELOPEMENT, [ProjectTechnologyEnum.JAVA, ProjectTechnologyEnum.HTML, ProjectTechnologyEnum.CSS], new Date(2009,10, 20), new Date(2018,11, 24)),
+      new Project('5', "Project 5 title", "This is the project 5 what else is there to say.", ProjectTypeEnum.GAME_DEVELOPEMENT, [ProjectTechnologyEnum.C_SHARP, ProjectTechnologyEnum.UNITY], new Date(2000, 8, 20), new Date(2021, 8, 20))
+    ]);
+
+    httpClientSpy.get.and.returnValue(expectedProjects);
+
+    translationsServiceSpy.translationsLoadedSubject = new Subject<void>();
+
+    translationsServiceSpy.get.and.callFake((key) => {
+      if(key === 'projects.page.title') {
+        return 'Project list page';
+      }
+
+      if(key === 'projects.page.sort.options.mode.ascending') {
+        return 'ASC';
+      }
+
+      if(key === 'projects.page.sort.options.mode.descending') {
+        return 'DESC';
+      }
+      return '';
+    });
+
     fixture = TestBed.createComponent(ProjectsComponent);
-    component = fixture.componentInstance;
+    projectsComponent = fixture.componentInstance;
+    
     router = TestBed.inject(Router);
     activatedRoute = TestBed.inject(ActivatedRoute);
-    projectsService = TestBed.inject(ProjectsService);
     fixture.detectChanges();
   });
 
   it('should create the projects component', () => {
-    expect(component).toBeTruthy();
+    expect(projectsComponent).toBeTruthy();
   });
 
   it('should render the page title', () => {
@@ -69,162 +126,165 @@ describe('ProjectsComponent', () => {
 
   it('should navigate to view project section', () => {
 		const spy = spyOn(router, 'navigate');
-		component.onViewProjectElement(0);
-		expect(spy).toHaveBeenCalledWith([0, RouteModeConstants.MODE_VIEW_CONSTANT], {
+		projectsComponent.onViewProjectElement('0');
+		expect(spy).toHaveBeenCalledWith(['0', RouteModeConstants.MODE_VIEW_CONSTANT], {
 			relativeTo: activatedRoute
 		});
 	});
 
+  it('should initialize the project type filter when translations are loaded', () => {
+    translationsServiceSpy.translationsLoadedSubject.next();
+    expect(projectsComponent.projectTypeFilters.length).toBeGreaterThan(0);
+	});
+
   it('should posess six projects', () => {
-    expect(component.projectList).toBeDefined();
-		expect(component.projectList).toHaveSize(4);
+    expect(projectsComponent.projectListToDisplay).toBeDefined();
+		expect(projectsComponent.projectListToDisplay).toHaveSize(4);
 	});
 
   it('should filter the projects', () => {
-    expect(component.projectList).toBeDefined();
-    expect(component.projectTypeFilters).toBeDefined();
-    expect(component.projectTechnologiesFilters).toBeDefined();
+    expect(projectsComponent.projectListToDisplay).toBeDefined();
+    expect(projectsComponent.projectTypeFilters).toBeDefined();
+    expect(projectsComponent.projectTechnologiesFilters).toBeDefined();
 
-		expect(component.projectList).toHaveSize(4);
-    expect(component.projectTypeFilters).toHaveSize(2);
-    expect(component.projectTechnologiesFilters).toHaveSize(8);
-    component.projectTypeFilters[0].isFilterActive = false;
-		component.onProjectFilterChange(true);
+		expect(projectsComponent.projectListToDisplay).toHaveSize(4);
+    expect(projectsComponent.projectTypeFilters).toHaveSize(2);
+    expect(projectsComponent.projectTechnologiesFilters).toHaveSize(8);
+    projectsComponent.projectTypeFilters[0].isFilterActive = false;
+		projectsComponent.onProjectFilterChange(true);
 
-    expect(component.projectList).toHaveSize(2);
+    expect(projectsComponent.projectListToDisplay).toHaveSize(2);
 	});
 
-
   it('should sort the projects by CREATION DATE in DESCENDING then ASCENDING order', () => {
-    expect(component.projectList).toBeDefined();
-    expect(component.userSortChoice).toBeDefined();
-    expect(component.userSortOrderChoice).toBeDefined();
-    expect(component.sortLabel).toBeDefined();
+    expect(projectsComponent.projectListToDisplay).toBeDefined();
+    expect(projectsComponent.userSortChoice).toBeDefined();
+    expect(projectsComponent.userSortOrderChoice).toBeDefined();
+    expect(projectsComponent.sortLabelTranslationKey).toBeDefined();
 
-		expect(component.projectList).toHaveSize(4);
-    expect(component.userSortChoice).toEqual(ProjectSortType.CREATION_DATE);
-    expect(component.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
-    expect(component.sortLabel).toEqual('ASC');
+		expect(projectsComponent.projectListToDisplay).toHaveSize(4);
+    expect(projectsComponent.userSortChoice).toEqual(ProjectSortType.CREATION_DATE);
+    expect(projectsComponent.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
+    expect(projectsComponent.sortLabelTranslationKey).toEqual('projects.page.sort.options.mode.ascending');
 
-		component.onSortOrderUpdate();
+		projectsComponent.onSortOrderUpdate();
 
-    expect(component.projectList).toHaveSize(4);
-    expect(component.userSortChoice).toEqual(ProjectSortType.CREATION_DATE);
-    expect(component.userSortOrderChoice).toEqual(SortOrder.DESCENDING);
-    expect(component.sortLabel).toEqual('DESC');
+    expect(projectsComponent.projectListToDisplay).toHaveSize(4);
+    expect(projectsComponent.userSortChoice).toEqual(ProjectSortType.CREATION_DATE);
+    expect(projectsComponent.userSortOrderChoice).toEqual(SortOrder.DESCENDING);
+    expect(projectsComponent.sortLabelTranslationKey).toEqual('projects.page.sort.options.mode.descending');
 
-    component.onSortOrderUpdate();
+    projectsComponent.onSortOrderUpdate();
 
-    expect(component.projectList).toHaveSize(4);
-    expect(component.userSortChoice).toEqual(ProjectSortType.CREATION_DATE);
-    expect(component.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
-    expect(component.sortLabel).toEqual('ASC');
+    expect(projectsComponent.projectListToDisplay).toHaveSize(4);
+    expect(projectsComponent.userSortChoice).toEqual(ProjectSortType.CREATION_DATE);
+    expect(projectsComponent.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
+    expect(projectsComponent.sortLabelTranslationKey).toEqual('projects.page.sort.options.mode.ascending');
 
 	});
 
   it('should sort the projects by PROJECT TYPE in ASCENDING then DESCENDING order', () => {
-    expect(component.projectList).toBeDefined();
-    expect(component.userSortChoice).toBeDefined();
-    expect(component.userSortOrderChoice).toBeDefined();
-    expect(component.sortLabel).toBeDefined();
+    expect(projectsComponent.projectListToDisplay).toBeDefined();
+    expect(projectsComponent.userSortChoice).toBeDefined();
+    expect(projectsComponent.userSortOrderChoice).toBeDefined();
+    expect(projectsComponent.sortLabelTranslationKey).toBeDefined();
 
-		expect(component.projectList).toHaveSize(4);
-    component.userSortChoice = ProjectSortType.PROJECT_TYPE;
-    expect(component.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
-    expect(component.sortLabel).toEqual('ASC');
+		expect(projectsComponent.projectListToDisplay).toHaveSize(4);
+    projectsComponent.userSortChoice = ProjectSortType.PROJECT_TYPE;
+    expect(projectsComponent.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
+    expect(projectsComponent.sortLabelTranslationKey).toEqual('projects.page.sort.options.mode.ascending');
 
-		component.onSortOrderUpdate();
+		projectsComponent.onSortOrderUpdate();
 
-    expect(component.projectList).toHaveSize(4);
-    expect(component.userSortChoice).toEqual(ProjectSortType.PROJECT_TYPE);
-    expect(component.userSortOrderChoice).toEqual(SortOrder.DESCENDING);
-    expect(component.sortLabel).toEqual('DESC');
+    expect(projectsComponent.projectListToDisplay).toHaveSize(4);
+    expect(projectsComponent.userSortChoice).toEqual(ProjectSortType.PROJECT_TYPE);
+    expect(projectsComponent.userSortOrderChoice).toEqual(SortOrder.DESCENDING);
+    expect(projectsComponent.sortLabelTranslationKey).toEqual('projects.page.sort.options.mode.descending');
 
-    component.onSortOrderUpdate();
+    projectsComponent.onSortOrderUpdate();
 
-    expect(component.projectList).toHaveSize(4);
-    expect(component.userSortChoice).toEqual(ProjectSortType.PROJECT_TYPE);
-    expect(component.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
-    expect(component.sortLabel).toEqual('ASC');
+    expect(projectsComponent.projectListToDisplay).toHaveSize(4);
+    expect(projectsComponent.userSortChoice).toEqual(ProjectSortType.PROJECT_TYPE);
+    expect(projectsComponent.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
+    expect(projectsComponent.sortLabelTranslationKey).toEqual('projects.page.sort.options.mode.ascending');
 
 	});
 
-
   it('should sort the projects by PROJECT TITLE in ASCENDING then DESCENDING order', () => {
-    expect(component.projectList).toBeDefined();
-    expect(component.userSortChoice).toBeDefined();
-    expect(component.userSortOrderChoice).toBeDefined();
-    expect(component.sortLabel).toBeDefined();
+    expect(projectsComponent.projectListToDisplay).toBeDefined();
+    expect(projectsComponent.userSortChoice).toBeDefined();
+    expect(projectsComponent.userSortOrderChoice).toBeDefined();
+    expect(projectsComponent.sortLabelTranslationKey).toBeDefined();
 
-		expect(component.projectList).toHaveSize(4);
-    component.userSortChoice = ProjectSortType.TITLE;
-    expect(component.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
-    expect(component.sortLabel).toEqual('ASC');
+		expect(projectsComponent.projectListToDisplay).toHaveSize(4);
+    projectsComponent.userSortChoice = ProjectSortType.TITLE;
+    expect(projectsComponent.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
+    expect(projectsComponent.sortLabelTranslationKey).toEqual('projects.page.sort.options.mode.ascending');
 
-		component.onSortOrderUpdate();
+		projectsComponent.onSortOrderUpdate();
 
-    expect(component.projectList).toHaveSize(4);
-    expect(component.userSortChoice).toEqual(ProjectSortType.TITLE);
-    expect(component.userSortOrderChoice).toEqual(SortOrder.DESCENDING);
-    expect(component.sortLabel).toEqual('DESC');
+    expect(projectsComponent.projectListToDisplay).toHaveSize(4);
+    expect(projectsComponent.userSortChoice).toEqual(ProjectSortType.TITLE);
+    expect(projectsComponent.userSortOrderChoice).toEqual(SortOrder.DESCENDING);
+    expect(projectsComponent.sortLabelTranslationKey).toEqual('projects.page.sort.options.mode.descending');
 
-    component.onSortOrderUpdate();
+    projectsComponent.onSortOrderUpdate();
 
-    expect(component.projectList).toHaveSize(4);
-    expect(component.userSortChoice).toEqual(ProjectSortType.TITLE);
-    expect(component.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
-    expect(component.sortLabel).toEqual('ASC');
+    expect(projectsComponent.projectListToDisplay).toHaveSize(4);
+    expect(projectsComponent.userSortChoice).toEqual(ProjectSortType.TITLE);
+    expect(projectsComponent.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
+    expect(projectsComponent.sortLabelTranslationKey).toEqual('projects.page.sort.options.mode.ascending');
 
 	});
 
 
   it('should sort the projects by LAST MODIFIED DATE in ASCENDING then DESCENDING order', () => {
-    expect(component.projectList).toBeDefined();
-    expect(component.userSortChoice).toBeDefined();
-    expect(component.userSortOrderChoice).toBeDefined();
-    expect(component.sortLabel).toBeDefined();
+    expect(projectsComponent.projectListToDisplay).toBeDefined();
+    expect(projectsComponent.userSortChoice).toBeDefined();
+    expect(projectsComponent.userSortOrderChoice).toBeDefined();
+    expect(projectsComponent.sortLabelTranslationKey).toBeDefined();
 
-		expect(component.projectList).toHaveSize(4);
-    component.userSortChoice = ProjectSortType.LAST_MODIFIED;
-    expect(component.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
-    expect(component.sortLabel).toEqual('ASC');
+		expect(projectsComponent.projectListToDisplay).toHaveSize(4);
+    projectsComponent.userSortChoice = ProjectSortType.LAST_MODIFIED;
+    expect(projectsComponent.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
+    expect(projectsComponent.sortLabelTranslationKey).toEqual('projects.page.sort.options.mode.ascending');
 
-		component.onSortOrderUpdate();
+		projectsComponent.onSortOrderUpdate();
 
-    expect(component.projectList).toHaveSize(4);
-    expect(component.userSortChoice).toEqual(ProjectSortType.LAST_MODIFIED);
-    expect(component.userSortOrderChoice).toEqual(SortOrder.DESCENDING);
-    expect(component.sortLabel).toEqual('DESC');
+    expect(projectsComponent.projectListToDisplay).toHaveSize(4);
+    expect(projectsComponent.userSortChoice).toEqual(ProjectSortType.LAST_MODIFIED);
+    expect(projectsComponent.userSortOrderChoice).toEqual(SortOrder.DESCENDING);
+    expect(projectsComponent.sortLabelTranslationKey).toEqual('projects.page.sort.options.mode.descending');
 
-    component.onSortOrderUpdate();
+    projectsComponent.onSortOrderUpdate();
 
-    expect(component.projectList).toHaveSize(4);
-    expect(component.userSortChoice).toEqual(ProjectSortType.LAST_MODIFIED);
-    expect(component.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
-    expect(component.sortLabel).toEqual('ASC');
+    expect(projectsComponent.projectListToDisplay).toHaveSize(4);
+    expect(projectsComponent.userSortChoice).toEqual(ProjectSortType.LAST_MODIFIED);
+    expect(projectsComponent.userSortOrderChoice).toEqual(SortOrder.ASCENDING);
+    expect(projectsComponent.sortLabelTranslationKey).toEqual('projects.page.sort.options.mode.ascending');
 
 	});
 
   it('should paginate the projects on page 1', () => {
-    expect(component.projectList).toBeDefined();
-		expect(component.projectList).toHaveSize(4);
-		component.paginateProjects(1, null);
-    expect(component.projectList).toHaveSize(4);
+    expect(projectsComponent.projectListToDisplay).toBeDefined();
+		expect(projectsComponent.projectListToDisplay).toHaveSize(4);
+		projectsComponent.paginateProjects(1, null);
+    expect(projectsComponent.projectListToDisplay).toHaveSize(4);
 	});
 
   it('should not paginate the projects on page 100 but 1', () => {
-    expect(component.projectList).toBeDefined();
-		expect(component.projectList).toHaveSize(4);
-		component.paginateProjects(100, null);
-    expect(component.projectList).toHaveSize(2);
+    expect(projectsComponent.projectListToDisplay).toBeDefined();
+		expect(projectsComponent.projectListToDisplay).toHaveSize(4);
+		projectsComponent.paginateProjects(100, null);
+    expect(projectsComponent.projectListToDisplay).toHaveSize(2);
 	});
 
   it('should get the projects length', () => {
-    expect(component.projectList).toBeDefined();
-		expect(component.projectList).toHaveSize(4);
-    component.projectList = [];
-    expect(component.projectList).toHaveSize(0);
-    expect(component.getProjectListLength()).toBe(6);
+    expect(projectsComponent.projectListToDisplay).toBeDefined();
+		expect(projectsComponent.projectListToDisplay).toHaveSize(4);
+    projectsComponent.projectListToDisplay = [];
+    expect(projectsComponent.projectListToDisplay).toHaveSize(0);
+    expect(projectsComponent.getProjectListLength()).toBe(6);
 	});
 });
 

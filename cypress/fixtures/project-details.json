@@ -1,0 +1,118 @@
+[
+    {
+        "projectDetailId": "62487ef1b97ff99dc964e4f0",
+        "projectDetailProjectId": "624736e7b97ff99dc964e4ca",
+        "projectDetailIntroductionTranslationKey": "project.details.element.0.introduction",
+        "projectDetailInstructionsTranslationKeys": [
+            "project.details.element.0.instructions.0",
+            "project.details.element.0.instructions.1",
+            "project.details.element.0.instructions.2",
+            "project.details.element.0.instructions.3"
+        ],
+        "projectUrl": "#/",
+        "projectMetadatas": null
+    },
+    {
+        "projectDetailId": "62487ef1b97ff99dc964e4f1",
+        "projectDetailProjectId": "624736e7b97ff99dc964e4cb",
+        "projectDetailIntroductionTranslationKey": "project.details.element.1.introduction",
+        "projectDetailInstructionsTranslationKeys": [
+            "project.details.element.1.instructions.0",
+            "project.details.element.1.instructions.1",
+            "project.details.element.1.instructions.2",
+            "project.details.element.1.instructions.3"
+        ],
+        "projectUrl": "the-pit-fall/index.html",
+        "projectMetadatas": {
+            "permissions": [
+                "autoplay",
+                "fullscreen",
+                "geolocation",
+                "microphone",
+                "camera",
+                "midi"
+            ],
+            "screenResolutionData": {
+                "screenWidth": 100,
+                "screenWidthUnit": "%",
+                "screenHeight": 640,
+                "screenHeightUnit": "px"
+            },
+            "transparencyEnabled": true,
+            "fullScreenEnabled": true,
+            "scrollingEnabled": true,
+            "autoPlayEnabled": true
+        }
+    },
+    {
+        "projectDetailId": "62487ef1b97ff99dc964e4f2",
+        "projectDetailProjectId": "624736e7b97ff99dc964e4cc",
+        "projectDetailIntroductionTranslationKey": "project.details.element.2.introduction",
+        "projectDetailInstructionsTranslationKeys": [
+            "project.details.element.2.instructions.0",
+            "project.details.element.2.instructions.1",
+            "project.details.element.2.instructions.2",
+            "project.details.element.2.instructions.3"
+        ],
+        "projectUrl": "#/",
+        "projectMetadatas": null
+    },
+    {
+        "projectDetailId": "62487ef1b97ff99dc964e4f3",
+        "projectDetailProjectId": "624736e7b97ff99dc964e4cd",
+        "projectDetailIntroductionTranslationKey": "project.details.element.3.introduction",
+        "projectDetailInstructionsTranslationKeys": [
+            "project.details.element.3.instructions.0",
+            "project.details.element.3.instructions.1",
+            "project.details.element.3.instructions.2",
+            "project.details.element.3.instructions.3"
+        ],
+        "projectUrl": "#/",
+        "projectMetadatas": null
+    },
+    {
+        "projectDetailId": "62487ef1b97ff99dc964e4f4",
+        "projectDetailProjectId": "624736e7b97ff99dc964e4ce",
+        "projectDetailIntroductionTranslationKey": "project.details.element.4.introduction",
+        "projectDetailInstructionsTranslationKeys": [
+            "project.details.element.4.instructions.0",
+            "project.details.element.4.instructions.1",
+            "project.details.element.4.instructions.2",
+            "project.details.element.4.instructions.3"
+        ],
+        "projectUrl": "#/",
+        "projectMetadatas": null
+    },
+    {
+        "projectDetailId": "62487ef1b97ff99dc964e4f5",
+        "projectDetailProjectId": "624736e7b97ff99dc964e4cf",
+        "projectDetailIntroductionTranslationKey": "project.details.element.5.introduction",
+        "projectDetailInstructionsTranslationKeys": [
+            "project.details.element.5.instructions.0",
+            "project.details.element.5.instructions.1",
+            "project.details.element.5.instructions.2",
+            "project.details.element.5.instructions.3"
+        ],
+        "projectUrl": "the-pit-fall/index.html",
+        "projectMetadatas": {
+            "permissions": [
+                "autoplay",
+                "fullscreen",
+                "geolocation",
+                "microphone",
+                "camera",
+                "midi"
+            ],
+            "screenResolutionData": {
+                "screenWidth": 100,
+                "screenWidthUnit": "%",
+                "screenHeight": 640,
+                "screenHeightUnit": "px"
+            },
+            "transparencyEnabled": true,
+            "fullScreenEnabled": true,
+            "scrollingEnabled": true,
+            "autoPlayEnabled": true
+        }
+    }
+]

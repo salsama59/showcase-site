@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, UrlSegment } from '@angular/router';
@@ -12,6 +13,7 @@ describe('PaginationComponent', () => {
 	let paginationComponent: PaginationComponent;
 	let fixture: ComponentFixture<PaginationComponent>;
 	const paginationSubject: Subject<number> = new Subject<number>();
+	let httpClientSpy: jasmine.SpyObj<HttpClient> = jasmine.createSpyObj('HttpClient', ['get']);
 
 	describe('with invalid route parameters', () => {
 		beforeEach(async () => {
@@ -41,7 +43,8 @@ describe('PaginationComponent', () => {
 							]),
 							fragment: of('/projects')
 						}
-					}
+					},
+					{ provide: HttpClient, useValue: httpClientSpy }
 				],
 				schemas: [CUSTOM_ELEMENTS_SCHEMA]
 			}).compileComponents();
@@ -88,7 +91,8 @@ describe('PaginationComponent', () => {
 							]),
 							fragment: of('/projects')
 						}
-					}
+					},
+					{provide: HttpClient, useValue: httpClientSpy }
 				],
 				schemas: [CUSTOM_ELEMENTS_SCHEMA]
 			}).compileComponents();

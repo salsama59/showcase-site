@@ -9,17 +9,17 @@ export class ProjectDetail {
      * Creates an instance of project detail.
      * @param projectDetailId the project detail id
      * @param projectDetailProjectId the project detail project id
-     * @param projectDetailIntroduction the project detail introduction
-     * @param projectDetailInstructions the project detail instructions
+     * @param projectDetailIntroductionTranslationKey the project detail introduction translation key
+     * @param projectDetailInstructionsTranslationKeys the project detail instructions translation keys
      * @param projectUrl the project url
      * @param projectMetadatas the project metadatas
      * @public
      */
     constructor(
-        public projectDetailId: number, 
-        public projectDetailProjectId: number, 
-        public projectDetailIntroduction: string, 
-        public projectDetailInstructions: string[], 
+        public projectDetailId: string, 
+        public projectDetailProjectId: string, 
+        public projectDetailIntroductionTranslationKey: string, 
+        public projectDetailInstructionsTranslationKeys: string[], 
         public projectUrl: string, 
         public projectMetadatas: ProjectMetadatas | null
         ) {}

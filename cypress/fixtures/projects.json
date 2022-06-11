@@ -1,0 +1,80 @@
+[
+    {
+        "projectId": "624736e7b97ff99dc964e4ca",
+        "projectTitleTranslationKey": "project.element.0.title",
+        "projectDescriptionTranslationKey": "project.element.0.description",
+        "projectType": 0,
+        "projectTags": [
+            0,
+            1,
+            2
+        ],
+        "projectCreationDate": "2019-11-19T23:00:00.000Z",
+        "projectLastModifiedDate": "2022-03-06T09:32:01.481Z"
+    },
+    {
+        "projectId": "624736e7b97ff99dc964e4cb",
+        "projectTitleTranslationKey": "project.element.1.title",
+        "projectDescriptionTranslationKey": "project.element.1.description",
+        "projectType": 1,
+        "projectTags": [
+            0,
+            6
+        ],
+        "projectCreationDate": "2014-06-10T22:00:00.000Z",
+        "projectLastModifiedDate": "2015-09-19T22:00:00.000Z"
+    },
+    {
+        "projectId": "624736e7b97ff99dc964e4cc",
+        "projectTitleTranslationKey": "project.element.2.title",
+        "projectDescriptionTranslationKey": "project.element.2.description",
+        "projectType": 0,
+        "projectTags": [
+            0,
+            1,
+            2,
+            3
+        ],
+        "projectCreationDate": "2021-01-09T23:00:00.000Z",
+        "projectLastModifiedDate": "2022-01-09T23:00:00.000Z"
+    },
+    {
+        "projectId": "624736e7b97ff99dc964e4cd",
+        "projectTitleTranslationKey": "project.element.3.title",
+        "projectDescriptionTranslationKey": "project.element.3.description",
+        "projectType": 0,
+        "projectTags": [
+            4,
+            1,
+            2,
+            7
+        ],
+        "projectCreationDate": "2010-12-05T23:00:00.000Z",
+        "projectLastModifiedDate": "2011-11-05T23:00:00.000Z"
+    },
+    {
+        "projectId": "624736e7b97ff99dc964e4ce",
+        "projectTitleTranslationKey": "project.element.4.title",
+        "projectDescriptionTranslationKey": "project.element.4.description",
+        "projectType": 0,
+        "projectTags": [
+            0,
+            1,
+            2
+        ],
+        "projectCreationDate": "2009-11-19T23:00:00.000Z",
+        "projectLastModifiedDate": "2018-12-23T23:00:00.000Z"
+    },
+    {
+        "projectId": "624736e7b97ff99dc964e4cf",
+        "projectTitleTranslationKey": "project.element.5.title",
+        "projectDescriptionTranslationKey": "project.element.5.description",
+        "projectType": 1,
+        "projectTags": [
+            4,
+            5
+        ],
+        "projectCreationDate": "2000-09-19T22:00:00.000Z",
+        "projectLastModifiedDate": "2021-09-19T22:00:00.000Z"
+    }
+]

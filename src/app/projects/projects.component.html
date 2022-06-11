@@ -1,14 +1,14 @@
-<h1 class="project-list-title mb-5 text-center">Project list page</h1>
+<h1 class="project-list-title mb-5 text-center">{{translationsService.get(projectsTranslationsConstants.PROJECTS_PAGE_TITLE_KEY)}}</h1>
 <section class="project-list-sort-group">
   <article>
     <div class="input-group">
       <select class="form-select" id="projectsSortDropdown" aria-label="Project list sort dropdown" [(ngModel)]="userSortChoice" (change)="onSortChoiceChange(true)">
-        <option [ngValue]="projectSortType.CREATION_DATE" selected>Creation date</option>
-        <option [ngValue]="projectSortType.PROJECT_TYPE">Project type</option>
-        <option [ngValue]="projectSortType.TITLE">Project title</option>
-        <option [ngValue]="projectSortType.LAST_MODIFIED">Last modified</option>
+        <option [ngValue]="projectSortType.CREATION_DATE" selected>{{translationsService.get(projectsTranslationsConstants.PROJECTS_PAGE_SORT_OPTIONS_LABEL_CREATION_DATE_KEY)}}</option>
+        <option [ngValue]="projectSortType.PROJECT_TYPE">{{translationsService.get(projectsTranslationsConstants.PROJECTS_PAGE_SORT_OPTIONS_LABEL_PROJECT_TYPE_KEY)}}</option>
+        <option [ngValue]="projectSortType.TITLE">{{translationsService.get(projectsTranslationsConstants.PROJECTS_PAGE_SORT_OPTIONS_LABEL_PROJECT_TITLE_KEY)}}</option>
+        <option [ngValue]="projectSortType.LAST_MODIFIED">{{translationsService.get(projectsTranslationsConstants.PROJECTS_PAGE_SORT_OPTIONS_LABEL_LAST_MODIFIED_KEY)}}</option>
       </select>
-      <button class="btn btn-primary" id="sortOrderButton" type="button" (click)="onSortOrderUpdate()">{{ sortLabel }}</button>
+      <button class="btn btn-primary" id="sortOrderButton" type="button" (click)="onSortOrderUpdate()">{{ this.translationsService.get(sortLabelTranslationKey) }}</button>
     </div>
   </article>
 </section>
@@ -16,15 +16,15 @@
   <aside class="filter-side-bar">
     <div class="card">
       <div class="card-header filter-header">
-        Filters
+        {{translationsService.get(projectsTranslationsConstants.PROJECTS_PAGE_FILTERS_TITLE_KEY)}}
       </div>
       <div class="card-body">
-        <p class="card-text">Project types</p>
+        <p class="card-text">{{translationsService.get(projectsTranslationsConstants.PROJECTS_PAGE_FILTERS_TYPES_TITLE_KEY)}}</p>
         <div *ngFor="let projectTypeFilter of projectTypeFilters" class="form-check">
           <input class="form-check-input" type="checkbox" (change)="onProjectFilterChange(true)" [(ngModel)]="projectTypeFilter.isFilterActive" value="" id="{{ projectTypeFilter.filterId }}">
           <label class="form-check-label" for="{{ projectTypeFilter.filterId }}">{{ projectTypeFilter.filterName }}</label>
         </div>
-        <p class="mt-3 card-text">Project technologies</p>
+        <p class="mt-3 card-text">{{translationsService.get(projectsTranslationsConstants.PROJECTS_PAGE_FILTERS_TECHNOLOGIES_TITLE_KEY)}}</p>
         <div *ngFor="let projectTechnologiesFilter of projectTechnologiesFilters" class="form-check">
           <input class="form-check-input" type="checkbox" (change)="onProjectFilterChange(true)" [(ngModel)]="projectTechnologiesFilter.isFilterActive" value="" id="{{ projectTechnologiesFilter.filterId }}">
           <label class="form-check-label" for="{{ projectTechnologiesFilter.filterId }}">{{ projectTechnologiesFilter.filterName }}</label>
@@ -34,20 +34,20 @@
   </aside>
   <div class="project-list-display">
     <section class="project-list-section">
-      <article *ngFor="let project of projectList; let i = index">
+      <article *ngFor="let project of projectListToDisplay; let i = index">
           <div class="card border-dark">
               <img [src]="projectUtilsService.getProjectImagePathByProjectType(project.projectType)" class="card-img-top project-image" [alt]="projectUtilsService.getProjectImageNameByProjectType(project.projectType)">
               <div class="card-body project-card">
                 <h5 class="card-title">{{ projectUtilsService.getProjectTypeLabelByProjectType(project.projectType) }}</h5>
-                <h6 id="cardProjectTitle{{ i }}" class="card-subtitle text-muted">{{ project.projectTitle }}</h6>
-                <p class="card-text creation-date-paragraph"><small class="text-muted">Creation date : {{ project.projectCreationDate | date:'dd/MM/yyyy' }}</small></p>
-                <p class="card-text last-modified-date-paragraph"><small class="text-muted">Last modified date : {{ project.projectLastModifiedDate | date:'dd/MM/yyyy' }}</small></p>
-                <p class="card-text">{{ project.projectDescription }}</p>
-                <span class="tag-label">Tags : </span>
+                <h6 id="cardProjectTitle{{ i }}" class="card-subtitle text-muted">{{ translationsService.get(project.projectTitleTranslationKey) }}</h6>
+                <p class="card-text creation-date-paragraph"><small class="text-muted">{{translationsService.get(projectsTranslationsConstants.PROJECTS_PAGE_LIST_PROJECT_CREATION_DATE_LABEL_KEY)}} {{ project.projectCreationDate | date:'dd/MM/yyyy' }}</small></p>
+                <p class="card-text last-modified-date-paragraph"><small class="text-muted">{{translationsService.get(projectsTranslationsConstants.PROJECTS_PAGE_LIST_PROJECT_LAST_MODIFY_DATE_LABEL_KEY)}} {{ project.projectLastModifiedDate | date:'dd/MM/yyyy' }}</small></p>
+                <p class="card-text">{{ translationsService.get(project.projectDescriptionTranslationKey) }}</p>
+                <span class="tag-label">{{translationsService.get(projectsTranslationsConstants.PROJECTS_PAGE_LIST_TAGS_TITLE_KEY)}}</span>
                 <div class="technologies-block">
                   <span *ngFor="let tag of project.projectTags" class="badge rounded-pill bg-primary">{{ projectUtilsService.getTechnologyLabelByProjectTechnologyType(tag) }}</span>
                 </div>
-                <button id="projectDetailsButton{{ i }}" (click)="onViewProjectElement(project.projectId)" class="btn btn-success">Go check the project</button>
+                <button id="projectDetailsButton{{ i }}" (click)="onViewProjectElement(project.projectId)" class="btn btn-success">{{translationsService.get(projectsTranslationsConstants.PROJECTS_PAGE_LIST_PROJECT_ACCESS_BUTTON_LABEL_KEY)}}</button>
               </div>
             </div>
       </article>
