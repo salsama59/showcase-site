@@ -5,7 +5,8 @@ pipeline {
   stages {
     stage('Prepare') {
 		    steps {
-		        sh "curl --request GET 'http://${AWS_LIGTHSAIL_SERVER_IP}:8200/v1/applications/showcase-site-frontend/data/production' --header 'X-Vault-Token: $SECRET_MANAGER_TOKEN' 2>/dev/null | python -c 'import json,sys;obj=json.load(sys.stdin);print(obj[\"data\"][\"data\"][\"application_configuration\"]);' > ./src/environments/environment.prod.ts"
+          sh "curl --request GET 'http://${AWS_LIGTHSAIL_SERVER_IP}:8200/v1/applications/showcase-site-frontend/data/production' --header 'X-Vault-Token: $SECRET_MANAGER_TOKEN' 2>/dev/null | python -c 'import json,sys;obj=json.load(sys.stdin);print(obj[\"data\"][\"data\"][\"application_configuration\"]);' > ./src/environments/environment.prod.ts"
+          sh "curl --request GET 'http://${AWS_LIGTHSAIL_SERVER_IP}:8200/v1/applications/showcase-site-frontend/data/production' --header 'X-Vault-Token: $SECRET_MANAGER_TOKEN' 2>/dev/null | python -c 'import json,sys;obj=json.load(sys.stdin);print(obj[\"data\"][\"data\"][\"apache_configuration\"]);' > ./dist/.htaccess"
 		    }
 		}
     stage('Install dependencies') {
