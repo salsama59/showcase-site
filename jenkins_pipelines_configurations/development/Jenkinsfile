@@ -3,9 +3,9 @@ pipeline {
   agent any
   
   stages {
-    stage('Prepare') {
+    stage('Prepare application configuration') {
 		    steps {
-		        sh "curl --request GET 'http://${AWS_LIGTHSAIL_SERVER_IP}:8200/v1/applications/showcase-site-frontend/data/production' --header 'X-Vault-Token: $SECRET_MANAGER_TOKEN' 2>/dev/null | python -c 'import json,sys;obj=json.load(sys.stdin);print(obj[\"data\"][\"data\"][\"application_configuration\"]);' > ./src/environments/environment.prod.ts"
+          sh "curl --request GET 'http://${AWS_LIGTHSAIL_SERVER_IP}:8200/v1/applications/showcase-site-frontend/data/production' --header 'X-Vault-Token: $SECRET_MANAGER_TOKEN' 2>/dev/null | python -c 'import json,sys;obj=json.load(sys.stdin);print(obj[\"data\"][\"data\"][\"application_configuration\"]);' > ./src/environments/environment.prod.ts"
 		    }
 		}
     stage('Install dependencies') {
@@ -21,8 +21,13 @@ pipeline {
         steps { sh 'npm run-script cypress:ci' }
     }
     stage('Build artefact') {
-      steps { sh 'npm run-script build -- --configuration production' }
+      steps { sh 'npm run-script build -- --configuration development' }
     }
+    stage('Prepare server configuration') {
+	    steps {
+        sh "curl --request GET 'http://${AWS_LIGTHSAIL_SERVER_IP}:8200/v1/applications/showcase-site-frontend/data/production' --header 'X-Vault-Token: $SECRET_MANAGER_TOKEN' 2>/dev/null | python -c 'import json,sys;obj=json.load(sys.stdin);print(obj[\"data\"][\"data\"][\"apache_configuration\"]);' > ./dist/showcase-site/.htaccess"
+      }
+		}
     stage('Artefact compression') {
       steps {
         sh 'tar -C ./dist -zcvf ./dist/showcase-site-archive.tar.gz showcase-site'
